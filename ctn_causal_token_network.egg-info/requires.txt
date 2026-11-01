@@ -1,5 +1,0 @@
-numpy>=1.26
-pydantic>=2.6
-
-[dev]
-pytest>=8

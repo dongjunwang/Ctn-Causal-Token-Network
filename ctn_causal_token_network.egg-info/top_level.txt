@@ -1,4 +1,0 @@
-configs
-ctn
-data
-tests
