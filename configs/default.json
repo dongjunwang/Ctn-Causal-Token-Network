@@ -1,0 +1,1 @@
+{"seed":42,"dataset":{"train":5000,"validation":1000,"test":1000},"feature_dimensions":32,"worlds":{"thermal":{"temperature_step":10.0,"freezing_point":0.0},"mechanics":{"dt":1.0},"weather":{"wetness_min":0.0,"wetness_max":1.0}}}

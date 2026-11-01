@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctn-causal-token-network"
+version = "0.1.0"
+description = "Causal Token Network (CTN): first-stage causal simulation prototype"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "pydantic>=2.6"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+ctn-generate = "ctn.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

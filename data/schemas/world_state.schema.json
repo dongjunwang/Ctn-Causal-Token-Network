@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"WorldState","type":"object","required":["world_id","timestamp","objects","environment"],"properties":{"world_id":{"type":"string"},"timestamp":{"type":"integer"},"objects":{"type":"object"},"environment":{"type":"object"}},"additionalProperties":false}
