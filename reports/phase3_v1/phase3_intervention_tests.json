@@ -1,0 +1,828 @@
+{
+  "method": "direct one-field-at-a-time calls to V2 simulator step()",
+  "total": 21,
+  "passed": 21,
+  "cases": [
+    {
+      "domain": "mechanics",
+      "feature": "force",
+      "input_before": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "input_after": {
+        "force": 3.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "Y_before": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_after": {
+        "velocity_delta": 1.4,
+        "displacement_delta": 2.4
+      },
+      "Y_delta": {
+        "velocity_delta": 0.5,
+        "displacement_delta": 0.5
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "signed force changes acceleration"
+    },
+    {
+      "domain": "mechanics",
+      "feature": "force_direction",
+      "input_before": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "input_after": {
+        "force": 2.0,
+        "force_direction": -1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "Y_before": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_after": {
+        "velocity_delta": -1.1,
+        "displacement_delta": -0.10000000000000009
+      },
+      "Y_delta": {
+        "velocity_delta": -2.0,
+        "displacement_delta": -2.0
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "direction changes force sign"
+    },
+    {
+      "domain": "mechanics",
+      "feature": "duration",
+      "input_before": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "input_after": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 2.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "Y_before": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_after": {
+        "velocity_delta": 1.7999999999999998,
+        "displacement_delta": 5.6
+      },
+      "Y_delta": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 3.6999999999999997
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "duration affects velocity/displacement updates"
+    },
+    {
+      "domain": "mechanics",
+      "feature": "friction",
+      "input_before": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "input_after": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.8,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "Y_before": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_after": {
+        "velocity_delta": 0.6000000000000001,
+        "displacement_delta": 1.6
+      },
+      "Y_delta": {
+        "velocity_delta": -0.2999999999999998,
+        "displacement_delta": -0.2999999999999998
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "friction opposes motion"
+    },
+    {
+      "domain": "mechanics",
+      "feature": "fixed",
+      "input_before": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "input_after": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": true,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "Y_before": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_after": {
+        "velocity_delta": -1.0,
+        "displacement_delta": 0.0
+      },
+      "Y_delta": {
+        "velocity_delta": -1.9,
+        "displacement_delta": -1.9
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "fixed constraint zeros displacement and final velocity"
+    },
+    {
+      "domain": "mechanics",
+      "feature": "mass",
+      "input_before": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "input_after": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 4.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "Y_before": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_after": {
+        "velocity_delta": 0.44999999999999996,
+        "displacement_delta": 1.45
+      },
+      "Y_delta": {
+        "velocity_delta": -0.44999999999999996,
+        "displacement_delta": -0.44999999999999996
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "mass changes acceleration"
+    },
+    {
+      "domain": "mechanics",
+      "feature": "velocity",
+      "input_before": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "input_after": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 2.0,
+        "position": 3.0
+      },
+      "Y_before": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_after": {
+        "velocity_delta": 0.7999999999999998,
+        "displacement_delta": 2.8
+      },
+      "Y_delta": {
+        "velocity_delta": -0.10000000000000009,
+        "displacement_delta": 0.8999999999999999
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "initial velocity changes result"
+    },
+    {
+      "domain": "mechanics",
+      "feature": "position",
+      "input_before": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 3.0
+      },
+      "input_after": {
+        "force": 2.0,
+        "force_direction": 1,
+        "duration": 1.0,
+        "friction": 0.2,
+        "fixed": false,
+        "mass": 2.0,
+        "velocity": 1.0,
+        "position": 103.0
+      },
+      "Y_before": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_after": {
+        "velocity_delta": 0.8999999999999999,
+        "displacement_delta": 1.9
+      },
+      "Y_delta": {
+        "velocity_delta": 0.0,
+        "displacement_delta": 0.0
+      },
+      "expected_effect": false,
+      "observed_effect": false,
+      "mechanism_matches": true,
+      "mechanism": "translation does not alter displacement or velocity change"
+    },
+    {
+      "domain": "thermal",
+      "feature": "heating_power",
+      "input_before": {
+        "heating_power": 1.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.0,
+        "initial_temperature": -0.5,
+        "initial_phase": "ice"
+      },
+      "input_after": {
+        "heating_power": 2.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.0,
+        "initial_temperature": -0.5,
+        "initial_phase": "ice"
+      },
+      "Y_before": {
+        "temperature_delta": 0.47500000000000003,
+        "final_temperature": -0.024999999999999967,
+        "final_phase": "ice"
+      },
+      "Y_after": {
+        "temperature_delta": 0.975,
+        "final_temperature": 0.475,
+        "final_phase": "liquid"
+      },
+      "Y_delta": {
+        "temperature_delta": 0.49999999999999994,
+        "final_temperature": 0.49999999999999994,
+        "final_phase": [
+          "ice",
+          "liquid"
+        ]
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "heating contributes energy"
+    },
+    {
+      "domain": "thermal",
+      "feature": "cooling_power",
+      "input_before": {
+        "heating_power": 1.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.0,
+        "initial_temperature": -0.5,
+        "initial_phase": "ice"
+      },
+      "input_after": {
+        "heating_power": 1.0,
+        "cooling_power": 0.5,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.0,
+        "initial_temperature": -0.5,
+        "initial_phase": "ice"
+      },
+      "Y_before": {
+        "temperature_delta": 0.47500000000000003,
+        "final_temperature": -0.024999999999999967,
+        "final_phase": "ice"
+      },
+      "Y_after": {
+        "temperature_delta": 0.275,
+        "final_temperature": -0.22499999999999998,
+        "final_phase": "ice"
+      },
+      "Y_delta": {
+        "temperature_delta": -0.2,
+        "final_temperature": -0.2,
+        "final_phase": null
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "cooling removes energy"
+    },
+    {
+      "domain": "thermal",
+      "feature": "duration",
+      "input_before": {
+        "heating_power": 1.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.0,
+        "initial_temperature": -0.5,
+        "initial_phase": "ice"
+      },
+      "input_after": {
+        "heating_power": 1.0,
+        "cooling_power": 0.1,
+        "duration": 2.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.0,
+        "initial_temperature": -0.5,
+        "initial_phase": "ice"
+      },
+      "Y_before": {
+        "temperature_delta": 0.47500000000000003,
+        "final_temperature": -0.024999999999999967,
+        "final_phase": "ice"
+      },
+      "Y_after": {
+        "temperature_delta": 0.9500000000000001,
+        "final_temperature": 0.45000000000000007,
+        "final_phase": "liquid"
+      },
+      "Y_delta": {
+        "temperature_delta": 0.47500000000000003,
+        "final_temperature": 0.47500000000000003,
+        "final_phase": [
+          "ice",
+          "liquid"
+        ]
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "duration scales heat exchange"
+    },
+    {
+      "domain": "thermal",
+      "feature": "freezing_point",
+      "input_before": {
+        "heating_power": 0.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.2,
+        "initial_temperature": 0.2,
+        "initial_phase": "ice"
+      },
+      "input_after": {
+        "heating_power": 0.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 2.0,
+        "ambient_temperature": 0.2,
+        "initial_temperature": 0.2,
+        "initial_phase": "ice"
+      },
+      "Y_before": {
+        "temperature_delta": -0.05,
+        "final_temperature": 0.15000000000000002,
+        "final_phase": "liquid"
+      },
+      "Y_after": {
+        "temperature_delta": -0.05,
+        "final_temperature": 0.15000000000000002,
+        "final_phase": "ice"
+      },
+      "Y_delta": {
+        "temperature_delta": 0.0,
+        "final_temperature": 0.0,
+        "final_phase": [
+          "liquid",
+          "ice"
+        ]
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "threshold may change phase but not temperature trajectory"
+    },
+    {
+      "domain": "thermal",
+      "feature": "ambient_temperature",
+      "input_before": {
+        "heating_power": 0.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.2,
+        "initial_temperature": 0.2,
+        "initial_phase": "ice"
+      },
+      "input_after": {
+        "heating_power": 0.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 10.0,
+        "initial_temperature": 0.2,
+        "initial_phase": "ice"
+      },
+      "Y_before": {
+        "temperature_delta": -0.05,
+        "final_temperature": 0.15000000000000002,
+        "final_phase": "liquid"
+      },
+      "Y_after": {
+        "temperature_delta": 0.44000000000000006,
+        "final_temperature": 0.6400000000000001,
+        "final_phase": "liquid"
+      },
+      "Y_delta": {
+        "temperature_delta": 0.49000000000000005,
+        "final_temperature": 0.4900000000000001,
+        "final_phase": null
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "ambient exchange changes energy balance"
+    },
+    {
+      "domain": "thermal",
+      "feature": "initial_temperature",
+      "input_before": {
+        "heating_power": 0.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.2,
+        "initial_temperature": 0.2,
+        "initial_phase": "ice"
+      },
+      "input_after": {
+        "heating_power": 0.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.2,
+        "initial_temperature": 1.0,
+        "initial_phase": "ice"
+      },
+      "Y_before": {
+        "temperature_delta": -0.05,
+        "final_temperature": 0.15000000000000002,
+        "final_phase": "liquid"
+      },
+      "Y_after": {
+        "temperature_delta": -0.09000000000000001,
+        "final_temperature": 0.91,
+        "final_phase": "liquid"
+      },
+      "Y_delta": {
+        "temperature_delta": -0.04000000000000001,
+        "final_temperature": 0.76,
+        "final_phase": null
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "initial temperature affects ambient exchange and final phase"
+    },
+    {
+      "domain": "thermal",
+      "feature": "initial_phase",
+      "input_before": {
+        "heating_power": 0.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.2,
+        "initial_temperature": 0.2,
+        "initial_phase": "ice"
+      },
+      "input_after": {
+        "heating_power": 0.0,
+        "cooling_power": 0.1,
+        "duration": 1.0,
+        "freezing_point": 0.0,
+        "ambient_temperature": 0.2,
+        "initial_temperature": 0.2,
+        "initial_phase": "liquid"
+      },
+      "Y_before": {
+        "temperature_delta": -0.05,
+        "final_temperature": 0.15000000000000002,
+        "final_phase": "liquid"
+      },
+      "Y_after": {
+        "temperature_delta": -0.1,
+        "final_temperature": 0.1,
+        "final_phase": "liquid"
+      },
+      "Y_delta": {
+        "temperature_delta": -0.05,
+        "final_temperature": -0.05000000000000002,
+        "final_phase": null
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "phase-dependent heat capacity changes temperature response"
+    },
+    {
+      "domain": "weather",
+      "feature": "rainfall",
+      "input_before": {
+        "rainfall": 0.3,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.5,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "Y_before": {
+        "wetness_delta": 0.19000000000000006,
+        "final_wetness": 0.5900000000000001
+      },
+      "Y_after": {
+        "wetness_delta": 0.35,
+        "final_wetness": 0.75
+      },
+      "Y_delta": {
+        "wetness_delta": 0.15999999999999992,
+        "final_wetness": 0.15999999999999992
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "rainfall is multiplied by exposure and duration"
+    },
+    {
+      "domain": "weather",
+      "feature": "rainfall_duration",
+      "input_before": {
+        "rainfall": 0.3,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.3,
+        "rainfall_duration": 2.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "Y_before": {
+        "wetness_delta": 0.19000000000000006,
+        "final_wetness": 0.5900000000000001
+      },
+      "Y_after": {
+        "wetness_delta": 0.38,
+        "final_wetness": 0.78
+      },
+      "Y_delta": {
+        "wetness_delta": 0.18999999999999995,
+        "final_wetness": 0.18999999999999995
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "duration scales rain and drainage contributions"
+    },
+    {
+      "domain": "weather",
+      "feature": "roof_cover",
+      "input_before": {
+        "rainfall": 0.3,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.3,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.8,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "Y_before": {
+        "wetness_delta": 0.19000000000000006,
+        "final_wetness": 0.5900000000000001
+      },
+      "Y_after": {
+        "wetness_delta": 0.010000000000000009,
+        "final_wetness": 0.41000000000000003
+      },
+      "Y_delta": {
+        "wetness_delta": -0.18000000000000005,
+        "final_wetness": -0.18000000000000005
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "cover attenuates direct rain; invalid if rainfall is zero"
+    },
+    {
+      "domain": "weather",
+      "feature": "drainage",
+      "input_before": {
+        "rainfall": 0.3,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.3,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.2,
+        "ground_wetness": 0.4
+      },
+      "Y_before": {
+        "wetness_delta": 0.19000000000000006,
+        "final_wetness": 0.5900000000000001
+      },
+      "Y_after": {
+        "wetness_delta": 0.03999999999999998,
+        "final_wetness": 0.44
+      },
+      "Y_delta": {
+        "wetness_delta": -0.15000000000000008,
+        "final_wetness": -0.15000000000000008
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "drainage removes wetness"
+    },
+    {
+      "domain": "weather",
+      "feature": "ground_wetness",
+      "input_before": {
+        "rainfall": 0.3,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.3,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.95
+      },
+      "Y_before": {
+        "wetness_delta": 0.19000000000000006,
+        "final_wetness": 0.5900000000000001
+      },
+      "Y_after": {
+        "wetness_delta": 0.050000000000000044,
+        "final_wetness": 1.0
+      },
+      "Y_delta": {
+        "wetness_delta": -0.14,
+        "final_wetness": 0.4099999999999999
+      },
+      "expected_effect": true,
+      "observed_effect": true,
+      "mechanism_matches": true,
+      "mechanism": "near upper boundary, clipping makes state affect delta"
+    },
+    {
+      "domain": "weather",
+      "feature": "roof_cover (zero-rain invalid intervention)",
+      "input_before": {
+        "rainfall": 0.0,
+        "rainfall_duration": 1.0,
+        "roof_cover": 0.2,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.0,
+        "rainfall_duration": 1.0,
+        "roof_cover": 1.0,
+        "drainage": 0.05,
+        "ground_wetness": 0.4
+      },
+      "Y_before": {
+        "wetness_delta": -0.04999999999999999,
+        "final_wetness": 0.35000000000000003
+      },
+      "Y_after": {
+        "wetness_delta": -0.04999999999999999,
+        "final_wetness": 0.35000000000000003
+      },
+      "Y_delta": {
+        "wetness_delta": 0.0,
+        "final_wetness": 0.0
+      },
+      "expected_effect": false,
+      "observed_effect": false,
+      "mechanism_matches": true,
+      "mechanism": "with zero rain cover cannot change direct rain contribution"
+    }
+  ],
+  "report_version": "phase3_v1"
+}

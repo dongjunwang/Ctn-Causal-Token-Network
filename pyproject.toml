@@ -16,6 +16,7 @@ research = ["torch>=2.3"]
 [project.scripts]
 ctn-generate = "ctn.cli:main"
 ctn-experiment = "ctn.experiment_cli:main"
+ctn-generate-v2 = "ctn.v2.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

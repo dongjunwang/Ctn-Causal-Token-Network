@@ -1,0 +1,17 @@
+[
+  {
+    "id": "EV_MOTION_V2",
+    "domain": "mechanics",
+    "name": "一维外力运动"
+  },
+  {
+    "id": "EV_THERMAL_V2",
+    "domain": "thermal",
+    "name": "水的简化热交换与相变"
+  },
+  {
+    "id": "EV_WETNESS_V2",
+    "domain": "weather",
+    "name": "降雨与地面湿度变化"
+  }
+]

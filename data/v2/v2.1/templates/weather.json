@@ -1,0 +1,21 @@
+[
+  {
+    "event_type_id": "EV_WETNESS_V2",
+    "name": "降雨与地面湿度变化",
+    "domain": "weather",
+    "actor": "weather",
+    "action": "precipitate_and_drain",
+    "object": "ground",
+    "cause_features": [
+      "rainfall",
+      "rainfall_duration",
+      "roof_cover",
+      "drainage",
+      "ground_wetness"
+    ],
+    "effect_features": [
+      "wetness_delta",
+      "final_wetness"
+    ]
+  }
+]

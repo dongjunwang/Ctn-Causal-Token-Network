@@ -1,0 +1,89 @@
+[
+  {
+    "relation_id": "R_MOTION_FORCE",
+    "source": "EV_MOTION_V2",
+    "target": "EV_MOTION_V2",
+    "relation_type": "CAUSE",
+    "condition": {
+      "fixed": false
+    },
+    "mechanism": "signed external force changes velocity and displacement",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_MOTION_FRICTION",
+    "source": "EV_MOTION_V2",
+    "target": "EV_MOTION_V2",
+    "relation_type": "CAUSE",
+    "condition": {
+      "velocity_nonzero": true
+    },
+    "mechanism": "friction opposes velocity",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_MOTION_FIXED",
+    "source": "EV_MOTION_V2",
+    "target": "EV_MOTION_V2",
+    "relation_type": "PREVENT",
+    "condition": {
+      "fixed": true
+    },
+    "mechanism": "fixed constraint prevents displacement",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_THERMAL_ENERGY",
+    "source": "EV_THERMAL_V2",
+    "target": "EV_THERMAL_V2",
+    "relation_type": "CAUSE",
+    "condition": {},
+    "mechanism": "heating, cooling, ambient exchange and heat capacity determine temperature change",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_THERMAL_THRESHOLD",
+    "source": "EV_THERMAL_V2",
+    "target": "EV_THERMAL_V2",
+    "relation_type": "ENABLE",
+    "condition": {
+      "final_temperature_crosses_freezing_point": true
+    },
+    "mechanism": "freezing threshold determines phase label without changing energy balance",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_WEATHER_RAIN",
+    "source": "EV_WETNESS_V2",
+    "target": "EV_WETNESS_V2",
+    "relation_type": "CAUSE",
+    "condition": {
+      "roof_cover_lt_1": true
+    },
+    "mechanism": "exposed rainfall adds ground water",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_WEATHER_DRAIN",
+    "source": "EV_WETNESS_V2",
+    "target": "EV_WETNESS_V2",
+    "relation_type": "CAUSE",
+    "condition": {},
+    "mechanism": "drainage subtracts water before clipping",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  }
+]

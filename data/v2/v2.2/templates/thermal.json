@@ -1,0 +1,24 @@
+[
+  {
+    "event_type_id": "EV_THERMAL_V2",
+    "name": "水的简化热交换与相变",
+    "domain": "thermal",
+    "actor": "heater_environment",
+    "action": "heat_exchange",
+    "object": "water",
+    "cause_features": [
+      "heating_power",
+      "cooling_power",
+      "duration",
+      "freezing_point",
+      "ambient_temperature",
+      "initial_temperature",
+      "initial_phase"
+    ],
+    "effect_features": [
+      "temperature_delta",
+      "final_temperature",
+      "final_phase"
+    ]
+  }
+]

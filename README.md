@@ -69,4 +69,23 @@ tests/               验收测试
 
 第二阶段机制与数据诊断结果见 `reports/v1/phase2_audit.md`。每次运行 `python -m ctn.audit` 会自动创建 `reports/vN/` 新版本目录，包含总报告、特征干预、配对反事实、数据质量和逐 epoch 训练诊断文件，不覆盖旧版。审计阶段只记录模型输入、逐 epoch 训练/验证指标与干预预测，不修改模型架构。
 
+## 第三阶段：V2 数据契约和模拟环境
+
+V1 数据留在 `data/generated/`。V2 独立放入 `data/v2/vN/`；`v2.1` 原始生成版保留在原位，严格配对修正版生成到 `v2.2/`。默认生成 train/validation/test 50k/10k/10k 条，并完整配对事实与单字段干预反事实。
+
+```powershell
+python -m ctn.v2.cli --output data/v2/v2.2 --seed 20261102
+pytest
+```
+
+三个模拟规则：
+
+- **Mechanics**：`a=(force×direction-friction×velocity)/mass`，显式更新速度和位移；`fixed=true` 时位移为零、最终速度为零。
+- **Thermal**：净热率为 `heating-cooling+0.1×(ambient-initial_temperature)`；冰的简化热容为液态的两倍，乘持续时间得到温度变化；最终温度与可干预 freezing_point 比较确定相态。忽略潜热、沸腾和压力。
+- **Weather**：`raw_final=wetness+rain×duration×(1-cover)-drainage×duration`，然后裁剪至 `[0,1]`；忽略土壤空间差异和蒸发动力学。
+
+V2 编码器按训练集拟合数值均值/标准差，bool 用 0/1，类别用带 `__MISSING__`/`__UNK__` 的 one-hot；Schema 保存稳定字段序、类型、映射、标准化参数和字段级追踪。目标归一化按领域/字段分别拟合并提供反归一化，原始 Y 仍保存在 JSONL。预测输入契约只含 X/C/S 和领域，不包含 Y 或 target_state。
+
+V2 验收报告位于 `reports/phase3_v3/`；每次报告使用新版本目录，保留旧报告。
+
 第一阶段的随机哈希编码有碰撞且非可学习编码，只用于验证形状和数据通路。当前实验模型直接读取保留的结构化数值特征。

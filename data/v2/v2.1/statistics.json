@@ -1,0 +1,910 @@
+{
+  "data_version": "v2.1",
+  "seed": 20261102,
+  "splits": {
+    "train": {
+      "samples": 50000,
+      "pairs": 25000,
+      "interventions": 25000,
+      "ood_samples": 0,
+      "domains": {
+        "mechanics": 16668,
+        "thermal": 16666,
+        "weather": 16666
+      },
+      "intervention_features": {
+        "initial_temperature": 2070,
+        "position": 2094,
+        "fixed": 2103,
+        "freezing_point": 2032,
+        "drainage": 2079,
+        "friction": 2084,
+        "rainfall": 2055,
+        "roof_cover": 2071,
+        "ground_wetness": 2128,
+        "ambient_temperature": 2113,
+        "force": 2053,
+        "heating_power": 2118
+      }
+    },
+    "validation": {
+      "samples": 10000,
+      "pairs": 5000,
+      "interventions": 5000,
+      "ood_samples": 0,
+      "domains": {
+        "mechanics": 3334,
+        "thermal": 3334,
+        "weather": 3332
+      },
+      "intervention_features": {
+        "fixed": 426,
+        "roof_cover": 422,
+        "friction": 428,
+        "force": 397,
+        "heating_power": 431,
+        "drainage": 427,
+        "ground_wetness": 403,
+        "position": 416,
+        "rainfall": 414,
+        "ambient_temperature": 433,
+        "initial_temperature": 402,
+        "freezing_point": 401
+      }
+    },
+    "test": {
+      "samples": 10000,
+      "pairs": 5000,
+      "interventions": 5000,
+      "ood_samples": 4998,
+      "domains": {
+        "mechanics": 3334,
+        "thermal": 3334,
+        "weather": 3332
+      },
+      "intervention_features": {
+        "friction": 445,
+        "drainage": 397,
+        "rainfall": 433,
+        "ambient_temperature": 438,
+        "freezing_point": 393,
+        "ground_wetness": 411,
+        "heating_power": 442,
+        "roof_cover": 425,
+        "force": 410,
+        "initial_temperature": 394,
+        "fixed": 405,
+        "position": 407
+      }
+    }
+  },
+  "domains": {
+    "mechanics": {
+      "train": {
+        "samples": 16668,
+        "pairs": 8334,
+        "interventions": 8334,
+        "ood_samples": 0,
+        "relation_labels": {
+          "CAUSE": 4188,
+          "CONDITIONALLY_CAUSAL": 7552,
+          "NO_EFFECT": 4928
+        }
+      },
+      "validation": {
+        "samples": 3334,
+        "pairs": 1667,
+        "interventions": 1667,
+        "ood_samples": 0,
+        "relation_labels": {
+          "CONDITIONALLY_CAUSAL": 1546,
+          "NO_EFFECT": 956,
+          "CAUSE": 832
+        }
+      },
+      "test": {
+        "samples": 3334,
+        "pairs": 1667,
+        "interventions": 1667,
+        "ood_samples": 1666,
+        "relation_labels": {
+          "CONDITIONALLY_CAUSAL": 2016,
+          "CAUSE": 814,
+          "NO_EFFECT": 504
+        }
+      }
+    },
+    "thermal": {
+      "train": {
+        "samples": 16666,
+        "pairs": 8333,
+        "interventions": 8333,
+        "ood_samples": 0,
+        "relation_labels": {
+          "CAUSE": 12602,
+          "NO_EFFECT": 3244,
+          "CONDITIONALLY_CAUSAL": 820
+        }
+      },
+      "validation": {
+        "samples": 3334,
+        "pairs": 1667,
+        "interventions": 1667,
+        "ood_samples": 0,
+        "relation_labels": {
+          "CAUSE": 2532,
+          "NO_EFFECT": 640,
+          "CONDITIONALLY_CAUSAL": 162
+        }
+      },
+      "test": {
+        "samples": 3334,
+        "pairs": 1667,
+        "interventions": 1667,
+        "ood_samples": 1666,
+        "relation_labels": {
+          "NO_EFFECT": 630,
+          "CAUSE": 2548,
+          "CONDITIONALLY_CAUSAL": 156
+        }
+      }
+    },
+    "weather": {
+      "train": {
+        "samples": 16666,
+        "pairs": 8333,
+        "interventions": 8333,
+        "ood_samples": 0,
+        "relation_labels": {
+          "CAUSE": 10060,
+          "NO_EFFECT": 3230,
+          "CONDITIONALLY_CAUSAL": 3376
+        }
+      },
+      "validation": {
+        "samples": 3332,
+        "pairs": 1666,
+        "interventions": 1666,
+        "ood_samples": 0,
+        "relation_labels": {
+          "NO_EFFECT": 660,
+          "CAUSE": 2040,
+          "CONDITIONALLY_CAUSAL": 632
+        }
+      },
+      "test": {
+        "samples": 3332,
+        "pairs": 1666,
+        "interventions": 1666,
+        "ood_samples": 1666,
+        "relation_labels": {
+          "CAUSE": 2244,
+          "CONDITIONALLY_CAUSAL": 624,
+          "NO_EFFECT": 464
+        }
+      }
+    }
+  },
+  "field_distributions": {
+    "train.mechanics.X.duration": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 2,
+      "min": 0.5,
+      "max": 1.0,
+      "mean": 0.7508999280057596
+    },
+    "train.mechanics.X.force": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 5,
+      "min": 0.0,
+      "max": 3.0,
+      "mean": 1.416066714662827
+    },
+    "train.mechanics.X.force_direction": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 2,
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -0.00671946244300456
+    },
+    "train.mechanics.C.fixed": {
+      "kind": "category/boolean",
+      "count": 16668,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "train.mechanics.C.friction": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 4,
+      "min": 0.0,
+      "max": 0.9,
+      "mean": 0.3185205183584983
+    },
+    "train.mechanics.S.mass": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 3,
+      "min": 1.0,
+      "max": 4.0,
+      "mean": 2.314254859611231
+    },
+    "train.mechanics.S.position": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 6,
+      "min": -2.0,
+      "max": 12.0,
+      "mean": 1.2447804175665946
+    },
+    "train.mechanics.S.velocity": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 3,
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.011519078473722102
+    },
+    "train.mechanics.Y.displacement_delta": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 227,
+      "min": -4.0,
+      "max": 4.0,
+      "mean": 0.005349322054235672
+    },
+    "train.mechanics.Y.final_position": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 769,
+      "min": -6.0,
+      "max": 16.0,
+      "mean": 1.2501297396208295
+    },
+    "train.mechanics.Y.final_velocity": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 169,
+      "min": -4.0,
+      "max": 4.0,
+      "mean": 0.0062589992800575886
+    },
+    "train.mechanics.Y.velocity_delta": {
+      "kind": "numeric",
+      "count": 16668,
+      "unique": 143,
+      "min": -3.9,
+      "max": 3.9,
+      "mean": -0.0052600791936645045
+    },
+    "validation.mechanics.X.duration": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 2,
+      "min": 0.5,
+      "max": 1.0,
+      "mean": 0.7465506898620275
+    },
+    "validation.mechanics.X.force": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 5,
+      "min": 0.0,
+      "max": 3.0,
+      "mean": 1.470605878824235
+    },
+    "validation.mechanics.X.force_direction": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 2,
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -0.011397720455908818
+    },
+    "validation.mechanics.C.fixed": {
+      "kind": "category/boolean",
+      "count": 3334,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "validation.mechanics.C.friction": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 4,
+      "min": 0.0,
+      "max": 0.9,
+      "mean": 0.3199760047990445
+    },
+    "validation.mechanics.S.mass": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": 1.0,
+      "max": 4.0,
+      "mean": 2.2861427714457108
+    },
+    "validation.mechanics.S.position": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 6,
+      "min": -2.0,
+      "max": 12.0,
+      "mean": 1.3173365326934614
+    },
+    "validation.mechanics.S.velocity": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -0.026994601079784044
+    },
+    "validation.mechanics.Y.displacement_delta": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 211,
+      "min": -4.0,
+      "max": 4.0,
+      "mean": -0.0269814787042592
+    },
+    "validation.mechanics.Y.final_position": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 481,
+      "min": -6.0,
+      "max": 14.5,
+      "mean": 1.290355053989203
+    },
+    "validation.mechanics.Y.final_velocity": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 163,
+      "min": -4.0,
+      "max": 4.0,
+      "mean": -0.031077534493101425
+    },
+    "validation.mechanics.Y.velocity_delta": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 137,
+      "min": -3.9,
+      "max": 3.5,
+      "mean": -0.004082933413317364
+    },
+    "test.mechanics.X.duration": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": 0.5,
+      "max": 1.5,
+      "mean": 1.1226754649070185
+    },
+    "test.mechanics.X.force": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 5,
+      "min": 0.0,
+      "max": 3.0,
+      "mean": 2.0346430713857226
+    },
+    "test.mechanics.X.force_direction": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 2,
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.5140971805638872
+    },
+    "test.mechanics.C.fixed": {
+      "kind": "category/boolean",
+      "count": 3334,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "test.mechanics.C.friction": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 4,
+      "min": 0.0,
+      "max": 0.9,
+      "mean": 0.5537792441511904
+    },
+    "test.mechanics.S.mass": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": 1.0,
+      "max": 4.0,
+      "mean": 3.1811637672465505
+    },
+    "test.mechanics.S.position": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 6,
+      "min": -2.0,
+      "max": 12.0,
+      "mean": 2.238152369526095
+    },
+    "test.mechanics.S.velocity": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": -1.0,
+      "max": 1.0,
+      "mean": 0.49250149970005996
+    },
+    "test.mechanics.Y.displacement_delta": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 174,
+      "min": -4.0,
+      "max": 4.0,
+      "mean": 1.0949178914217392
+    },
+    "test.mechanics.Y.final_position": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 362,
+      "min": -5.8,
+      "max": 15.0,
+      "mean": 3.333070260947733
+    },
+    "test.mechanics.Y.final_velocity": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 138,
+      "min": -4.0,
+      "max": 4.0,
+      "mean": 0.730800089981985
+    },
+    "test.mechanics.Y.velocity_delta": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 119,
+      "min": -3.9,
+      "max": 3.9,
+      "mean": 0.23829859028194916
+    },
+    "train.thermal.X.cooling_power": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 3,
+      "min": 0.0,
+      "max": 0.75,
+      "mean": 0.3271030841233649
+    },
+    "train.thermal.X.duration": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 3,
+      "min": 0.5,
+      "max": 2.0,
+      "mean": 1.171126845073803
+    },
+    "train.thermal.X.heating_power": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 4,
+      "min": 0.0,
+      "max": 1.5,
+      "mean": 0.5560422416896675
+    },
+    "train.thermal.C.ambient_temperature": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 3,
+      "min": -5.0,
+      "max": 15.0,
+      "mean": 1.312852514100564
+    },
+    "train.thermal.C.freezing_point": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 4,
+      "min": -5.0,
+      "max": 3.0,
+      "mean": -2.094923796951878
+    },
+    "train.thermal.S.initial_phase": {
+      "kind": "category/boolean",
+      "count": 16666,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "train.thermal.S.initial_temperature": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 10,
+      "min": -11.0,
+      "max": 10.0,
+      "mean": -1.9314772590903637
+    },
+    "train.thermal.Y.final_phase": {
+      "kind": "category/boolean",
+      "count": 16666,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "train.thermal.Y.final_temperature": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 410,
+      "min": -11.15,
+      "max": 11.0,
+      "mean": -1.5700453018121254
+    },
+    "train.thermal.Y.temperature_delta": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 291,
+      "min": -4.5,
+      "max": 5.6,
+      "mean": 0.361431957278304
+    },
+    "validation.thermal.X.cooling_power": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": 0.0,
+      "max": 0.75,
+      "mean": 0.34403119376124774
+    },
+    "validation.thermal.X.duration": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": 0.5,
+      "max": 2.0,
+      "mean": 1.1829634073185362
+    },
+    "validation.thermal.X.heating_power": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 4,
+      "min": 0.0,
+      "max": 1.5,
+      "mean": 0.5769346130773845
+    },
+    "validation.thermal.C.ambient_temperature": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": -5.0,
+      "max": 15.0,
+      "mean": 1.0677864427114576
+    },
+    "validation.thermal.C.freezing_point": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 4,
+      "min": -5.0,
+      "max": 3.0,
+      "mean": -2.0866826634673066
+    },
+    "validation.thermal.S.initial_phase": {
+      "kind": "category/boolean",
+      "count": 3334,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "validation.thermal.S.initial_temperature": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 10,
+      "min": -11.0,
+      "max": 10.0,
+      "mean": -1.9304139172165566
+    },
+    "validation.thermal.Y.final_phase": {
+      "kind": "category/boolean",
+      "count": 3334,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "validation.thermal.Y.final_temperature": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 373,
+      "min": -11.15,
+      "max": 10.5,
+      "mean": -1.5394421115776697
+    },
+    "validation.thermal.Y.temperature_delta": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 273,
+      "min": -4.5,
+      "max": 5.6,
+      "mean": 0.39097180563886846
+    },
+    "test.thermal.X.cooling_power": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": 0.0,
+      "max": 0.75,
+      "mean": 0.3395320935812837
+    },
+    "test.thermal.X.duration": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 3,
+      "min": 0.5,
+      "max": 2.0,
+      "mean": 1.159268146370726
+    },
+    "test.thermal.X.heating_power": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 4,
+      "min": 0.0,
+      "max": 1.5,
+      "mean": 0.5656868626274745
+    },
+    "test.thermal.C.ambient_temperature": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 5,
+      "min": -5.0,
+      "max": 20.0,
+      "mean": 6.436712657468506
+    },
+    "test.thermal.C.freezing_point": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 6,
+      "min": -5.0,
+      "max": 8.0,
+      "mean": 1.604379124175165
+    },
+    "test.thermal.S.initial_phase": {
+      "kind": "category/boolean",
+      "count": 3334,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "test.thermal.S.initial_temperature": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 13,
+      "min": -11.0,
+      "max": 12.0,
+      "mean": 0.7198560287942412
+    },
+    "test.thermal.Y.final_phase": {
+      "kind": "category/boolean",
+      "count": 3334,
+      "unique": 2,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "test.thermal.Y.final_temperature": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 445,
+      "min": -11.15,
+      "max": 13.6,
+      "mean": 1.2549040191961693
+    },
+    "test.thermal.Y.temperature_delta": {
+      "kind": "numeric",
+      "count": 3334,
+      "unique": 276,
+      "min": -4.5,
+      "max": 4.800000000000001,
+      "mean": 0.5350479904019194
+    },
+    "train.weather.X.rainfall": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 5,
+      "min": 0.0,
+      "max": 0.8,
+      "mean": 0.29705388215531975
+    },
+    "train.weather.X.rainfall_duration": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 3,
+      "min": 0.5,
+      "max": 2.0,
+      "mean": 1.1668666746669867
+    },
+    "train.weather.C.drainage": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 4,
+      "min": 0.0,
+      "max": 0.4,
+      "mean": 0.12256390255610668
+    },
+    "train.weather.C.roof_cover": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 3,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.5214808592343694
+    },
+    "train.weather.S.ground_wetness": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 6,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.503720148805952
+    },
+    "train.weather.Y.final_wetness": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 83,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.5080838233529366
+    },
+    "train.weather.Y.unclipped_wetness": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 142,
+      "min": -0.8,
+      "max": 2.6,
+      "mean": 0.5275261010440454
+    },
+    "train.weather.Y.wetness_delta": {
+      "kind": "numeric",
+      "count": 16666,
+      "unique": 76,
+      "min": -0.8,
+      "max": 1.0,
+      "mean": 0.004363674546981877
+    },
+    "validation.weather.X.rainfall": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 5,
+      "min": 0.0,
+      "max": 0.8,
+      "mean": 0.29453781512604743
+    },
+    "validation.weather.X.rainfall_duration": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 3,
+      "min": 0.5,
+      "max": 2.0,
+      "mean": 1.160264105642257
+    },
+    "validation.weather.C.drainage": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 4,
+      "min": 0.0,
+      "max": 0.4,
+      "mean": 0.12339435774309651
+    },
+    "validation.weather.C.roof_cover": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 3,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.5081032412965186
+    },
+    "validation.weather.S.ground_wetness": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 6,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.4927370948379353
+    },
+    "validation.weather.Y.final_wetness": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 81,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.5041791716686674
+    },
+    "validation.weather.Y.unclipped_wetness": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 139,
+      "min": -0.8,
+      "max": 2.6,
+      "mean": 0.5222463985594233
+    },
+    "validation.weather.Y.wetness_delta": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 75,
+      "min": -0.8,
+      "max": 1.0,
+      "mean": 0.011442076830732272
+    },
+    "test.weather.X.rainfall": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 5,
+      "min": 0.0,
+      "max": 0.8,
+      "mean": 0.5019507803121049
+    },
+    "test.weather.X.rainfall_duration": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 3,
+      "min": 0.5,
+      "max": 2.0,
+      "mean": 1.5885354141656662
+    },
+    "test.weather.C.drainage": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 5,
+      "min": 0.0,
+      "max": 0.4,
+      "mean": 0.21571128451380037
+    },
+    "test.weather.C.roof_cover": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 4,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.43554921968787513
+    },
+    "test.weather.S.ground_wetness": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 9,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.49699879951980896
+    },
+    "test.weather.Y.final_wetness": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 77,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.5893982593037239
+    },
+    "test.weather.Y.unclipped_wetness": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 136,
+      "min": -0.8,
+      "max": 2.6,
+      "mean": 0.6469012605042002
+    },
+    "test.weather.Y.wetness_delta": {
+      "kind": "numeric",
+      "count": 3332,
+      "unique": 78,
+      "min": -0.8,
+      "max": 1.0,
+      "mean": 0.09239945978391412
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "data_version": "v2.1",
+  "seed": 20261102,
+  "files": {
+    "train.jsonl": "bee02af9c6ca10a57153e8f57e14624e1c9f4d32c45029e5c5d10b9b780d4622",
+    "validation.jsonl": "bf3be6a29cf1b1619e6a0c2d667ec9e9b6597be046ab962cc77c0c482760f0b4",
+    "test.jsonl": "956025fe7f2f96b99233422fe1ca74a16484abc4d6458c6213d2eeb1d604eb1c",
+    "feature_schema.json": "d51eb623aed7ee67daf1bfb57353aa1bd6a2b17231c27e4b80c0730f5d838353",
+    "statistics.json": "91df42c4d3e0bdec61e0473c58497d6643e66cec607a7a1e970148ec6e5660b2",
+    "templates/mechanics.json": "f697525f87d9f43c72d16d68898ecacfa292892491e60c1124f7467ca785b42c",
+    "templates/thermal.json": "1cb39225a074022af46d7414106ec4e2ce8fb45b492276ac9710c4c42ccee371",
+    "templates/weather.json": "4727cd260dd6bf6d130964b5cdae85aa64641382ce563c1336cfbf06c73474a3",
+    "causal_graph/nodes.json": "0eedced812ed06ba24f55209829a5601855a34dceac86068a34e33bf2c838bab",
+    "causal_graph/edges.json": "dec7329df0e02091a557795c24e9dbd1225b5eadd7dd19555dfc4e4e4dd669e5"
+  }
+}

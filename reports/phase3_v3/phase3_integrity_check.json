@@ -1,0 +1,53 @@
+{
+  "split_counts": {
+    "train": 50000,
+    "validation": 10000,
+    "test": 10000
+  },
+  "pair_checks": {
+    "train": {
+      "pair_count": 25000,
+      "all_have_two_records": true,
+      "one_intervention_each": true
+    },
+    "validation": {
+      "pair_count": 5000,
+      "all_have_two_records": true,
+      "one_intervention_each": true
+    },
+    "test": {
+      "pair_count": 5000,
+      "all_have_two_records": true,
+      "one_intervention_each": true
+    }
+  },
+  "cross_split_id_overlap": {
+    "train_vs_validation": {
+      "sample_ids": 0,
+      "pair_ids": 0
+    },
+    "train_vs_test": {
+      "sample_ids": 0,
+      "pair_ids": 0
+    },
+    "validation_vs_test": {
+      "sample_ids": 0,
+      "pair_ids": 0
+    }
+  },
+  "paired_feature_change_errors": [],
+  "test_ood_factual_XCS_overlap_with_train": 0,
+  "sha256_valid": {
+    "train.jsonl": true,
+    "validation.jsonl": true,
+    "test.jsonl": true,
+    "feature_schema.json": true,
+    "statistics.json": true,
+    "templates/mechanics.json": true,
+    "templates/thermal.json": true,
+    "templates/weather.json": true,
+    "causal_graph/nodes.json": true,
+    "causal_graph/edges.json": true
+  },
+  "passed": true
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "event_type_id": "EV_MOTION_V2",
+    "name": "一维外力运动",
+    "domain": "mechanics",
+    "actor": "external_force",
+    "action": "accelerate",
+    "object": "body",
+    "cause_features": [
+      "force",
+      "force_direction",
+      "duration",
+      "friction",
+      "fixed",
+      "mass",
+      "velocity"
+    ],
+    "effect_features": [
+      "velocity_delta",
+      "displacement_delta"
+    ]
+  }
+]

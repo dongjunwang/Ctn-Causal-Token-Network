@@ -1,0 +1,454 @@
+{
+  "data_version": "v2.1",
+  "fit_split": "train",
+  "domains": {
+    "mechanics": {
+      "X": {
+        "encoder_version": "v2.1",
+        "dimension": 3,
+        "field_order": [
+          "duration",
+          "force",
+          "force_direction"
+        ],
+        "fields": [
+          {
+            "name": "duration",
+            "kind": "numeric",
+            "mean": 0.7508999280057596,
+            "std": 0.24999838025392174,
+            "categories": null,
+            "missing_fill": 0.7508999280057596,
+            "offset": 0,
+            "width": 1
+          },
+          {
+            "name": "force",
+            "kind": "numeric",
+            "mean": 1.416066714662827,
+            "std": 1.0414114830357104,
+            "categories": null,
+            "missing_fill": 1.416066714662827,
+            "offset": 1,
+            "width": 1
+          },
+          {
+            "name": "force_direction",
+            "kind": "numeric",
+            "mean": -0.00671946244300456,
+            "std": 0.9999774241574041,
+            "categories": null,
+            "missing_fill": -0.00671946244300456,
+            "offset": 2,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      },
+      "C": {
+        "encoder_version": "v2.1",
+        "dimension": 2,
+        "field_order": [
+          "fixed",
+          "friction"
+        ],
+        "fields": [
+          {
+            "name": "fixed",
+            "kind": "bool",
+            "mean": null,
+            "std": null,
+            "categories": [
+              "false",
+              "true"
+            ],
+            "missing_fill": false,
+            "offset": 0,
+            "width": 1
+          },
+          {
+            "name": "friction",
+            "kind": "numeric",
+            "mean": 0.31852051835853135,
+            "std": 0.2919437351055951,
+            "categories": null,
+            "missing_fill": 0.31852051835853135,
+            "offset": 1,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      },
+      "S": {
+        "encoder_version": "v2.1",
+        "dimension": 3,
+        "field_order": [
+          "mass",
+          "position",
+          "velocity"
+        ],
+        "fields": [
+          {
+            "name": "mass",
+            "kind": "numeric",
+            "mean": 2.314254859611231,
+            "std": 1.242784141244023,
+            "categories": null,
+            "missing_fill": 2.314254859611231,
+            "offset": 0,
+            "width": 1
+          },
+          {
+            "name": "position",
+            "kind": "numeric",
+            "mean": 1.2447804175665946,
+            "std": 3.6926341424553417,
+            "categories": null,
+            "missing_fill": 1.2447804175665946,
+            "offset": 1,
+            "width": 1
+          },
+          {
+            "name": "velocity",
+            "kind": "numeric",
+            "mean": 0.011519078473722102,
+            "std": 0.8158272208572348,
+            "categories": null,
+            "missing_fill": 0.011519078473722102,
+            "offset": 2,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      }
+    },
+    "thermal": {
+      "X": {
+        "encoder_version": "v2.1",
+        "dimension": 3,
+        "field_order": [
+          "cooling_power",
+          "duration",
+          "heating_power"
+        ],
+        "fields": [
+          {
+            "name": "cooling_power",
+            "kind": "numeric",
+            "mean": 0.3271030841233649,
+            "std": 0.31000676828408735,
+            "categories": null,
+            "missing_fill": 0.3271030841233649,
+            "offset": 0,
+            "width": 1
+          },
+          {
+            "name": "duration",
+            "kind": "numeric",
+            "mean": 1.171126845073803,
+            "std": 0.6254217939661085,
+            "categories": null,
+            "missing_fill": 1.171126845073803,
+            "offset": 1,
+            "width": 1
+          },
+          {
+            "name": "heating_power",
+            "kind": "numeric",
+            "mean": 0.5560422416896675,
+            "std": 0.44391133694321633,
+            "categories": null,
+            "missing_fill": 0.5560422416896675,
+            "offset": 2,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      },
+      "C": {
+        "encoder_version": "v2.1",
+        "dimension": 2,
+        "field_order": [
+          "ambient_temperature",
+          "freezing_point"
+        ],
+        "fields": [
+          {
+            "name": "ambient_temperature",
+            "kind": "numeric",
+            "mean": 1.312852514100564,
+            "std": 5.9947414203180305,
+            "categories": null,
+            "missing_fill": 1.312852514100564,
+            "offset": 0,
+            "width": 1
+          },
+          {
+            "name": "freezing_point",
+            "kind": "numeric",
+            "mean": -2.094923796951878,
+            "std": 2.7015628385925363,
+            "categories": null,
+            "missing_fill": -2.094923796951878,
+            "offset": 1,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      },
+      "S": {
+        "encoder_version": "v2.1",
+        "dimension": 5,
+        "field_order": [
+          "initial_phase",
+          "initial_temperature"
+        ],
+        "fields": [
+          {
+            "name": "initial_phase",
+            "kind": "category",
+            "mean": null,
+            "std": null,
+            "categories": [
+              "ice",
+              "liquid",
+              "__MISSING__",
+              "__UNK__"
+            ],
+            "missing_fill": "__MISSING__",
+            "offset": 0,
+            "width": 4
+          },
+          {
+            "name": "initial_temperature",
+            "kind": "numeric",
+            "mean": -1.9314772590903637,
+            "std": 5.319435748052605,
+            "categories": null,
+            "missing_fill": -1.9314772590903637,
+            "offset": 4,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      }
+    },
+    "weather": {
+      "X": {
+        "encoder_version": "v2.1",
+        "dimension": 2,
+        "field_order": [
+          "rainfall",
+          "rainfall_duration"
+        ],
+        "fields": [
+          {
+            "name": "rainfall",
+            "kind": "numeric",
+            "mean": 0.2970538821552862,
+            "std": 0.26040628485917394,
+            "categories": null,
+            "missing_fill": 0.2970538821552862,
+            "offset": 0,
+            "width": 1
+          },
+          {
+            "name": "rainfall_duration",
+            "kind": "numeric",
+            "mean": 1.1668666746669867,
+            "std": 0.6233796361382818,
+            "categories": null,
+            "missing_fill": 1.1668666746669867,
+            "offset": 1,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      },
+      "C": {
+        "encoder_version": "v2.1",
+        "dimension": 2,
+        "field_order": [
+          "drainage",
+          "roof_cover"
+        ],
+        "fields": [
+          {
+            "name": "drainage",
+            "kind": "numeric",
+            "mean": 0.12256390255610225,
+            "std": 0.1314029350352575,
+            "categories": null,
+            "missing_fill": 0.12256390255610225,
+            "offset": 0,
+            "width": 1
+          },
+          {
+            "name": "roof_cover",
+            "kind": "numeric",
+            "mean": 0.5214808592343694,
+            "std": 0.42106493913761645,
+            "categories": null,
+            "missing_fill": 0.5214808592343694,
+            "offset": 1,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      },
+      "S": {
+        "encoder_version": "v2.1",
+        "dimension": 1,
+        "field_order": [
+          "ground_wetness"
+        ],
+        "fields": [
+          {
+            "name": "ground_wetness",
+            "kind": "numeric",
+            "mean": 0.5037201488059523,
+            "std": 0.36878123736231905,
+            "categories": null,
+            "missing_fill": 0.5037201488059523,
+            "offset": 0,
+            "width": 1
+          }
+        ],
+        "numeric_normalization": "z-score, fitted on train split only",
+        "missing_numeric": "training mean imputation",
+        "missing_boolean": "false encoded as 0",
+        "missing_category": "reserved __MISSING__ one-hot",
+        "unseen_category": "reserved __UNK__ one-hot",
+        "traceability": "transform_one returns per-field raw value and encoded location/value"
+      }
+    }
+  },
+  "targets": {
+    "fit_scope": "training split only",
+    "targets": {
+      "thermal.temperature_delta": {
+        "mean": 0.36143195727829114,
+        "std": 0.9619624988555123,
+        "raw_min": -4.5,
+        "raw_max": 5.6,
+        "unit": "simulator-defined raw unit"
+      },
+      "thermal.final_temperature": {
+        "mean": -1.5700453018120726,
+        "std": 5.037534227252601,
+        "raw_min": -11.15,
+        "raw_max": 11.0,
+        "unit": "simulator-defined raw unit"
+      },
+      "mechanics.velocity_delta": {
+        "mean": -0.0052600791936645045,
+        "std": 0.8771321945593281,
+        "raw_min": -3.9,
+        "raw_max": 3.9,
+        "unit": "simulator-defined raw unit"
+      },
+      "mechanics.displacement_delta": {
+        "mean": 0.005349322054235662,
+        "std": 0.7177335231226302,
+        "raw_min": -4.0,
+        "raw_max": 4.0,
+        "unit": "simulator-defined raw unit"
+      },
+      "mechanics.final_velocity": {
+        "mean": 0.006258999280057597,
+        "std": 0.8267310622591014,
+        "raw_min": -4.0,
+        "raw_max": 4.0,
+        "unit": "simulator-defined raw unit"
+      },
+      "mechanics.final_position": {
+        "mean": 1.2501297396208304,
+        "std": 3.765173863779842,
+        "raw_min": -6.0,
+        "raw_max": 16.0,
+        "unit": "simulator-defined raw unit"
+      },
+      "weather.wetness_delta": {
+        "mean": 0.004363674546981877,
+        "std": 0.22907699722351113,
+        "raw_min": -0.8,
+        "raw_max": 1.0,
+        "unit": "simulator-defined raw unit"
+      },
+      "weather.final_wetness": {
+        "mean": 0.5080838233529341,
+        "std": 0.3710818979483181,
+        "raw_min": 0.0,
+        "raw_max": 1.0,
+        "unit": "simulator-defined raw unit"
+      },
+      "weather.unclipped_wetness": {
+        "mean": 0.5275261010440417,
+        "std": 0.49787951296386956,
+        "raw_min": -0.8,
+        "raw_max": 2.6,
+        "unit": "simulator-defined raw unit"
+      },
+      "categorical_targets": {
+        "thermal.final_phase": {
+          "categories": [
+            "ice",
+            "liquid"
+          ],
+          "encoding": "class label; no numeric normalization"
+        }
+      }
+    }
+  },
+  "prediction_inputs": [
+    "X_encoded",
+    "C_encoded",
+    "S_encoded",
+    "domain"
+  ],
+  "supervision_only": [
+    "Y_raw",
+    "target_state"
+  ],
+  "raw_fields_retained": true
+}
