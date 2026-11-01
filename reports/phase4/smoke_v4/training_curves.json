@@ -1,0 +1,2932 @@
+{
+  "data_version": "v2.2",
+  "device": "cpu",
+  "seeds": [
+    11
+  ],
+  "smoke": true,
+  "records": [
+    {
+      "track": "A",
+      "model": "XY",
+      "seed": 11,
+      "parameters": 5518,
+      "best_epoch": 2,
+      "train_seconds": 0.06027479999829666,
+      "inference_seconds": 0.002464099998178426,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 1.0261022746562958,
+          "train_by_target": {
+            "y_num_0": 1.3069347739219666,
+            "y_num_1": 1.6864811182022095,
+            "y_num_2": 0.9312701523303986,
+            "y_num_3": 0.8726452887058258,
+            "y_num_4": 0.8354333341121674,
+            "y_num_5": 1.0257669389247894,
+            "y_phase": 0.6943910717964172,
+            "s_num_0": 1.3568896055221558,
+            "s_num_1": 1.0269907712936401,
+            "s_num_2": 0.8595201671123505,
+            "s_num_3": 1.0229591727256775,
+            "s_phase": 0.6939437985420227
+          },
+          "validation_loss": 0.9540142814318339,
+          "validation_by_target": {
+            "y_num_0": 0.9083466529846191,
+            "y_num_1": 0.7453793883323669,
+            "y_num_2": 1.125613808631897,
+            "y_num_3": 1.0391310453414917,
+            "y_num_4": 1.2067817449569702,
+            "y_num_5": 1.022815465927124,
+            "y_phase": 0.7069815993309021,
+            "s_num_0": 0.7939847111701965,
+            "s_num_1": 1.1052029132843018,
+            "s_num_2": 1.071839690208435,
+            "s_num_3": 1.0359559059143066,
+            "s_phase": 0.6861384510993958
+          }
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.0255737602710724,
+          "train_by_target": {
+            "y_num_0": 1.3167222142219543,
+            "y_num_1": 1.6742560267448425,
+            "y_num_2": 0.9500793218612671,
+            "y_num_3": 0.8534987270832062,
+            "y_num_4": 0.8248156905174255,
+            "y_num_5": 1.0236109495162964,
+            "y_phase": 0.6905474364757538,
+            "s_num_0": 1.3691514134407043,
+            "s_num_1": 1.0508435368537903,
+            "s_num_2": 0.8407465219497681,
+            "s_num_3": 1.020739197731018,
+            "s_phase": 0.6918738484382629
+          },
+          "validation_loss": 0.9504288633664449,
+          "validation_by_target": {
+            "y_num_0": 0.8997035026550293,
+            "y_num_1": 0.7350912690162659,
+            "y_num_2": 1.113544225692749,
+            "y_num_3": 1.0445441007614136,
+            "y_num_4": 1.1993595361709595,
+            "y_num_5": 1.017735481262207,
+            "y_phase": 0.7079154253005981,
+            "s_num_0": 0.7918227314949036,
+            "s_num_1": 1.1057195663452148,
+            "s_num_2": 1.0725994110107422,
+            "s_num_3": 1.029082179069519,
+            "s_phase": 0.6880289316177368
+          }
+        }
+      ],
+      "validation_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.8997034430503845,
+            "raw_mae": 0.7154837846755981,
+            "count": 170
+          },
+          "displacement_delta": {
+            "standardized_mse": 0.7350911498069763,
+            "raw_mae": 0.3342861533164978,
+            "count": 170
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 1.1135441064834595,
+            "raw_mae": 0.6905122399330139,
+            "count": 158
+          },
+          "final_temperature": {
+            "standardized_mse": 1.044543981552124,
+            "raw_mae": 4.429777145385742,
+            "count": 158
+          },
+          "final_phase": {
+            "accuracy": 0.4430379746835443,
+            "confusion_matrix": [
+              [
+                70,
+                0
+              ],
+              [
+                88,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 1.1993595361709595,
+            "raw_mae": 0.14932985603809357,
+            "count": 152
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0177353620529175,
+            "raw_mae": 0.3498498499393463,
+            "count": 152
+          }
+        }
+      },
+      "test_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.1561908721923828,
+            "raw_mae": 0.8080101609230042,
+            "count": 180
+          },
+          "displacement_delta": {
+            "standardized_mse": 5.483823299407959,
+            "raw_mae": 1.1634775400161743,
+            "count": 180
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.6968910098075867,
+            "raw_mae": 0.5681138634681702,
+            "count": 178
+          },
+          "final_temperature": {
+            "standardized_mse": 1.7095590829849243,
+            "raw_mae": 5.5565409660339355,
+            "count": 178
+          },
+          "final_phase": {
+            "accuracy": 0.550561797752809,
+            "confusion_matrix": [
+              [
+                98,
+                0
+              ],
+              [
+                80,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 2.6472537517547607,
+            "raw_mae": 0.27663636207580566,
+            "count": 122
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0498055219650269,
+            "raw_mae": 0.35131147503852844,
+            "count": 122
+          }
+        }
+      },
+      "ood_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9912022948265076,
+            "raw_mae": 0.8163520097732544,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 9.801243782043457,
+            "raw_mae": 1.975607991218567,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.618290364742279,
+            "raw_mae": 0.5380261540412903,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.3861587047576904,
+            "raw_mae": 6.7915449142456055,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 3.6998796463012695,
+            "raw_mae": 0.36804908514022827,
+            "count": 64
+          },
+          "final_wetness": {
+            "standardized_mse": 1.1681468486785889,
+            "raw_mae": 0.37283796072006226,
+            "count": 64
+          }
+        }
+      },
+      "out_of_range_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9912022948265076,
+            "raw_mae": 0.8163520097732544,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 9.801243782043457,
+            "raw_mae": 1.975607991218567,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.618290364742279,
+            "raw_mae": 0.5380261540412903,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.3861587047576904,
+            "raw_mae": 6.7915449142456055,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          },
+          "final_wetness": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          }
+        }
+      },
+      "counterfactual_metrics": {
+        "mechanics": {
+          "targets": {
+            "velocity_delta": {
+              "pair_count": 90,
+              "change_mae": 0.6554830405336495,
+              "mean_abs_error_before": 0.8637637579893862,
+              "mean_abs_error_after": 0.7522567330478063
+            },
+            "displacement_delta": {
+              "pair_count": 90,
+              "change_mae": 0.9031694904403966,
+              "mean_abs_error_before": 1.484843879331353,
+              "mean_abs_error_after": 0.8421112107035827
+            }
+          },
+          "direction_accuracy": 0.1509433962264151,
+          "direction_pairs": 106,
+          "invalid_intervention_preservation_rate": 0.7894736842105263,
+          "invalid_pair_count": 19
+        },
+        "thermal": {
+          "targets": {
+            "temperature_delta": {
+              "pair_count": 89,
+              "change_mae": 0.4326234369422539,
+              "mean_abs_error_before": 0.47303122276185366,
+              "mean_abs_error_after": 0.6631964580431415
+            },
+            "final_temperature": {
+              "pair_count": 89,
+              "change_mae": 1.2339073148730997,
+              "mean_abs_error_before": 5.348438749079533,
+              "mean_abs_error_after": 5.7646431834419785
+            }
+          },
+          "direction_accuracy": 0.2391304347826087,
+          "direction_pairs": 138,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 16
+        },
+        "weather": {
+          "targets": {
+            "wetness_delta": {
+              "pair_count": 61,
+              "change_mae": 0.395768281680913,
+              "mean_abs_error_before": 0.2945204073659922,
+              "mean_abs_error_after": 0.2587523529881434
+            },
+            "final_wetness": {
+              "pair_count": 61,
+              "change_mae": 0.4689716086435418,
+              "mean_abs_error_before": 0.35890452032131837,
+              "mean_abs_error_after": 0.34371843663060647
+            }
+          },
+          "direction_accuracy": 0.1919191919191919,
+          "direction_pairs": 99,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 3
+        }
+      },
+      "ctn_relation_activations": {}
+    },
+    {
+      "track": "A",
+      "model": "MLP-Full",
+      "seed": 11,
+      "parameters": 10310,
+      "best_epoch": 2,
+      "train_seconds": 0.050797899999452056,
+      "inference_seconds": 0.0031178999997791834,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 1.0148510336875916,
+          "train_by_target": {
+            "y_num_0": 1.2742931246757507,
+            "y_num_1": 1.6053995490074158,
+            "y_num_2": 0.9491595923900604,
+            "y_num_3": 0.8777720630168915,
+            "y_num_4": 0.8026556372642517,
+            "y_num_5": 1.0014006793498993,
+            "y_phase": 0.6939404308795929,
+            "s_num_0": 1.3316732048988342,
+            "s_num_1": 1.0389980375766754,
+            "s_num_2": 0.9004276096820831,
+            "s_num_3": 1.0037886500358582,
+            "s_phase": 0.6987040936946869
+          },
+          "validation_loss": 0.9317852507034937,
+          "validation_by_target": {
+            "y_num_0": 0.8804262280464172,
+            "y_num_1": 0.7160528898239136,
+            "y_num_2": 1.1597176790237427,
+            "y_num_3": 1.057430624961853,
+            "y_num_4": 1.140848994255066,
+            "y_num_5": 0.9799215197563171,
+            "y_phase": 0.6989766955375671,
+            "s_num_0": 0.7859305739402771,
+            "s_num_1": 1.065845251083374,
+            "s_num_2": 1.0326825380325317,
+            "s_num_3": 0.9716686606407166,
+            "s_phase": 0.6919213533401489
+          }
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.9934183359146118,
+          "train_by_target": {
+            "y_num_0": 1.2502703070640564,
+            "y_num_1": 1.5946590900421143,
+            "y_num_2": 0.9198470115661621,
+            "y_num_3": 0.8616980314254761,
+            "y_num_4": 0.7776222229003906,
+            "y_num_5": 0.9729926288127899,
+            "y_phase": 0.6863792240619659,
+            "s_num_0": 1.3222482204437256,
+            "s_num_1": 0.9910564720630646,
+            "s_num_2": 0.8786129653453827,
+            "s_num_3": 0.9727022051811218,
+            "s_phase": 0.6929310858249664
+          },
+          "validation_loss": 0.9116714894771576,
+          "validation_by_target": {
+            "y_num_0": 0.8566116094589233,
+            "y_num_1": 0.7067878842353821,
+            "y_num_2": 1.1356440782546997,
+            "y_num_3": 1.0294333696365356,
+            "y_num_4": 1.1218270063400269,
+            "y_num_5": 0.9556685090065002,
+            "y_phase": 0.6936522722244263,
+            "s_num_0": 0.778034508228302,
+            "s_num_1": 1.0274568796157837,
+            "s_num_2": 1.0023109912872314,
+            "s_num_3": 0.9445655345916748,
+            "s_phase": 0.688065230846405
+          }
+        }
+      ],
+      "validation_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.8566116094589233,
+            "raw_mae": 0.6926651000976562,
+            "count": 170
+          },
+          "displacement_delta": {
+            "standardized_mse": 0.7067878842353821,
+            "raw_mae": 0.32807841897010803,
+            "count": 170
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 1.1356438398361206,
+            "raw_mae": 0.7192909717559814,
+            "count": 158
+          },
+          "final_temperature": {
+            "standardized_mse": 1.029433250427246,
+            "raw_mae": 4.409341812133789,
+            "count": 158
+          },
+          "final_phase": {
+            "accuracy": 0.4810126582278481,
+            "confusion_matrix": [
+              [
+                65,
+                5
+              ],
+              [
+                77,
+                11
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 1.1218270063400269,
+            "raw_mae": 0.14197173714637756,
+            "count": 152
+          },
+          "final_wetness": {
+            "standardized_mse": 0.9556686282157898,
+            "raw_mae": 0.33910298347473145,
+            "count": 152
+          }
+        }
+      },
+      "test_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.0729734897613525,
+            "raw_mae": 0.7833697199821472,
+            "count": 180
+          },
+          "displacement_delta": {
+            "standardized_mse": 6.0733513832092285,
+            "raw_mae": 1.2207331657409668,
+            "count": 180
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.6352526545524597,
+            "raw_mae": 0.5354418158531189,
+            "count": 178
+          },
+          "final_temperature": {
+            "standardized_mse": 1.664321780204773,
+            "raw_mae": 5.5031304359436035,
+            "count": 178
+          },
+          "final_phase": {
+            "accuracy": 0.6348314606741573,
+            "confusion_matrix": [
+              [
+                95,
+                3
+              ],
+              [
+                62,
+                18
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 2.6212480068206787,
+            "raw_mae": 0.27473050355911255,
+            "count": 122
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0013232231140137,
+            "raw_mae": 0.3438407778739929,
+            "count": 122
+          }
+        }
+      },
+      "ood_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9317771196365356,
+            "raw_mae": 0.8056955337524414,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 10.97118854522705,
+            "raw_mae": 2.0863358974456787,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.48661303520202637,
+            "raw_mae": 0.4712945520877838,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.2980523109436035,
+            "raw_mae": 6.674620151519775,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5875,
+            "confusion_matrix": [
+              [
+                39,
+                2
+              ],
+              [
+                31,
+                8
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 3.702773332595825,
+            "raw_mae": 0.36746805906295776,
+            "count": 64
+          },
+          "final_wetness": {
+            "standardized_mse": 1.126932144165039,
+            "raw_mae": 0.3681066036224365,
+            "count": 64
+          }
+        }
+      },
+      "out_of_range_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9317771196365356,
+            "raw_mae": 0.8056955337524414,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 10.97118854522705,
+            "raw_mae": 2.0863358974456787,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.48661303520202637,
+            "raw_mae": 0.4712945520877838,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.2980523109436035,
+            "raw_mae": 6.674620151519775,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5875,
+            "confusion_matrix": [
+              [
+                39,
+                2
+              ],
+              [
+                31,
+                8
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          },
+          "final_wetness": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          }
+        }
+      },
+      "counterfactual_metrics": {
+        "mechanics": {
+          "targets": {
+            "velocity_delta": {
+              "pair_count": 90,
+              "change_mae": 0.66592586876305,
+              "mean_abs_error_before": 0.8269836544601461,
+              "mean_abs_error_after": 0.7397557798574509
+            },
+            "displacement_delta": {
+              "pair_count": 90,
+              "change_mae": 0.9276423993079786,
+              "mean_abs_error_before": 1.5520924475468638,
+              "mean_abs_error_after": 0.8893740555357266
+            }
+          },
+          "direction_accuracy": 0.5283018867924528,
+          "direction_pairs": 106,
+          "invalid_intervention_preservation_rate": 0.8421052631578947,
+          "invalid_pair_count": 19
+        },
+        "thermal": {
+          "targets": {
+            "temperature_delta": {
+              "pair_count": 89,
+              "change_mae": 0.4262315741398494,
+              "mean_abs_error_before": 0.46753519547324934,
+              "mean_abs_error_after": 0.6033482871086879
+            },
+            "final_temperature": {
+              "pair_count": 89,
+              "change_mae": 1.2352095677985286,
+              "mean_abs_error_before": 5.303409439500456,
+              "mean_abs_error_after": 5.702850928533635
+            }
+          },
+          "direction_accuracy": 0.644927536231884,
+          "direction_pairs": 138,
+          "invalid_intervention_preservation_rate": 0.8125,
+          "invalid_pair_count": 16
+        },
+        "weather": {
+          "targets": {
+            "wetness_delta": {
+              "pair_count": 61,
+              "change_mae": 0.3914054314409806,
+              "mean_abs_error_before": 0.29377358925925956,
+              "mean_abs_error_after": 0.255687393569029
+            },
+            "final_wetness": {
+              "pair_count": 61,
+              "change_mae": 0.4558510727147805,
+              "mean_abs_error_before": 0.3541347295643734,
+              "mean_abs_error_after": 0.333546843992888
+            }
+          },
+          "direction_accuracy": 0.8686868686868687,
+          "direction_pairs": 99,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 3
+        }
+      },
+      "ctn_relation_activations": {}
+    },
+    {
+      "track": "A",
+      "model": "Transformer-Full",
+      "seed": 11,
+      "parameters": 9678,
+      "best_epoch": 2,
+      "train_seconds": 0.10028260000035516,
+      "inference_seconds": 0.00528160000249045,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 1.125713586807251,
+          "train_by_target": {
+            "y_num_0": 1.3434067964553833,
+            "y_num_1": 1.767148494720459,
+            "y_num_2": 1.1256237626075745,
+            "y_num_3": 1.1233705878257751,
+            "y_num_4": 1.23109632730484,
+            "y_num_5": 1.5132009387016296,
+            "y_phase": 0.7227079272270203,
+            "s_num_0": 1.2891599535942078,
+            "s_num_1": 0.8569727838039398,
+            "s_num_2": 0.9693402945995331,
+            "s_num_3": 0.8743392527103424,
+            "s_phase": 0.6921969056129456
+          },
+          "validation_loss": 1.047298903266589,
+          "validation_by_target": {
+            "y_num_0": 0.9324537515640259,
+            "y_num_1": 0.7484908103942871,
+            "y_num_2": 1.3113681077957153,
+            "y_num_3": 1.2565549612045288,
+            "y_num_4": 1.6594585180282593,
+            "y_num_5": 1.496667504310608,
+            "y_phase": 0.7678070664405823,
+            "s_num_0": 0.7658782005310059,
+            "s_num_1": 0.9029677510261536,
+            "s_num_2": 1.205093502998352,
+            "s_num_3": 0.817074716091156,
+            "s_phase": 0.7037719488143921
+          }
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.065711259841919,
+          "train_by_target": {
+            "y_num_0": 1.2957278490066528,
+            "y_num_1": 1.663328468799591,
+            "y_num_2": 1.025555282831192,
+            "y_num_3": 1.0704251527786255,
+            "y_num_4": 1.146993100643158,
+            "y_num_5": 1.3324713110923767,
+            "y_phase": 0.7112322747707367,
+            "s_num_0": 1.258276104927063,
+            "s_num_1": 0.8378170430660248,
+            "s_num_2": 0.9230494499206543,
+            "s_num_3": 0.836556613445282,
+            "s_phase": 0.6871033012866974
+          },
+          "validation_loss": 0.9931008617083231,
+          "validation_by_target": {
+            "y_num_0": 0.9152853488922119,
+            "y_num_1": 0.6978246569633484,
+            "y_num_2": 1.1892179250717163,
+            "y_num_3": 1.205956220626831,
+            "y_num_4": 1.568268060684204,
+            "y_num_5": 1.3197911977767944,
+            "y_phase": 0.7595108151435852,
+            "s_num_0": 0.7514366507530212,
+            "s_num_1": 0.8658815026283264,
+            "s_num_2": 1.1615180969238281,
+            "s_num_3": 0.7890944480895996,
+            "s_phase": 0.6934254169464111
+          }
+        }
+      ],
+      "validation_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9152853488922119,
+            "raw_mae": 0.7119763493537903,
+            "count": 170
+          },
+          "displacement_delta": {
+            "standardized_mse": 0.6978245973587036,
+            "raw_mae": 0.3793901205062866,
+            "count": 170
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 1.1892178058624268,
+            "raw_mae": 0.7887223362922668,
+            "count": 158
+          },
+          "final_temperature": {
+            "standardized_mse": 1.205956220626831,
+            "raw_mae": 4.831806659698486,
+            "count": 158
+          },
+          "final_phase": {
+            "accuracy": 0.26582278481012656,
+            "confusion_matrix": [
+              [
+                33,
+                37
+              ],
+              [
+                79,
+                9
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 1.568268060684204,
+            "raw_mae": 0.191536545753479,
+            "count": 152
+          },
+          "final_wetness": {
+            "standardized_mse": 1.3197911977767944,
+            "raw_mae": 0.3896920382976532,
+            "count": 152
+          }
+        }
+      },
+      "test_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.1874504089355469,
+            "raw_mae": 0.8244993686676025,
+            "count": 180
+          },
+          "displacement_delta": {
+            "standardized_mse": 4.984914779663086,
+            "raw_mae": 1.1335852146148682,
+            "count": 180
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.8384920358657837,
+            "raw_mae": 0.6671125292778015,
+            "count": 178
+          },
+          "final_temperature": {
+            "standardized_mse": 1.8702858686447144,
+            "raw_mae": 5.927793502807617,
+            "count": 178
+          },
+          "final_phase": {
+            "accuracy": 0.47191011235955055,
+            "confusion_matrix": [
+              [
+                77,
+                21
+              ],
+              [
+                73,
+                7
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 3.0663580894470215,
+            "raw_mae": 0.3077753782272339,
+            "count": 122
+          },
+          "final_wetness": {
+            "standardized_mse": 1.1240808963775635,
+            "raw_mae": 0.34585320949554443,
+            "count": 122
+          }
+        }
+      },
+      "ood_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.0616986751556396,
+            "raw_mae": 0.8518449664115906,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 8.817938804626465,
+            "raw_mae": 1.860499620437622,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.7569040060043335,
+            "raw_mae": 0.6572179198265076,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.453824281692505,
+            "raw_mae": 6.9766035079956055,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 4.150864124298096,
+            "raw_mae": 0.386624276638031,
+            "count": 64
+          },
+          "final_wetness": {
+            "standardized_mse": 1.1750414371490479,
+            "raw_mae": 0.353071928024292,
+            "count": 64
+          }
+        }
+      },
+      "out_of_range_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.0616986751556396,
+            "raw_mae": 0.8518449664115906,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 8.817938804626465,
+            "raw_mae": 1.860499620437622,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.7569040060043335,
+            "raw_mae": 0.6572179198265076,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.453824281692505,
+            "raw_mae": 6.9766035079956055,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          },
+          "final_wetness": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          }
+        }
+      },
+      "counterfactual_metrics": {
+        "mechanics": {
+          "targets": {
+            "velocity_delta": {
+              "pair_count": 90,
+              "change_mae": 0.7282389598366716,
+              "mean_abs_error_before": 0.8914468488086696,
+              "mean_abs_error_after": 0.7575520341280956
+            },
+            "displacement_delta": {
+              "pair_count": 90,
+              "change_mae": 0.9814922900789488,
+              "mean_abs_error_before": 1.4235991751039452,
+              "mean_abs_error_after": 0.8435713388097484
+            }
+          },
+          "direction_accuracy": 0.39622641509433965,
+          "direction_pairs": 106,
+          "invalid_intervention_preservation_rate": 0.21052631578947367,
+          "invalid_pair_count": 19
+        },
+        "thermal": {
+          "targets": {
+            "temperature_delta": {
+              "pair_count": 89,
+              "change_mae": 0.4440710351096577,
+              "mean_abs_error_before": 0.6081309174803975,
+              "mean_abs_error_after": 0.7260941233732559
+            },
+            "final_temperature": {
+              "pair_count": 89,
+              "change_mae": 1.2094493554452315,
+              "mean_abs_error_before": 5.771044534246052,
+              "mean_abs_error_after": 6.084541859199465
+            }
+          },
+          "direction_accuracy": 0.7101449275362319,
+          "direction_pairs": 138,
+          "invalid_intervention_preservation_rate": 0.0625,
+          "invalid_pair_count": 16
+        },
+        "weather": {
+          "targets": {
+            "wetness_delta": {
+              "pair_count": 61,
+              "change_mae": 0.436954199957295,
+              "mean_abs_error_before": 0.31857730774780246,
+              "mean_abs_error_after": 0.2969734575570052
+            },
+            "final_wetness": {
+              "pair_count": 61,
+              "change_mae": 0.496895935282325,
+              "mean_abs_error_before": 0.30527844049689135,
+              "mean_abs_error_after": 0.386427983847534
+            }
+          },
+          "direction_accuracy": 0.26262626262626265,
+          "direction_pairs": 99,
+          "invalid_intervention_preservation_rate": 0.3333333333333333,
+          "invalid_pair_count": 3
+        }
+      },
+      "ctn_relation_activations": {}
+    },
+    {
+      "track": "A",
+      "model": "CTN",
+      "seed": 11,
+      "parameters": 9652,
+      "best_epoch": 2,
+      "train_seconds": 0.09932889999981853,
+      "inference_seconds": 0.009690300001238938,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 1.0150583982467651,
+          "train_by_target": {
+            "y_num_0": 1.2857640981674194,
+            "y_num_1": 1.6012002229690552,
+            "y_num_2": 0.9357903897762299,
+            "y_num_3": 0.8323452770709991,
+            "y_num_4": 0.8300769627094269,
+            "y_num_5": 1.0370120406150818,
+            "y_phase": 0.6950521171092987,
+            "s_num_0": 1.3416700959205627,
+            "s_num_1": 1.0225100815296173,
+            "s_num_2": 0.8812715113162994,
+            "s_num_3": 1.0251185297966003,
+            "s_phase": 0.6928889751434326
+          },
+          "validation_loss": 0.951984316110611,
+          "validation_by_target": {
+            "y_num_0": 0.8687798976898193,
+            "y_num_1": 0.7172490954399109,
+            "y_num_2": 1.1767427921295166,
+            "y_num_3": 1.0467742681503296,
+            "y_num_4": 1.2431882619857788,
+            "y_num_5": 1.0187479257583618,
+            "y_phase": 0.722428560256958,
+            "s_num_0": 0.7943676114082336,
+            "s_num_1": 1.1009798049926758,
+            "s_num_2": 1.0283879041671753,
+            "s_num_3": 1.0055137872695923,
+            "s_phase": 0.7006518840789795
+          }
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.0070980489253998,
+          "train_by_target": {
+            "y_num_0": 1.259595274925232,
+            "y_num_1": 1.6185879707336426,
+            "y_num_2": 0.9142739474773407,
+            "y_num_3": 0.7868683636188507,
+            "y_num_4": 0.8623798191547394,
+            "y_num_5": 1.038595974445343,
+            "y_phase": 0.6960273683071136,
+            "s_num_0": 1.346952497959137,
+            "s_num_1": 1.0152480602264404,
+            "s_num_2": 0.8321126103401184,
+            "s_num_3": 1.021834820508957,
+            "s_phase": 0.6927004158496857
+          },
+          "validation_loss": 0.9480888495842615,
+          "validation_by_target": {
+            "y_num_0": 0.8647605180740356,
+            "y_num_1": 0.7138566374778748,
+            "y_num_2": 1.1685549020767212,
+            "y_num_3": 1.0465517044067383,
+            "y_num_4": 1.2398284673690796,
+            "y_num_5": 1.0152798891067505,
+            "y_phase": 0.7216184735298157,
+            "s_num_0": 0.7906562089920044,
+            "s_num_1": 1.0938098430633545,
+            "s_num_2": 1.0232558250427246,
+            "s_num_3": 0.997798502445221,
+            "s_phase": 0.7010952234268188
+          }
+        }
+      ],
+      "validation_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.8647606372833252,
+            "raw_mae": 0.7021702527999878,
+            "count": 170
+          },
+          "displacement_delta": {
+            "standardized_mse": 0.71385657787323,
+            "raw_mae": 0.3202681541442871,
+            "count": 170
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 1.1685550212860107,
+            "raw_mae": 0.7256216406822205,
+            "count": 158
+          },
+          "final_temperature": {
+            "standardized_mse": 1.0465517044067383,
+            "raw_mae": 4.404422283172607,
+            "count": 158
+          },
+          "final_phase": {
+            "accuracy": 0.4430379746835443,
+            "confusion_matrix": [
+              [
+                70,
+                0
+              ],
+              [
+                88,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 1.2398285865783691,
+            "raw_mae": 0.16010090708732605,
+            "count": 152
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0152798891067505,
+            "raw_mae": 0.3505268692970276,
+            "count": 152
+          }
+        }
+      },
+      "test_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.2880083322525024,
+            "raw_mae": 0.8551157712936401,
+            "count": 180
+          },
+          "displacement_delta": {
+            "standardized_mse": 5.797618389129639,
+            "raw_mae": 1.1895169019699097,
+            "count": 180
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.6635408997535706,
+            "raw_mae": 0.5443203449249268,
+            "count": 178
+          },
+          "final_temperature": {
+            "standardized_mse": 1.7755376100540161,
+            "raw_mae": 5.598277568817139,
+            "count": 178
+          },
+          "final_phase": {
+            "accuracy": 0.550561797752809,
+            "confusion_matrix": [
+              [
+                98,
+                0
+              ],
+              [
+                80,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 2.640691041946411,
+            "raw_mae": 0.2799643278121948,
+            "count": 122
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0136537551879883,
+            "raw_mae": 0.3446909189224243,
+            "count": 122
+          }
+        }
+      },
+      "ood_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.2273728847503662,
+            "raw_mae": 0.8946166038513184,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 10.422624588012695,
+            "raw_mae": 2.0344512462615967,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.4909021854400635,
+            "raw_mae": 0.4672662615776062,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.5663158893585205,
+            "raw_mae": 7.013853549957275,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 3.6948750019073486,
+            "raw_mae": 0.3675293028354645,
+            "count": 64
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0896040201187134,
+            "raw_mae": 0.3571639657020569,
+            "count": 64
+          }
+        }
+      },
+      "out_of_range_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.2273728847503662,
+            "raw_mae": 0.8946166038513184,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 10.422624588012695,
+            "raw_mae": 2.0344512462615967,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.4909021854400635,
+            "raw_mae": 0.4672662615776062,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.5663158893585205,
+            "raw_mae": 7.013853549957275,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          },
+          "final_wetness": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          }
+        }
+      },
+      "counterfactual_metrics": {
+        "mechanics": {
+          "targets": {
+            "velocity_delta": {
+              "pair_count": 90,
+              "change_mae": 0.6680734370373987,
+              "mean_abs_error_before": 0.963525769633132,
+              "mean_abs_error_after": 0.7467056745735648
+            },
+            "displacement_delta": {
+              "pair_count": 90,
+              "change_mae": 0.9000776402915687,
+              "mean_abs_error_before": 1.5167923527077878,
+              "mean_abs_error_after": 0.8622415551118929
+            }
+          },
+          "direction_accuracy": 0.49056603773584906,
+          "direction_pairs": 106,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 19
+        },
+        "thermal": {
+          "targets": {
+            "temperature_delta": {
+              "pair_count": 89,
+              "change_mae": 0.43380265734342793,
+              "mean_abs_error_before": 0.47524513808157254,
+              "mean_abs_error_after": 0.6133954321040164
+            },
+            "final_temperature": {
+              "pair_count": 89,
+              "change_mae": 1.2217288722697348,
+              "mean_abs_error_before": 5.361944841799589,
+              "mean_abs_error_after": 5.834609904518515
+            }
+          },
+          "direction_accuracy": 0.644927536231884,
+          "direction_pairs": 138,
+          "invalid_intervention_preservation_rate": 0.9375,
+          "invalid_pair_count": 16
+        },
+        "weather": {
+          "targets": {
+            "wetness_delta": {
+              "pair_count": 61,
+              "change_mae": 0.3974416744179254,
+              "mean_abs_error_before": 0.293821153616844,
+              "mean_abs_error_after": 0.2661074699737578
+            },
+            "final_wetness": {
+              "pair_count": 61,
+              "change_mae": 0.467178839821084,
+              "mean_abs_error_before": 0.3389673691523513,
+              "mean_abs_error_after": 0.3504144364086649
+            }
+          },
+          "direction_accuracy": 0.6666666666666666,
+          "direction_pairs": 99,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 3
+        }
+      },
+      "ctn_relation_activations": {
+        "gate_xc": 0.9978591203689575,
+        "gate_xs": 1.0035799741744995,
+        "gate_cs": 1.003904104232788,
+        "gate_all": 1.003702998161316,
+        "mean_abs_xc": 0.11859963834285736,
+        "mean_abs_xs": 0.05491577833890915,
+        "mean_abs_cs": 0.05018484964966774
+      }
+    },
+    {
+      "track": "B",
+      "model": "XY",
+      "seed": 11,
+      "parameters": 5518,
+      "best_epoch": 2,
+      "train_seconds": 0.4349294999992708,
+      "inference_seconds": 0.0030197999985830393,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 1.7076427936553955,
+          "train_by_target": {
+            "y_num_0": 1.291033387184143,
+            "y_num_1": 1.6650705337524414,
+            "y_num_2": 1.0059614479541779,
+            "y_num_3": 0.8571425080299377,
+            "y_num_4": 0.8278229832649231,
+            "y_num_5": 1.0258934199810028,
+            "y_phase": 0.6935880780220032,
+            "s_num_0": 1.3294965028762817,
+            "s_num_1": 1.012845903635025,
+            "s_num_2": 0.8416551947593689,
+            "s_num_3": 1.0251997411251068,
+            "s_phase": 0.6941289603710175,
+            "pair": 0.6851561069488525
+          },
+          "validation_loss": 0.9539261062939962,
+          "validation_by_target": {
+            "y_num_0": 0.9098478555679321,
+            "y_num_1": 0.7469196915626526,
+            "y_num_2": 1.128875732421875,
+            "y_num_3": 1.0378843545913696,
+            "y_num_4": 1.200273036956787,
+            "y_num_5": 1.020398497581482,
+            "y_phase": 0.7067283391952515,
+            "s_num_0": 0.7940494418144226,
+            "s_num_1": 1.1045454740524292,
+            "s_num_2": 1.0714988708496094,
+            "s_num_3": 1.0405129194259644,
+            "s_phase": 0.6855790615081787
+          }
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.7108396887779236,
+          "train_by_target": {
+            "y_num_0": 1.3222643733024597,
+            "y_num_1": 1.7017817497253418,
+            "y_num_2": 0.9253639876842499,
+            "y_num_3": 0.8047476708889008,
+            "y_num_4": 0.8493377864360809,
+            "y_num_5": 1.0225600004196167,
+            "y_phase": 0.6916933357715607,
+            "s_num_0": 1.3694927096366882,
+            "s_num_1": 1.0640974640846252,
+            "s_num_2": 0.7917756140232086,
+            "s_num_3": 1.0273492932319641,
+            "s_phase": 0.6925593316555023,
+            "pair": 0.6889210343360901
+          },
+          "validation_loss": 0.949894646803538,
+          "validation_by_target": {
+            "y_num_0": 0.9030485153198242,
+            "y_num_1": 0.7375033497810364,
+            "y_num_2": 1.1185333728790283,
+            "y_num_3": 1.0418627262115479,
+            "y_num_4": 1.1873891353607178,
+            "y_num_5": 1.0126187801361084,
+            "y_phase": 0.7075557708740234,
+            "s_num_0": 0.7922351360321045,
+            "s_num_1": 1.1033226251602173,
+            "s_num_2": 1.0715394020080566,
+            "s_num_3": 1.0362695455551147,
+            "s_phase": 0.6868574023246765
+          }
+        }
+      ],
+      "validation_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9030485153198242,
+            "raw_mae": 0.7179527878761292,
+            "count": 170
+          },
+          "displacement_delta": {
+            "standardized_mse": 0.7375032901763916,
+            "raw_mae": 0.33716097474098206,
+            "count": 170
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 1.1185333728790283,
+            "raw_mae": 0.6921313405036926,
+            "count": 158
+          },
+          "final_temperature": {
+            "standardized_mse": 1.0418627262115479,
+            "raw_mae": 4.424685478210449,
+            "count": 158
+          },
+          "final_phase": {
+            "accuracy": 0.4430379746835443,
+            "confusion_matrix": [
+              [
+                70,
+                0
+              ],
+              [
+                88,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 1.1873890161514282,
+            "raw_mae": 0.1491193175315857,
+            "count": 152
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0126187801361084,
+            "raw_mae": 0.34914395213127136,
+            "count": 152
+          }
+        }
+      },
+      "test_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.1517988443374634,
+            "raw_mae": 0.8044975996017456,
+            "count": 180
+          },
+          "displacement_delta": {
+            "standardized_mse": 5.348725318908691,
+            "raw_mae": 1.1552265882492065,
+            "count": 180
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.7016754746437073,
+            "raw_mae": 0.570380449295044,
+            "count": 178
+          },
+          "final_temperature": {
+            "standardized_mse": 1.707958459854126,
+            "raw_mae": 5.560917854309082,
+            "count": 178
+          },
+          "final_phase": {
+            "accuracy": 0.550561797752809,
+            "confusion_matrix": [
+              [
+                98,
+                0
+              ],
+              [
+                80,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 2.5992934703826904,
+            "raw_mae": 0.2737559974193573,
+            "count": 122
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0404953956604004,
+            "raw_mae": 0.3498118221759796,
+            "count": 122
+          }
+        }
+      },
+      "ood_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9757590293884277,
+            "raw_mae": 0.8068916201591492,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 9.533479690551758,
+            "raw_mae": 1.9569568634033203,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.624496579170227,
+            "raw_mae": 0.5409653782844543,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.3807272911071777,
+            "raw_mae": 6.789784908294678,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 3.628775119781494,
+            "raw_mae": 0.36372262239456177,
+            "count": 64
+          },
+          "final_wetness": {
+            "standardized_mse": 1.151706576347351,
+            "raw_mae": 0.3699701130390167,
+            "count": 64
+          }
+        }
+      },
+      "out_of_range_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9757590293884277,
+            "raw_mae": 0.8068916201591492,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 9.533479690551758,
+            "raw_mae": 1.9569568634033203,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.624496579170227,
+            "raw_mae": 0.5409653782844543,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.3807272911071777,
+            "raw_mae": 6.789784908294678,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          },
+          "final_wetness": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          }
+        }
+      },
+      "counterfactual_metrics": {
+        "mechanics": {
+          "targets": {
+            "velocity_delta": {
+              "pair_count": 90,
+              "change_mae": 0.6517535165142642,
+              "mean_abs_error_before": 0.8593031212034106,
+              "mean_abs_error_after": 0.7496920240288721
+            },
+            "displacement_delta": {
+              "pair_count": 90,
+              "change_mae": 0.896922210281223,
+              "mean_abs_error_before": 1.4664233240995086,
+              "mean_abs_error_after": 0.844029670621419
+            }
+          },
+          "direction_accuracy": 0.2830188679245283,
+          "direction_pairs": 106,
+          "invalid_intervention_preservation_rate": 0.7368421052631579,
+          "invalid_pair_count": 19
+        },
+        "thermal": {
+          "targets": {
+            "temperature_delta": {
+              "pair_count": 89,
+              "change_mae": 0.4322763966527836,
+              "mean_abs_error_before": 0.4748895023914717,
+              "mean_abs_error_after": 0.6658715069903907
+            },
+            "final_temperature": {
+              "pair_count": 89,
+              "change_mae": 1.2321634735179532,
+              "mean_abs_error_before": 5.354983273665059,
+              "mean_abs_error_after": 5.766852548348505
+            }
+          },
+          "direction_accuracy": 0.2391304347826087,
+          "direction_pairs": 138,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 16
+        },
+        "weather": {
+          "targets": {
+            "wetness_delta": {
+              "pair_count": 61,
+              "change_mae": 0.39460623722569815,
+              "mean_abs_error_before": 0.2892795115236466,
+              "mean_abs_error_after": 0.25823253716955863
+            },
+            "final_wetness": {
+              "pair_count": 61,
+              "change_mae": 0.4678133853646491,
+              "mean_abs_error_before": 0.3562834204131257,
+              "mean_abs_error_after": 0.3433402994647996
+            }
+          },
+          "direction_accuracy": 0.2222222222222222,
+          "direction_pairs": 99,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 3
+        }
+      },
+      "ctn_relation_activations": {}
+    },
+    {
+      "track": "B",
+      "model": "MLP-Full",
+      "seed": 11,
+      "parameters": 10310,
+      "best_epoch": 2,
+      "train_seconds": 0.4377851000026567,
+      "inference_seconds": 0.0025660000028437935,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 1.6919441223144531,
+          "train_by_target": {
+            "y_num_0": 1.318045288324356,
+            "y_num_1": 1.671092689037323,
+            "y_num_2": 0.9424655735492706,
+            "y_num_3": 0.8869470953941345,
+            "y_num_4": 0.7981295585632324,
+            "y_num_5": 0.9973702430725098,
+            "y_phase": 0.694416344165802,
+            "s_num_0": 1.3724605441093445,
+            "s_num_1": 1.0554969608783722,
+            "s_num_2": 0.9130029082298279,
+            "s_num_3": 1.0052944421768188,
+            "s_phase": 0.6988183259963989,
+            "pair": 0.662482500076294
+          },
+          "validation_loss": 0.9342933694521586,
+          "validation_by_target": {
+            "y_num_0": 0.8932351469993591,
+            "y_num_1": 0.7202409505844116,
+            "y_num_2": 1.158548355102539,
+            "y_num_3": 1.0606377124786377,
+            "y_num_4": 1.12969172000885,
+            "y_num_5": 0.9681800007820129,
+            "y_phase": 0.7011330127716064,
+            "s_num_0": 0.7879111170768738,
+            "s_num_1": 1.0780433416366577,
+            "s_num_2": 1.0416182279586792,
+            "s_num_3": 0.9785440564155579,
+            "s_phase": 0.6937367916107178
+          }
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6501439809799194,
+          "train_by_target": {
+            "y_num_0": 1.2779517769813538,
+            "y_num_1": 1.6182110905647278,
+            "y_num_2": 0.9062542915344238,
+            "y_num_3": 0.8515870869159698,
+            "y_num_4": 0.7668860256671906,
+            "y_num_5": 0.9614162445068359,
+            "y_phase": 0.6883754432201385,
+            "s_num_0": 1.3350971341133118,
+            "s_num_1": 1.0203349888324738,
+            "s_num_2": 0.8752406239509583,
+            "s_num_3": 0.9866489768028259,
+            "s_phase": 0.6954540610313416,
+            "pair": 0.6515224575996399
+          },
+          "validation_loss": 0.9159409453471502,
+          "validation_by_target": {
+            "y_num_0": 0.8775445222854614,
+            "y_num_1": 0.713493824005127,
+            "y_num_2": 1.1349172592163086,
+            "y_num_3": 1.0340304374694824,
+            "y_num_4": 1.101809024810791,
+            "y_num_5": 0.9335198402404785,
+            "y_phase": 0.6970344185829163,
+            "s_num_0": 0.7817546129226685,
+            "s_num_1": 1.0502197742462158,
+            "s_num_2": 1.01706862449646,
+            "s_num_3": 0.958662748336792,
+            "s_phase": 0.6912362575531006
+          }
+        }
+      ],
+      "validation_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.877544641494751,
+            "raw_mae": 0.701291561126709,
+            "count": 170
+          },
+          "displacement_delta": {
+            "standardized_mse": 0.713493824005127,
+            "raw_mae": 0.33073556423187256,
+            "count": 170
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 1.1349172592163086,
+            "raw_mae": 0.7190613746643066,
+            "count": 158
+          },
+          "final_temperature": {
+            "standardized_mse": 1.0340304374694824,
+            "raw_mae": 4.419879913330078,
+            "count": 158
+          },
+          "final_phase": {
+            "accuracy": 0.43037974683544306,
+            "confusion_matrix": [
+              [
+                61,
+                9
+              ],
+              [
+                81,
+                7
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 1.101809024810791,
+            "raw_mae": 0.14100772142410278,
+            "count": 152
+          },
+          "final_wetness": {
+            "standardized_mse": 0.9335198402404785,
+            "raw_mae": 0.3351936936378479,
+            "count": 152
+          }
+        }
+      },
+      "test_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.0625107288360596,
+            "raw_mae": 0.7788151502609253,
+            "count": 180
+          },
+          "displacement_delta": {
+            "standardized_mse": 5.996490955352783,
+            "raw_mae": 1.2132848501205444,
+            "count": 180
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.633002758026123,
+            "raw_mae": 0.5340477824211121,
+            "count": 178
+          },
+          "final_temperature": {
+            "standardized_mse": 1.6660341024398804,
+            "raw_mae": 5.510916709899902,
+            "count": 178
+          },
+          "final_phase": {
+            "accuracy": 0.5674157303370787,
+            "confusion_matrix": [
+              [
+                95,
+                3
+              ],
+              [
+                74,
+                6
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 2.5816075801849365,
+            "raw_mae": 0.2729986011981964,
+            "count": 122
+          },
+          "final_wetness": {
+            "standardized_mse": 0.9861578941345215,
+            "raw_mae": 0.341818243265152,
+            "count": 122
+          }
+        }
+      },
+      "ood_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9012537002563477,
+            "raw_mae": 0.7922577857971191,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 10.815958023071289,
+            "raw_mae": 2.0685789585113525,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.4838465750217438,
+            "raw_mae": 0.4701169431209564,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.2945876121520996,
+            "raw_mae": 6.673101902008057,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5375,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                37,
+                2
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 3.661952257156372,
+            "raw_mae": 0.3658183813095093,
+            "count": 64
+          },
+          "final_wetness": {
+            "standardized_mse": 1.1138174533843994,
+            "raw_mae": 0.3670365810394287,
+            "count": 64
+          }
+        }
+      },
+      "out_of_range_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9012537002563477,
+            "raw_mae": 0.7922577857971191,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 10.815958023071289,
+            "raw_mae": 2.0685789585113525,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.4838465750217438,
+            "raw_mae": 0.4701169431209564,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.2945876121520996,
+            "raw_mae": 6.673101902008057,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5375,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                37,
+                2
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          },
+          "final_wetness": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          }
+        }
+      },
+      "counterfactual_metrics": {
+        "mechanics": {
+          "targets": {
+            "velocity_delta": {
+              "pair_count": 90,
+              "change_mae": 0.6636206272846041,
+              "mean_abs_error_before": 0.8165106885695604,
+              "mean_abs_error_after": 0.7411196397357507
+            },
+            "displacement_delta": {
+              "pair_count": 90,
+              "change_mae": 0.9261041525534572,
+              "mean_abs_error_before": 1.5424970202385213,
+              "mean_abs_error_after": 0.8840726701814123
+            }
+          },
+          "direction_accuracy": 0.5094339622641509,
+          "direction_pairs": 106,
+          "invalid_intervention_preservation_rate": 0.8421052631578947,
+          "invalid_pair_count": 19
+        },
+        "thermal": {
+          "targets": {
+            "temperature_delta": {
+              "pair_count": 89,
+              "change_mae": 0.42376003267388324,
+              "mean_abs_error_before": 0.4665903071311836,
+              "mean_abs_error_after": 0.6015051243483345
+            },
+            "final_temperature": {
+              "pair_count": 89,
+              "change_mae": 1.2282803459128913,
+              "mean_abs_error_before": 5.312471221296137,
+              "mean_abs_error_after": 5.7093615437210685
+            }
+          },
+          "direction_accuracy": 0.6739130434782609,
+          "direction_pairs": 138,
+          "invalid_intervention_preservation_rate": 0.8125,
+          "invalid_pair_count": 16
+        },
+        "weather": {
+          "targets": {
+            "wetness_delta": {
+              "pair_count": 61,
+              "change_mae": 0.38947762695647836,
+              "mean_abs_error_before": 0.29104172058116523,
+              "mean_abs_error_after": 0.25495538148019814
+            },
+            "final_wetness": {
+              "pair_count": 61,
+              "change_mae": 0.4519166974745869,
+              "mean_abs_error_before": 0.3527860282160029,
+              "mean_abs_error_after": 0.33085047785265254
+            }
+          },
+          "direction_accuracy": 0.9696969696969697,
+          "direction_pairs": 99,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 3
+        }
+      },
+      "ctn_relation_activations": {}
+    },
+    {
+      "track": "B",
+      "model": "Transformer-Full",
+      "seed": 11,
+      "parameters": 9678,
+      "best_epoch": 2,
+      "train_seconds": 0.4842309999985446,
+      "inference_seconds": 0.009363199998915661,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9118021726608276,
+          "train_by_target": {
+            "y_num_0": 1.3215007781982422,
+            "y_num_1": 1.7586207389831543,
+            "y_num_2": 1.129913181066513,
+            "y_num_3": 1.1143472790718079,
+            "y_num_4": 1.2435301542282104,
+            "y_num_5": 1.5158652067184448,
+            "y_phase": 0.7212905287742615,
+            "s_num_0": 1.287910282611847,
+            "s_num_1": 0.8623205721378326,
+            "s_num_2": 0.9519604742527008,
+            "s_num_3": 0.8676367104053497,
+            "s_phase": 0.6958551406860352,
+            "pair": 0.7892395853996277
+          },
+          "validation_loss": 1.0497631281614304,
+          "validation_by_target": {
+            "y_num_0": 0.9370436072349548,
+            "y_num_1": 0.7558146715164185,
+            "y_num_2": 1.307489275932312,
+            "y_num_3": 1.2689634561538696,
+            "y_num_4": 1.64576256275177,
+            "y_num_5": 1.4854458570480347,
+            "y_phase": 0.7690683007240295,
+            "s_num_0": 0.7674821615219116,
+            "s_num_1": 0.9105715751647949,
+            "s_num_2": 1.2144246101379395,
+            "s_num_3": 0.8307998776435852,
+            "s_phase": 0.704291582107544
+          }
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.8075359463691711,
+          "train_by_target": {
+            "y_num_0": 1.3259490728378296,
+            "y_num_1": 1.7264138460159302,
+            "y_num_2": 1.0226889252662659,
+            "y_num_3": 1.0497350096702576,
+            "y_num_4": 1.0988052487373352,
+            "y_num_5": 1.2774044275283813,
+            "y_phase": 0.7124108672142029,
+            "s_num_0": 1.2923691272735596,
+            "s_num_1": 0.8345308601856232,
+            "s_num_2": 0.918410450220108,
+            "s_num_3": 0.8465225994586945,
+            "s_phase": 0.6825850307941437,
+            "pair": 0.7418838441371918
+          },
+          "validation_loss": 0.9962423890829086,
+          "validation_by_target": {
+            "y_num_0": 0.9231783747673035,
+            "y_num_1": 0.710739016532898,
+            "y_num_2": 1.197791576385498,
+            "y_num_3": 1.2297359704971313,
+            "y_num_4": 1.5191757678985596,
+            "y_num_5": 1.2902027368545532,
+            "y_phase": 0.7616505026817322,
+            "s_num_0": 0.754560649394989,
+            "s_num_1": 0.8827099800109863,
+            "s_num_2": 1.1785473823547363,
+            "s_num_3": 0.8130853772163391,
+            "s_phase": 0.693531334400177
+          }
+        }
+      ],
+      "validation_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.9231781959533691,
+            "raw_mae": 0.7157466411590576,
+            "count": 170
+          },
+          "displacement_delta": {
+            "standardized_mse": 0.710739016532898,
+            "raw_mae": 0.38540905714035034,
+            "count": 170
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 1.197791576385498,
+            "raw_mae": 0.7947657108306885,
+            "count": 158
+          },
+          "final_temperature": {
+            "standardized_mse": 1.229736089706421,
+            "raw_mae": 4.886660575866699,
+            "count": 158
+          },
+          "final_phase": {
+            "accuracy": 0.26582278481012656,
+            "confusion_matrix": [
+              [
+                35,
+                35
+              ],
+              [
+                81,
+                7
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 1.5191758871078491,
+            "raw_mae": 0.1921928972005844,
+            "count": 152
+          },
+          "final_wetness": {
+            "standardized_mse": 1.2902028560638428,
+            "raw_mae": 0.3837386667728424,
+            "count": 152
+          }
+        }
+      },
+      "test_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.205284833908081,
+            "raw_mae": 0.8297507166862488,
+            "count": 180
+          },
+          "displacement_delta": {
+            "standardized_mse": 4.937802314758301,
+            "raw_mae": 1.1328113079071045,
+            "count": 180
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.8150431513786316,
+            "raw_mae": 0.6526975035667419,
+            "count": 178
+          },
+          "final_temperature": {
+            "standardized_mse": 1.916498064994812,
+            "raw_mae": 6.004478931427002,
+            "count": 178
+          },
+          "final_phase": {
+            "accuracy": 0.46629213483146065,
+            "confusion_matrix": [
+              [
+                77,
+                21
+              ],
+              [
+                74,
+                6
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 2.993795871734619,
+            "raw_mae": 0.30437612533569336,
+            "count": 122
+          },
+          "final_wetness": {
+            "standardized_mse": 1.1009546518325806,
+            "raw_mae": 0.34214961528778076,
+            "count": 122
+          }
+        }
+      },
+      "ood_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.0715596675872803,
+            "raw_mae": 0.853688657283783,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 8.72241497039795,
+            "raw_mae": 1.8548474311828613,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.6997146606445312,
+            "raw_mae": 0.628760814666748,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.5202624797821045,
+            "raw_mae": 7.064610481262207,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 4.11428165435791,
+            "raw_mae": 0.3839555084705353,
+            "count": 64
+          },
+          "final_wetness": {
+            "standardized_mse": 1.1476256847381592,
+            "raw_mae": 0.3489006459712982,
+            "count": 64
+          }
+        }
+      },
+      "out_of_range_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.0715596675872803,
+            "raw_mae": 0.853688657283783,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 8.72241497039795,
+            "raw_mae": 1.8548474311828613,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.6997146606445312,
+            "raw_mae": 0.628760814666748,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.5202624797821045,
+            "raw_mae": 7.064610481262207,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          },
+          "final_wetness": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          }
+        }
+      },
+      "counterfactual_metrics": {
+        "mechanics": {
+          "targets": {
+            "velocity_delta": {
+              "pair_count": 90,
+              "change_mae": 0.7259189187619559,
+              "mean_abs_error_before": 0.8988253722267444,
+              "mean_abs_error_after": 0.7606762121235132
+            },
+            "displacement_delta": {
+              "pair_count": 90,
+              "change_mae": 0.9752928370825319,
+              "mean_abs_error_before": 1.4197118570569527,
+              "mean_abs_error_after": 0.845910853966946
+            }
+          },
+          "direction_accuracy": 0.39622641509433965,
+          "direction_pairs": 106,
+          "invalid_intervention_preservation_rate": 0.2631578947368421,
+          "invalid_pair_count": 19
+        },
+        "thermal": {
+          "targets": {
+            "temperature_delta": {
+              "pair_count": 89,
+              "change_mae": 0.4389908729110305,
+              "mean_abs_error_before": 0.5981327189431354,
+              "mean_abs_error_after": 0.707262207204768
+            },
+            "final_temperature": {
+              "pair_count": 89,
+              "change_mae": 1.2214391169933414,
+              "mean_abs_error_before": 5.847531641375292,
+              "mean_abs_error_after": 6.161425498613279
+            }
+          },
+          "direction_accuracy": 0.7318840579710145,
+          "direction_pairs": 138,
+          "invalid_intervention_preservation_rate": 0.125,
+          "invalid_pair_count": 16
+        },
+        "weather": {
+          "targets": {
+            "wetness_delta": {
+              "pair_count": 61,
+              "change_mae": 0.43206047394369523,
+              "mean_abs_error_before": 0.3154767441982017,
+              "mean_abs_error_after": 0.29327556859737214
+            },
+            "final_wetness": {
+              "pair_count": 61,
+              "change_mae": 0.4885553551343845,
+              "mean_abs_error_before": 0.302004877669586,
+              "mean_abs_error_after": 0.3822943635922149
+            }
+          },
+          "direction_accuracy": 0.37373737373737376,
+          "direction_pairs": 99,
+          "invalid_intervention_preservation_rate": 0.3333333333333333,
+          "invalid_pair_count": 3
+        }
+      },
+      "ctn_relation_activations": {}
+    },
+    {
+      "track": "B",
+      "model": "CTN",
+      "seed": 11,
+      "parameters": 9652,
+      "best_epoch": 2,
+      "train_seconds": 0.4459955999991507,
+      "inference_seconds": 0.003380399997695349,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 1.7028106451034546,
+          "train_by_target": {
+            "y_num_0": 1.2706350088119507,
+            "y_num_1": 1.6163254976272583,
+            "y_num_2": 0.9609954357147217,
+            "y_num_3": 0.8460590243339539,
+            "y_num_4": 0.8644771575927734,
+            "y_num_5": 1.035718560218811,
+            "y_phase": 0.6927457749843597,
+            "s_num_0": 1.3515368700027466,
+            "s_num_1": 1.0327987670898438,
+            "s_num_2": 0.8905805945396423,
+            "s_num_3": 1.0239706337451935,
+            "s_phase": 0.6924836337566376,
+            "pair": 0.6796167492866516
+          },
+          "validation_loss": 0.9526186635096868,
+          "validation_by_target": {
+            "y_num_0": 0.8701595664024353,
+            "y_num_1": 0.7167646288871765,
+            "y_num_2": 1.1796495914459229,
+            "y_num_3": 1.0495761632919312,
+            "y_num_4": 1.241729736328125,
+            "y_num_5": 1.0186693668365479,
+            "y_phase": 0.7224804162979126,
+            "s_num_0": 0.7933645844459534,
+            "s_num_1": 1.1037265062332153,
+            "s_num_2": 1.0288180112838745,
+            "s_num_3": 1.0061362981796265,
+            "s_phase": 0.7003490924835205
+          }
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.7078664302825928,
+          "train_by_target": {
+            "y_num_0": 1.2837573885917664,
+            "y_num_1": 1.626718819141388,
+            "y_num_2": 0.9488626420497894,
+            "y_num_3": 0.8271728456020355,
+            "y_num_4": 0.8874154090881348,
+            "y_num_5": 1.0430232882499695,
+            "y_phase": 0.6930948793888092,
+            "s_num_0": 1.3552510738372803,
+            "s_num_1": 1.0215171575546265,
+            "s_num_2": 0.8705753684043884,
+            "s_num_3": 1.026953399181366,
+            "s_phase": 0.6922359764575958,
+            "pair": 0.6848181486129761
+          },
+          "validation_loss": 0.948718806107839,
+          "validation_by_target": {
+            "y_num_0": 0.8668161630630493,
+            "y_num_1": 0.7124547958374023,
+            "y_num_2": 1.1731501817703247,
+            "y_num_3": 1.0499171018600464,
+            "y_num_4": 1.236610770225525,
+            "y_num_5": 1.0148320198059082,
+            "y_phase": 0.7213243842124939,
+            "s_num_0": 0.7898380160331726,
+            "s_num_1": 1.0966978073120117,
+            "s_num_2": 1.023620367050171,
+            "s_num_3": 0.9985918998718262,
+            "s_phase": 0.7007721662521362
+          }
+        }
+      ],
+      "validation_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 0.8668161034584045,
+            "raw_mae": 0.7042747139930725,
+            "count": 170
+          },
+          "displacement_delta": {
+            "standardized_mse": 0.7124547362327576,
+            "raw_mae": 0.3201068341732025,
+            "count": 170
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 1.1731501817703247,
+            "raw_mae": 0.7290920615196228,
+            "count": 158
+          },
+          "final_temperature": {
+            "standardized_mse": 1.0499171018600464,
+            "raw_mae": 4.40678071975708,
+            "count": 158
+          },
+          "final_phase": {
+            "accuracy": 0.4430379746835443,
+            "confusion_matrix": [
+              [
+                70,
+                0
+              ],
+              [
+                88,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 1.236611008644104,
+            "raw_mae": 0.16082744300365448,
+            "count": 152
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0148319005966187,
+            "raw_mae": 0.3506726324558258,
+            "count": 152
+          }
+        }
+      },
+      "test_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.2706077098846436,
+            "raw_mae": 0.8491533994674683,
+            "count": 180
+          },
+          "displacement_delta": {
+            "standardized_mse": 5.669990539550781,
+            "raw_mae": 1.1796739101409912,
+            "count": 180
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.6634407639503479,
+            "raw_mae": 0.5445284843444824,
+            "count": 178
+          },
+          "final_temperature": {
+            "standardized_mse": 1.7882994413375854,
+            "raw_mae": 5.605447292327881,
+            "count": 178
+          },
+          "final_phase": {
+            "accuracy": 0.550561797752809,
+            "confusion_matrix": [
+              [
+                98,
+                0
+              ],
+              [
+                80,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 2.6141297817230225,
+            "raw_mae": 0.27878645062446594,
+            "count": 122
+          },
+          "final_wetness": {
+            "standardized_mse": 1.0094859600067139,
+            "raw_mae": 0.3438514471054077,
+            "count": 122
+          }
+        }
+      },
+      "ood_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.1886104345321655,
+            "raw_mae": 0.8811855912208557,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 10.173171997070312,
+            "raw_mae": 2.0151119232177734,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.48771533370018005,
+            "raw_mae": 0.46575912833213806,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.597827196121216,
+            "raw_mae": 7.049172878265381,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": 3.657761812210083,
+            "raw_mae": 0.3654366731643677,
+            "count": 64
+          },
+          "final_wetness": {
+            "standardized_mse": 1.080308437347412,
+            "raw_mae": 0.35498863458633423,
+            "count": 64
+          }
+        }
+      },
+      "out_of_range_metrics": {
+        "mechanics": {
+          "velocity_delta": {
+            "standardized_mse": 1.1886104345321655,
+            "raw_mae": 0.8811855912208557,
+            "count": 90
+          },
+          "displacement_delta": {
+            "standardized_mse": 10.173171997070312,
+            "raw_mae": 2.0151119232177734,
+            "count": 90
+          }
+        },
+        "thermal": {
+          "temperature_delta": {
+            "standardized_mse": 0.48771533370018005,
+            "raw_mae": 0.46575912833213806,
+            "count": 80
+          },
+          "final_temperature": {
+            "standardized_mse": 2.597827196121216,
+            "raw_mae": 7.049172878265381,
+            "count": 80
+          },
+          "final_phase": {
+            "accuracy": 0.5125,
+            "confusion_matrix": [
+              [
+                41,
+                0
+              ],
+              [
+                39,
+                0
+              ]
+            ],
+            "classes": [
+              "ice",
+              "liquid"
+            ]
+          }
+        },
+        "weather": {
+          "wetness_delta": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          },
+          "final_wetness": {
+            "standardized_mse": NaN,
+            "raw_mae": NaN,
+            "count": 0
+          }
+        }
+      },
+      "counterfactual_metrics": {
+        "mechanics": {
+          "targets": {
+            "velocity_delta": {
+              "pair_count": 90,
+              "change_mae": 0.6631375722324053,
+              "mean_abs_error_before": 0.9508181527214689,
+              "mean_abs_error_after": 0.747488587016291
+            },
+            "displacement_delta": {
+              "pair_count": 90,
+              "change_mae": 0.8978277771677584,
+              "mean_abs_error_before": 1.4983124908565246,
+              "mean_abs_error_after": 0.861035095649793
+            }
+          },
+          "direction_accuracy": 0.49056603773584906,
+          "direction_pairs": 106,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 19
+        },
+        "thermal": {
+          "targets": {
+            "temperature_delta": {
+              "pair_count": 89,
+              "change_mae": 0.4333624632940963,
+              "mean_abs_error_before": 0.47709073252890327,
+              "mean_abs_error_after": 0.6119661428940049
+            },
+            "final_temperature": {
+              "pair_count": 89,
+              "change_mae": 1.223089348018822,
+              "mean_abs_error_before": 5.363470520422674,
+              "mean_abs_error_after": 5.847424411024456
+            }
+          },
+          "direction_accuracy": 0.6376811594202898,
+          "direction_pairs": 138,
+          "invalid_intervention_preservation_rate": 0.9375,
+          "invalid_pair_count": 16
+        },
+        "weather": {
+          "targets": {
+            "wetness_delta": {
+              "pair_count": 61,
+              "change_mae": 0.39671433617577556,
+              "mean_abs_error_before": 0.29107500338768605,
+              "mean_abs_error_after": 0.2664979306649156
+            },
+            "final_wetness": {
+              "pair_count": 61,
+              "change_mae": 0.46696153349803227,
+              "mean_abs_error_before": 0.3363592885427022,
+              "mean_abs_error_after": 0.35134355135407697
+            }
+          },
+          "direction_accuracy": 0.797979797979798,
+          "direction_pairs": 99,
+          "invalid_intervention_preservation_rate": 1.0,
+          "invalid_pair_count": 3
+        }
+      },
+      "ctn_relation_activations": {
+        "gate_xc": 1.0011259317398071,
+        "gate_xs": 1.0039225816726685,
+        "gate_cs": 1.0039423704147339,
+        "gate_all": 1.003835916519165,
+        "mean_abs_xc": 0.11837831139564514,
+        "mean_abs_xs": 0.05495060607790947,
+        "mean_abs_cs": 0.050097957253456116
+      }
+    }
+  ],
+  "state_transition_normalization_train_only": {
+    "0": [
+      0.006258999280057597,
+      0.8267310622591014
+    ],
+    "1": [
+      1.2501297396208304,
+      3.765173863779842
+    ],
+    "2": [
+      -1.5700453018120726,
+      5.037534227252601
+    ],
+    "3": [
+      0.49668786751470057,
+      0.38319320022458203
+    ]
+  }
+}

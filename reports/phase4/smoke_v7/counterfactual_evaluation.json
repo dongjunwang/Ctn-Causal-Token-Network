@@ -1,0 +1,498 @@
+{
+  "A.XY.seed11": {
+    "mechanics": {
+      "targets": {
+        "velocity_delta": {
+          "pair_count": 90,
+          "change_mae": 0.6554830405336495,
+          "mean_abs_error_before": 0.8637637579893862,
+          "mean_abs_error_after": 0.7522567330478063
+        },
+        "displacement_delta": {
+          "pair_count": 90,
+          "change_mae": 0.9031694904403966,
+          "mean_abs_error_before": 1.484843879331353,
+          "mean_abs_error_after": 0.8421112107035827
+        }
+      },
+      "direction_accuracy": 0.1509433962264151,
+      "direction_pairs": 106,
+      "invalid_intervention_preservation_rate": 0.7894736842105263,
+      "invalid_pair_count": 19
+    },
+    "thermal": {
+      "targets": {
+        "temperature_delta": {
+          "pair_count": 89,
+          "change_mae": 0.4326234369422539,
+          "mean_abs_error_before": 0.47303122276185366,
+          "mean_abs_error_after": 0.6631964580431415
+        },
+        "final_temperature": {
+          "pair_count": 89,
+          "change_mae": 1.2339073148730997,
+          "mean_abs_error_before": 5.348438749079533,
+          "mean_abs_error_after": 5.7646431834419785
+        }
+      },
+      "direction_accuracy": 0.2391304347826087,
+      "direction_pairs": 138,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 16
+    },
+    "weather": {
+      "targets": {
+        "wetness_delta": {
+          "pair_count": 61,
+          "change_mae": 0.395768281680913,
+          "mean_abs_error_before": 0.2945204073659922,
+          "mean_abs_error_after": 0.2587523529881434
+        },
+        "final_wetness": {
+          "pair_count": 61,
+          "change_mae": 0.4689716086435418,
+          "mean_abs_error_before": 0.35890452032131837,
+          "mean_abs_error_after": 0.34371843663060647
+        }
+      },
+      "direction_accuracy": 0.1919191919191919,
+      "direction_pairs": 99,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 3
+    }
+  },
+  "A.MLP-Full.seed11": {
+    "mechanics": {
+      "targets": {
+        "velocity_delta": {
+          "pair_count": 90,
+          "change_mae": 0.66592586876305,
+          "mean_abs_error_before": 0.8269836544601461,
+          "mean_abs_error_after": 0.7397557798574509
+        },
+        "displacement_delta": {
+          "pair_count": 90,
+          "change_mae": 0.9276423993079786,
+          "mean_abs_error_before": 1.5520924475468638,
+          "mean_abs_error_after": 0.8893740555357266
+        }
+      },
+      "direction_accuracy": 0.5283018867924528,
+      "direction_pairs": 106,
+      "invalid_intervention_preservation_rate": 0.8421052631578947,
+      "invalid_pair_count": 19
+    },
+    "thermal": {
+      "targets": {
+        "temperature_delta": {
+          "pair_count": 89,
+          "change_mae": 0.4262315741398494,
+          "mean_abs_error_before": 0.46753519547324934,
+          "mean_abs_error_after": 0.6033482871086879
+        },
+        "final_temperature": {
+          "pair_count": 89,
+          "change_mae": 1.2352095677985286,
+          "mean_abs_error_before": 5.303409439500456,
+          "mean_abs_error_after": 5.702850928533635
+        }
+      },
+      "direction_accuracy": 0.644927536231884,
+      "direction_pairs": 138,
+      "invalid_intervention_preservation_rate": 0.8125,
+      "invalid_pair_count": 16
+    },
+    "weather": {
+      "targets": {
+        "wetness_delta": {
+          "pair_count": 61,
+          "change_mae": 0.3914054314409806,
+          "mean_abs_error_before": 0.29377358925925956,
+          "mean_abs_error_after": 0.255687393569029
+        },
+        "final_wetness": {
+          "pair_count": 61,
+          "change_mae": 0.4558510727147805,
+          "mean_abs_error_before": 0.3541347295643734,
+          "mean_abs_error_after": 0.333546843992888
+        }
+      },
+      "direction_accuracy": 0.8686868686868687,
+      "direction_pairs": 99,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 3
+    }
+  },
+  "A.Transformer-Full.seed11": {
+    "mechanics": {
+      "targets": {
+        "velocity_delta": {
+          "pair_count": 90,
+          "change_mae": 0.7282389598366716,
+          "mean_abs_error_before": 0.8914468488086696,
+          "mean_abs_error_after": 0.7575520341280956
+        },
+        "displacement_delta": {
+          "pair_count": 90,
+          "change_mae": 0.9814922900789488,
+          "mean_abs_error_before": 1.4235991751039452,
+          "mean_abs_error_after": 0.8435713388097484
+        }
+      },
+      "direction_accuracy": 0.39622641509433965,
+      "direction_pairs": 106,
+      "invalid_intervention_preservation_rate": 0.21052631578947367,
+      "invalid_pair_count": 19
+    },
+    "thermal": {
+      "targets": {
+        "temperature_delta": {
+          "pair_count": 89,
+          "change_mae": 0.4440710351096577,
+          "mean_abs_error_before": 0.6081309174803975,
+          "mean_abs_error_after": 0.7260941233732559
+        },
+        "final_temperature": {
+          "pair_count": 89,
+          "change_mae": 1.2094493554452315,
+          "mean_abs_error_before": 5.771044534246052,
+          "mean_abs_error_after": 6.084541859199465
+        }
+      },
+      "direction_accuracy": 0.7101449275362319,
+      "direction_pairs": 138,
+      "invalid_intervention_preservation_rate": 0.0625,
+      "invalid_pair_count": 16
+    },
+    "weather": {
+      "targets": {
+        "wetness_delta": {
+          "pair_count": 61,
+          "change_mae": 0.436954199957295,
+          "mean_abs_error_before": 0.31857730774780246,
+          "mean_abs_error_after": 0.2969734575570052
+        },
+        "final_wetness": {
+          "pair_count": 61,
+          "change_mae": 0.496895935282325,
+          "mean_abs_error_before": 0.30527844049689135,
+          "mean_abs_error_after": 0.386427983847534
+        }
+      },
+      "direction_accuracy": 0.26262626262626265,
+      "direction_pairs": 99,
+      "invalid_intervention_preservation_rate": 0.3333333333333333,
+      "invalid_pair_count": 3
+    }
+  },
+  "A.CTN.seed11": {
+    "mechanics": {
+      "targets": {
+        "velocity_delta": {
+          "pair_count": 90,
+          "change_mae": 0.6680734370373987,
+          "mean_abs_error_before": 0.963525769633132,
+          "mean_abs_error_after": 0.7467056745735648
+        },
+        "displacement_delta": {
+          "pair_count": 90,
+          "change_mae": 0.9000776402915687,
+          "mean_abs_error_before": 1.5167923527077878,
+          "mean_abs_error_after": 0.8622415551118929
+        }
+      },
+      "direction_accuracy": 0.49056603773584906,
+      "direction_pairs": 106,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 19
+    },
+    "thermal": {
+      "targets": {
+        "temperature_delta": {
+          "pair_count": 89,
+          "change_mae": 0.43380265734342793,
+          "mean_abs_error_before": 0.47524513808157254,
+          "mean_abs_error_after": 0.6133954321040164
+        },
+        "final_temperature": {
+          "pair_count": 89,
+          "change_mae": 1.2217288722697348,
+          "mean_abs_error_before": 5.361944841799589,
+          "mean_abs_error_after": 5.834609904518515
+        }
+      },
+      "direction_accuracy": 0.644927536231884,
+      "direction_pairs": 138,
+      "invalid_intervention_preservation_rate": 0.9375,
+      "invalid_pair_count": 16
+    },
+    "weather": {
+      "targets": {
+        "wetness_delta": {
+          "pair_count": 61,
+          "change_mae": 0.3974416744179254,
+          "mean_abs_error_before": 0.293821153616844,
+          "mean_abs_error_after": 0.2661074699737578
+        },
+        "final_wetness": {
+          "pair_count": 61,
+          "change_mae": 0.467178839821084,
+          "mean_abs_error_before": 0.3389673691523513,
+          "mean_abs_error_after": 0.3504144364086649
+        }
+      },
+      "direction_accuracy": 0.6666666666666666,
+      "direction_pairs": 99,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 3
+    }
+  },
+  "B.XY.seed11": {
+    "mechanics": {
+      "targets": {
+        "velocity_delta": {
+          "pair_count": 90,
+          "change_mae": 0.6506572327109664,
+          "mean_abs_error_before": 0.853642748048464,
+          "mean_abs_error_after": 0.7495638570004303
+        },
+        "displacement_delta": {
+          "pair_count": 90,
+          "change_mae": 0.8963538582087281,
+          "mean_abs_error_before": 1.465486639615461,
+          "mean_abs_error_after": 0.8447069791227708
+        }
+      },
+      "direction_accuracy": 0.2830188679245283,
+      "direction_pairs": 106,
+      "invalid_intervention_preservation_rate": 0.7368421052631579,
+      "invalid_pair_count": 19
+    },
+    "thermal": {
+      "targets": {
+        "temperature_delta": {
+          "pair_count": 89,
+          "change_mae": 0.4320038733636566,
+          "mean_abs_error_before": 0.47510496672066177,
+          "mean_abs_error_after": 0.6671044370340717
+        },
+        "final_temperature": {
+          "pair_count": 89,
+          "change_mae": 1.2338261897319636,
+          "mean_abs_error_before": 5.362197766161223,
+          "mean_abs_error_after": 5.775703503669189
+        }
+      },
+      "direction_accuracy": 0.2391304347826087,
+      "direction_pairs": 138,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 16
+    },
+    "weather": {
+      "targets": {
+        "wetness_delta": {
+          "pair_count": 61,
+          "change_mae": 0.3947107314968518,
+          "mean_abs_error_before": 0.28973571165199197,
+          "mean_abs_error_after": 0.2582439301645166
+        },
+        "final_wetness": {
+          "pair_count": 61,
+          "change_mae": 0.4676314265217401,
+          "mean_abs_error_before": 0.35535243098864,
+          "mean_abs_error_after": 0.3431891883927856
+        }
+      },
+      "direction_accuracy": 0.2222222222222222,
+      "direction_pairs": 99,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 3
+    }
+  },
+  "B.MLP-Full.seed11": {
+    "mechanics": {
+      "targets": {
+        "velocity_delta": {
+          "pair_count": 90,
+          "change_mae": 0.6639888069201281,
+          "mean_abs_error_before": 0.8175072865734846,
+          "mean_abs_error_after": 0.7412589174531444
+        },
+        "displacement_delta": {
+          "pair_count": 90,
+          "change_mae": 0.9262652600253218,
+          "mean_abs_error_before": 1.5454569420179871,
+          "mean_abs_error_after": 0.8865477931512651
+        }
+      },
+      "direction_accuracy": 0.5094339622641509,
+      "direction_pairs": 106,
+      "invalid_intervention_preservation_rate": 0.8421052631578947,
+      "invalid_pair_count": 19
+    },
+    "thermal": {
+      "targets": {
+        "temperature_delta": {
+          "pair_count": 89,
+          "change_mae": 0.4239196346701294,
+          "mean_abs_error_before": 0.4667130208845372,
+          "mean_abs_error_after": 0.6014088847756052
+        },
+        "final_temperature": {
+          "pair_count": 89,
+          "change_mae": 1.2297019715504802,
+          "mean_abs_error_before": 5.320449072187774,
+          "mean_abs_error_after": 5.71396031087364
+        }
+      },
+      "direction_accuracy": 0.6594202898550725,
+      "direction_pairs": 138,
+      "invalid_intervention_preservation_rate": 0.75,
+      "invalid_pair_count": 16
+    },
+    "weather": {
+      "targets": {
+        "wetness_delta": {
+          "pair_count": 61,
+          "change_mae": 0.3896488452680225,
+          "mean_abs_error_before": 0.2919995830988394,
+          "mean_abs_error_after": 0.2550128634958698
+        },
+        "final_wetness": {
+          "pair_count": 61,
+          "change_mae": 0.45192299426166577,
+          "mean_abs_error_before": 0.3528099190719419,
+          "mean_abs_error_after": 0.33099464112468724
+        }
+      },
+      "direction_accuracy": 0.9797979797979798,
+      "direction_pairs": 99,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 3
+    }
+  },
+  "B.Transformer-Full.seed11": {
+    "mechanics": {
+      "targets": {
+        "velocity_delta": {
+          "pair_count": 90,
+          "change_mae": 0.7269784096131502,
+          "mean_abs_error_before": 0.8896417488525311,
+          "mean_abs_error_after": 0.7618404225595983
+        },
+        "displacement_delta": {
+          "pair_count": 90,
+          "change_mae": 0.9754294112535389,
+          "mean_abs_error_before": 1.4145348116723344,
+          "mean_abs_error_after": 0.846585596455326
+        }
+      },
+      "direction_accuracy": 0.39622641509433965,
+      "direction_pairs": 106,
+      "invalid_intervention_preservation_rate": 0.2631578947368421,
+      "invalid_pair_count": 19
+    },
+    "thermal": {
+      "targets": {
+        "temperature_delta": {
+          "pair_count": 89,
+          "change_mae": 0.4392492280560312,
+          "mean_abs_error_before": 0.5968848138437003,
+          "mean_abs_error_after": 0.7086411572489868
+        },
+        "final_temperature": {
+          "pair_count": 89,
+          "change_mae": 1.218459367829033,
+          "mean_abs_error_before": 5.839199216432461,
+          "mean_abs_error_after": 6.1488476660324665
+        }
+      },
+      "direction_accuracy": 0.7318840579710145,
+      "direction_pairs": 138,
+      "invalid_intervention_preservation_rate": 0.125,
+      "invalid_pair_count": 16
+    },
+    "weather": {
+      "targets": {
+        "wetness_delta": {
+          "pair_count": 61,
+          "change_mae": 0.4321041961095288,
+          "mean_abs_error_before": 0.3152589215216284,
+          "mean_abs_error_after": 0.29340505755193047
+        },
+        "final_wetness": {
+          "pair_count": 61,
+          "change_mae": 0.48874392796320615,
+          "mean_abs_error_before": 0.3015703765093539,
+          "mean_abs_error_after": 0.3821512118953324
+        }
+      },
+      "direction_accuracy": 0.41414141414141414,
+      "direction_pairs": 99,
+      "invalid_intervention_preservation_rate": 0.3333333333333333,
+      "invalid_pair_count": 3
+    }
+  },
+  "B.CTN.seed11": {
+    "mechanics": {
+      "targets": {
+        "velocity_delta": {
+          "pair_count": 90,
+          "change_mae": 0.6643163434778555,
+          "mean_abs_error_before": 0.9524225962422973,
+          "mean_abs_error_after": 0.7478627225643183
+        },
+        "displacement_delta": {
+          "pair_count": 90,
+          "change_mae": 0.8981626783648853,
+          "mean_abs_error_before": 1.502274599723628,
+          "mean_abs_error_after": 0.8613256514841787
+        }
+      },
+      "direction_accuracy": 0.49056603773584906,
+      "direction_pairs": 106,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 19
+    },
+    "thermal": {
+      "targets": {
+        "temperature_delta": {
+          "pair_count": 89,
+          "change_mae": 0.43281605710598825,
+          "mean_abs_error_before": 0.4761870415552539,
+          "mean_abs_error_after": 0.6106017164739173
+        },
+        "final_temperature": {
+          "pair_count": 89,
+          "change_mae": 1.2238689700952543,
+          "mean_abs_error_before": 5.363473794755899,
+          "mean_abs_error_after": 5.84452006771468
+        }
+      },
+      "direction_accuracy": 0.644927536231884,
+      "direction_pairs": 138,
+      "invalid_intervention_preservation_rate": 0.9375,
+      "invalid_pair_count": 16
+    },
+    "weather": {
+      "targets": {
+        "wetness_delta": {
+          "pair_count": 61,
+          "change_mae": 0.3968014545997533,
+          "mean_abs_error_before": 0.2914026557040596,
+          "mean_abs_error_after": 0.26649426313262475
+        },
+        "final_wetness": {
+          "pair_count": 61,
+          "change_mae": 0.4668626376202305,
+          "mean_abs_error_before": 0.33836764712405437,
+          "mean_abs_error_after": 0.35040246770766875
+        }
+      },
+      "direction_accuracy": 0.7171717171717171,
+      "direction_pairs": 99,
+      "invalid_intervention_preservation_rate": 1.0,
+      "invalid_pair_count": 3
+    }
+  }
+}

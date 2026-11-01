@@ -1,0 +1,83 @@
+{
+  "dataset_version": "v2.2",
+  "dataset_hashes": {
+    "data_version": "v2.2",
+    "seed": 20261102,
+    "files": {
+      "train.jsonl": "f6730a943d4f718bb83f516b676ac0b7e2ab599e034fbcdf65a59aba97aacbcb",
+      "validation.jsonl": "e1698842e662736bc32f4eff11b922428898af7245e3a99413bc6e60e681b6b5",
+      "test.jsonl": "c8f6536dfaa015035a6ce1b3cf2563cf375adce2dc93e93b65584f1bf0fe6254",
+      "feature_schema.json": "85c1cb56df992f88ce290bda727bf2897d21ae4debfb37d0c0409a4119ba305e",
+      "statistics.json": "4aa587aac0904f1642dc80e6718249afef28939db3921de93c5713cd928a5695",
+      "templates/mechanics.json": "f697525f87d9f43c72d16d68898ecacfa292892491e60c1124f7467ca785b42c",
+      "templates/thermal.json": "1cb39225a074022af46d7414106ec4e2ce8fb45b492276ac9710c4c42ccee371",
+      "templates/weather.json": "4727cd260dd6bf6d130964b5cdae85aa64641382ce563c1336cfbf06c73474a3",
+      "causal_graph/nodes.json": "0eedced812ed06ba24f55209829a5601855a34dceac86068a34e33bf2c838bab",
+      "causal_graph/edges.json": "dec7329df0e02091a557795c24e9dbd1225b5eadd7dd19555dfc4e4e4dd669e5"
+    }
+  },
+  "dataset_hash_verification": {
+    "train.jsonl": {
+      "expected": "f6730a943d4f718bb83f516b676ac0b7e2ab599e034fbcdf65a59aba97aacbcb",
+      "actual": "f6730a943d4f718bb83f516b676ac0b7e2ab599e034fbcdf65a59aba97aacbcb",
+      "matches": true
+    },
+    "validation.jsonl": {
+      "expected": "e1698842e662736bc32f4eff11b922428898af7245e3a99413bc6e60e681b6b5",
+      "actual": "e1698842e662736bc32f4eff11b922428898af7245e3a99413bc6e60e681b6b5",
+      "matches": true
+    },
+    "test.jsonl": {
+      "expected": "c8f6536dfaa015035a6ce1b3cf2563cf375adce2dc93e93b65584f1bf0fe6254",
+      "actual": "c8f6536dfaa015035a6ce1b3cf2563cf375adce2dc93e93b65584f1bf0fe6254",
+      "matches": true
+    },
+    "feature_schema.json": {
+      "expected": "85c1cb56df992f88ce290bda727bf2897d21ae4debfb37d0c0409a4119ba305e",
+      "actual": "85c1cb56df992f88ce290bda727bf2897d21ae4debfb37d0c0409a4119ba305e",
+      "matches": true
+    },
+    "statistics.json": {
+      "expected": "4aa587aac0904f1642dc80e6718249afef28939db3921de93c5713cd928a5695",
+      "actual": "4aa587aac0904f1642dc80e6718249afef28939db3921de93c5713cd928a5695",
+      "matches": true
+    },
+    "templates/mechanics.json": {
+      "expected": "f697525f87d9f43c72d16d68898ecacfa292892491e60c1124f7467ca785b42c",
+      "actual": "f697525f87d9f43c72d16d68898ecacfa292892491e60c1124f7467ca785b42c",
+      "matches": true
+    },
+    "templates/thermal.json": {
+      "expected": "1cb39225a074022af46d7414106ec4e2ce8fb45b492276ac9710c4c42ccee371",
+      "actual": "1cb39225a074022af46d7414106ec4e2ce8fb45b492276ac9710c4c42ccee371",
+      "matches": true
+    },
+    "templates/weather.json": {
+      "expected": "4727cd260dd6bf6d130964b5cdae85aa64641382ce563c1336cfbf06c73474a3",
+      "actual": "4727cd260dd6bf6d130964b5cdae85aa64641382ce563c1336cfbf06c73474a3",
+      "matches": true
+    },
+    "causal_graph/nodes.json": {
+      "expected": "0eedced812ed06ba24f55209829a5601855a34dceac86068a34e33bf2c838bab",
+      "actual": "0eedced812ed06ba24f55209829a5601855a34dceac86068a34e33bf2c838bab",
+      "matches": true
+    },
+    "causal_graph/edges.json": {
+      "expected": "dec7329df0e02091a557795c24e9dbd1225b5eadd7dd19555dfc4e4e4dd669e5",
+      "actual": "dec7329df0e02091a557795c24e9dbd1225b5eadd7dd19555dfc4e4e4dd669e5",
+      "matches": true
+    }
+  },
+  "seeds": [
+    11
+  ],
+  "device": "cpu",
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "batch_pairs": 128,
+  "max_epochs": 2,
+  "early_stopping_patience": 4,
+  "test_used_for_selection": false,
+  "all_records": 15,
+  "prediction_files": 15
+}

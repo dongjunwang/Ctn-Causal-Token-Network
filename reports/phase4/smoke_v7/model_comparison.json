@@ -1,0 +1,710 @@
+{
+  "data_version": "v2.2",
+  "tracks": {
+    "A": {
+      "XY": {
+        "mechanics.velocity_delta.standardized_mse": {
+          "mean": 1.1561908721923828,
+          "std": 0.0,
+          "per_run": [
+            1.1561908721923828
+          ]
+        },
+        "mechanics.velocity_delta.raw_mae": {
+          "mean": 0.8080101609230042,
+          "std": 0.0,
+          "per_run": [
+            0.8080101609230042
+          ]
+        },
+        "mechanics.displacement_delta.standardized_mse": {
+          "mean": 5.483823299407959,
+          "std": 0.0,
+          "per_run": [
+            5.483823299407959
+          ]
+        },
+        "mechanics.displacement_delta.raw_mae": {
+          "mean": 1.1634775400161743,
+          "std": 0.0,
+          "per_run": [
+            1.1634775400161743
+          ]
+        },
+        "thermal.temperature_delta.standardized_mse": {
+          "mean": 0.6968910098075867,
+          "std": 0.0,
+          "per_run": [
+            0.6968910098075867
+          ]
+        },
+        "thermal.temperature_delta.raw_mae": {
+          "mean": 0.5681138634681702,
+          "std": 0.0,
+          "per_run": [
+            0.5681138634681702
+          ]
+        },
+        "thermal.final_temperature.standardized_mse": {
+          "mean": 1.7095590829849243,
+          "std": 0.0,
+          "per_run": [
+            1.7095590829849243
+          ]
+        },
+        "thermal.final_temperature.raw_mae": {
+          "mean": 5.5565409660339355,
+          "std": 0.0,
+          "per_run": [
+            5.5565409660339355
+          ]
+        },
+        "weather.wetness_delta.standardized_mse": {
+          "mean": 2.6472537517547607,
+          "std": 0.0,
+          "per_run": [
+            2.6472537517547607
+          ]
+        },
+        "weather.wetness_delta.raw_mae": {
+          "mean": 0.27663636207580566,
+          "std": 0.0,
+          "per_run": [
+            0.27663636207580566
+          ]
+        },
+        "weather.final_wetness.standardized_mse": {
+          "mean": 1.0498055219650269,
+          "std": 0.0,
+          "per_run": [
+            1.0498055219650269
+          ]
+        },
+        "weather.final_wetness.raw_mae": {
+          "mean": 0.35131147503852844,
+          "std": 0.0,
+          "per_run": [
+            0.35131147503852844
+          ]
+        }
+      },
+      "MLP-Full": {
+        "mechanics.velocity_delta.standardized_mse": {
+          "mean": 1.0729734897613525,
+          "std": 0.0,
+          "per_run": [
+            1.0729734897613525
+          ]
+        },
+        "mechanics.velocity_delta.raw_mae": {
+          "mean": 0.7833697199821472,
+          "std": 0.0,
+          "per_run": [
+            0.7833697199821472
+          ]
+        },
+        "mechanics.displacement_delta.standardized_mse": {
+          "mean": 6.0733513832092285,
+          "std": 0.0,
+          "per_run": [
+            6.0733513832092285
+          ]
+        },
+        "mechanics.displacement_delta.raw_mae": {
+          "mean": 1.2207331657409668,
+          "std": 0.0,
+          "per_run": [
+            1.2207331657409668
+          ]
+        },
+        "thermal.temperature_delta.standardized_mse": {
+          "mean": 0.6352526545524597,
+          "std": 0.0,
+          "per_run": [
+            0.6352526545524597
+          ]
+        },
+        "thermal.temperature_delta.raw_mae": {
+          "mean": 0.5354418158531189,
+          "std": 0.0,
+          "per_run": [
+            0.5354418158531189
+          ]
+        },
+        "thermal.final_temperature.standardized_mse": {
+          "mean": 1.664321780204773,
+          "std": 0.0,
+          "per_run": [
+            1.664321780204773
+          ]
+        },
+        "thermal.final_temperature.raw_mae": {
+          "mean": 5.5031304359436035,
+          "std": 0.0,
+          "per_run": [
+            5.5031304359436035
+          ]
+        },
+        "weather.wetness_delta.standardized_mse": {
+          "mean": 2.6212480068206787,
+          "std": 0.0,
+          "per_run": [
+            2.6212480068206787
+          ]
+        },
+        "weather.wetness_delta.raw_mae": {
+          "mean": 0.27473050355911255,
+          "std": 0.0,
+          "per_run": [
+            0.27473050355911255
+          ]
+        },
+        "weather.final_wetness.standardized_mse": {
+          "mean": 1.0013232231140137,
+          "std": 0.0,
+          "per_run": [
+            1.0013232231140137
+          ]
+        },
+        "weather.final_wetness.raw_mae": {
+          "mean": 0.3438407778739929,
+          "std": 0.0,
+          "per_run": [
+            0.3438407778739929
+          ]
+        }
+      },
+      "Transformer-Full": {
+        "mechanics.velocity_delta.standardized_mse": {
+          "mean": 1.1874504089355469,
+          "std": 0.0,
+          "per_run": [
+            1.1874504089355469
+          ]
+        },
+        "mechanics.velocity_delta.raw_mae": {
+          "mean": 0.8244993686676025,
+          "std": 0.0,
+          "per_run": [
+            0.8244993686676025
+          ]
+        },
+        "mechanics.displacement_delta.standardized_mse": {
+          "mean": 4.984914779663086,
+          "std": 0.0,
+          "per_run": [
+            4.984914779663086
+          ]
+        },
+        "mechanics.displacement_delta.raw_mae": {
+          "mean": 1.1335852146148682,
+          "std": 0.0,
+          "per_run": [
+            1.1335852146148682
+          ]
+        },
+        "thermal.temperature_delta.standardized_mse": {
+          "mean": 0.8384920358657837,
+          "std": 0.0,
+          "per_run": [
+            0.8384920358657837
+          ]
+        },
+        "thermal.temperature_delta.raw_mae": {
+          "mean": 0.6671125292778015,
+          "std": 0.0,
+          "per_run": [
+            0.6671125292778015
+          ]
+        },
+        "thermal.final_temperature.standardized_mse": {
+          "mean": 1.8702858686447144,
+          "std": 0.0,
+          "per_run": [
+            1.8702858686447144
+          ]
+        },
+        "thermal.final_temperature.raw_mae": {
+          "mean": 5.927793502807617,
+          "std": 0.0,
+          "per_run": [
+            5.927793502807617
+          ]
+        },
+        "weather.wetness_delta.standardized_mse": {
+          "mean": 3.0663580894470215,
+          "std": 0.0,
+          "per_run": [
+            3.0663580894470215
+          ]
+        },
+        "weather.wetness_delta.raw_mae": {
+          "mean": 0.3077753782272339,
+          "std": 0.0,
+          "per_run": [
+            0.3077753782272339
+          ]
+        },
+        "weather.final_wetness.standardized_mse": {
+          "mean": 1.1240808963775635,
+          "std": 0.0,
+          "per_run": [
+            1.1240808963775635
+          ]
+        },
+        "weather.final_wetness.raw_mae": {
+          "mean": 0.34585320949554443,
+          "std": 0.0,
+          "per_run": [
+            0.34585320949554443
+          ]
+        }
+      },
+      "CTN": {
+        "mechanics.velocity_delta.standardized_mse": {
+          "mean": 1.2880083322525024,
+          "std": 0.0,
+          "per_run": [
+            1.2880083322525024
+          ]
+        },
+        "mechanics.velocity_delta.raw_mae": {
+          "mean": 0.8551157712936401,
+          "std": 0.0,
+          "per_run": [
+            0.8551157712936401
+          ]
+        },
+        "mechanics.displacement_delta.standardized_mse": {
+          "mean": 5.797618389129639,
+          "std": 0.0,
+          "per_run": [
+            5.797618389129639
+          ]
+        },
+        "mechanics.displacement_delta.raw_mae": {
+          "mean": 1.1895169019699097,
+          "std": 0.0,
+          "per_run": [
+            1.1895169019699097
+          ]
+        },
+        "thermal.temperature_delta.standardized_mse": {
+          "mean": 0.6635408997535706,
+          "std": 0.0,
+          "per_run": [
+            0.6635408997535706
+          ]
+        },
+        "thermal.temperature_delta.raw_mae": {
+          "mean": 0.5443203449249268,
+          "std": 0.0,
+          "per_run": [
+            0.5443203449249268
+          ]
+        },
+        "thermal.final_temperature.standardized_mse": {
+          "mean": 1.7755376100540161,
+          "std": 0.0,
+          "per_run": [
+            1.7755376100540161
+          ]
+        },
+        "thermal.final_temperature.raw_mae": {
+          "mean": 5.598277568817139,
+          "std": 0.0,
+          "per_run": [
+            5.598277568817139
+          ]
+        },
+        "weather.wetness_delta.standardized_mse": {
+          "mean": 2.640691041946411,
+          "std": 0.0,
+          "per_run": [
+            2.640691041946411
+          ]
+        },
+        "weather.wetness_delta.raw_mae": {
+          "mean": 0.2799643278121948,
+          "std": 0.0,
+          "per_run": [
+            0.2799643278121948
+          ]
+        },
+        "weather.final_wetness.standardized_mse": {
+          "mean": 1.0136537551879883,
+          "std": 0.0,
+          "per_run": [
+            1.0136537551879883
+          ]
+        },
+        "weather.final_wetness.raw_mae": {
+          "mean": 0.3446909189224243,
+          "std": 0.0,
+          "per_run": [
+            0.3446909189224243
+          ]
+        }
+      }
+    },
+    "B": {
+      "XY": {
+        "mechanics.velocity_delta.standardized_mse": {
+          "mean": 1.1448429822921753,
+          "std": 0.0,
+          "per_run": [
+            1.1448429822921753
+          ]
+        },
+        "mechanics.velocity_delta.raw_mae": {
+          "mean": 0.801603376865387,
+          "std": 0.0,
+          "per_run": [
+            0.801603376865387
+          ]
+        },
+        "mechanics.displacement_delta.standardized_mse": {
+          "mean": 5.3375630378723145,
+          "std": 0.0,
+          "per_run": [
+            5.3375630378723145
+          ]
+        },
+        "mechanics.displacement_delta.raw_mae": {
+          "mean": 1.1550967693328857,
+          "std": 0.0,
+          "per_run": [
+            1.1550967693328857
+          ]
+        },
+        "thermal.temperature_delta.standardized_mse": {
+          "mean": 0.702747106552124,
+          "std": 0.0,
+          "per_run": [
+            0.702747106552124
+          ]
+        },
+        "thermal.temperature_delta.raw_mae": {
+          "mean": 0.5711047053337097,
+          "std": 0.0,
+          "per_run": [
+            0.5711047053337097
+          ]
+        },
+        "thermal.final_temperature.standardized_mse": {
+          "mean": 1.7147303819656372,
+          "std": 0.0,
+          "per_run": [
+            1.7147303819656372
+          ]
+        },
+        "thermal.final_temperature.raw_mae": {
+          "mean": 5.568950653076172,
+          "std": 0.0,
+          "per_run": [
+            5.568950653076172
+          ]
+        },
+        "weather.wetness_delta.standardized_mse": {
+          "mean": 2.6029677391052246,
+          "std": 0.0,
+          "per_run": [
+            2.6029677391052246
+          ]
+        },
+        "weather.wetness_delta.raw_mae": {
+          "mean": 0.27398979663848877,
+          "std": 0.0,
+          "per_run": [
+            0.27398979663848877
+          ]
+        },
+        "weather.final_wetness.standardized_mse": {
+          "mean": 1.0374751091003418,
+          "std": 0.0,
+          "per_run": [
+            1.0374751091003418
+          ]
+        },
+        "weather.final_wetness.raw_mae": {
+          "mean": 0.3492707908153534,
+          "std": 0.0,
+          "per_run": [
+            0.3492707908153534
+          ]
+        }
+      },
+      "MLP-Full": {
+        "mechanics.velocity_delta.standardized_mse": {
+          "mean": 1.0634907484054565,
+          "std": 0.0,
+          "per_run": [
+            1.0634907484054565
+          ]
+        },
+        "mechanics.velocity_delta.raw_mae": {
+          "mean": 0.7793831825256348,
+          "std": 0.0,
+          "per_run": [
+            0.7793831825256348
+          ]
+        },
+        "mechanics.displacement_delta.standardized_mse": {
+          "mean": 6.0228400230407715,
+          "std": 0.0,
+          "per_run": [
+            6.0228400230407715
+          ]
+        },
+        "mechanics.displacement_delta.raw_mae": {
+          "mean": 1.2160022258758545,
+          "std": 0.0,
+          "per_run": [
+            1.2160022258758545
+          ]
+        },
+        "thermal.temperature_delta.standardized_mse": {
+          "mean": 0.6332333087921143,
+          "std": 0.0,
+          "per_run": [
+            0.6332333087921143
+          ]
+        },
+        "thermal.temperature_delta.raw_mae": {
+          "mean": 0.5340609550476074,
+          "std": 0.0,
+          "per_run": [
+            0.5340609550476074
+          ]
+        },
+        "thermal.final_temperature.standardized_mse": {
+          "mean": 1.667458176612854,
+          "std": 0.0,
+          "per_run": [
+            1.667458176612854
+          ]
+        },
+        "thermal.final_temperature.raw_mae": {
+          "mean": 5.517204284667969,
+          "std": 0.0,
+          "per_run": [
+            5.517204284667969
+          ]
+        },
+        "weather.wetness_delta.standardized_mse": {
+          "mean": 2.590893030166626,
+          "std": 0.0,
+          "per_run": [
+            2.590893030166626
+          ]
+        },
+        "weather.wetness_delta.raw_mae": {
+          "mean": 0.273506224155426,
+          "std": 0.0,
+          "per_run": [
+            0.273506224155426
+          ]
+        },
+        "weather.final_wetness.standardized_mse": {
+          "mean": 0.9863427877426147,
+          "std": 0.0,
+          "per_run": [
+            0.9863427877426147
+          ]
+        },
+        "weather.final_wetness.raw_mae": {
+          "mean": 0.34190231561660767,
+          "std": 0.0,
+          "per_run": [
+            0.34190231561660767
+          ]
+        }
+      },
+      "Transformer-Full": {
+        "mechanics.velocity_delta.standardized_mse": {
+          "mean": 1.1945754289627075,
+          "std": 0.0,
+          "per_run": [
+            1.1945754289627075
+          ]
+        },
+        "mechanics.velocity_delta.raw_mae": {
+          "mean": 0.8257410526275635,
+          "std": 0.0,
+          "per_run": [
+            0.8257410526275635
+          ]
+        },
+        "mechanics.displacement_delta.standardized_mse": {
+          "mean": 4.909757614135742,
+          "std": 0.0,
+          "per_run": [
+            4.909757614135742
+          ]
+        },
+        "mechanics.displacement_delta.raw_mae": {
+          "mean": 1.130560278892517,
+          "std": 0.0,
+          "per_run": [
+            1.130560278892517
+          ]
+        },
+        "thermal.temperature_delta.standardized_mse": {
+          "mean": 0.8136371970176697,
+          "std": 0.0,
+          "per_run": [
+            0.8136371970176697
+          ]
+        },
+        "thermal.temperature_delta.raw_mae": {
+          "mean": 0.6527630090713501,
+          "std": 0.0,
+          "per_run": [
+            0.6527630090713501
+          ]
+        },
+        "thermal.final_temperature.standardized_mse": {
+          "mean": 1.9084997177124023,
+          "std": 0.0,
+          "per_run": [
+            1.9084997177124023
+          ]
+        },
+        "thermal.final_temperature.raw_mae": {
+          "mean": 5.994023323059082,
+          "std": 0.0,
+          "per_run": [
+            5.994023323059082
+          ]
+        },
+        "weather.wetness_delta.standardized_mse": {
+          "mean": 2.9929795265197754,
+          "std": 0.0,
+          "per_run": [
+            2.9929795265197754
+          ]
+        },
+        "weather.wetness_delta.raw_mae": {
+          "mean": 0.3043319880962372,
+          "std": 0.0,
+          "per_run": [
+            0.3043319880962372
+          ]
+        },
+        "weather.final_wetness.standardized_mse": {
+          "mean": 1.0993040800094604,
+          "std": 0.0,
+          "per_run": [
+            1.0993040800094604
+          ]
+        },
+        "weather.final_wetness.raw_mae": {
+          "mean": 0.3418608009815216,
+          "std": 0.0,
+          "per_run": [
+            0.3418608009815216
+          ]
+        }
+      },
+      "CTN": {
+        "mechanics.velocity_delta.standardized_mse": {
+          "mean": 1.2725142240524292,
+          "std": 0.0,
+          "per_run": [
+            1.2725142240524292
+          ]
+        },
+        "mechanics.velocity_delta.raw_mae": {
+          "mean": 0.8501426577568054,
+          "std": 0.0,
+          "per_run": [
+            0.8501426577568054
+          ]
+        },
+        "mechanics.displacement_delta.standardized_mse": {
+          "mean": 5.69783878326416,
+          "std": 0.0,
+          "per_run": [
+            5.69783878326416
+          ]
+        },
+        "mechanics.displacement_delta.raw_mae": {
+          "mean": 1.1818000078201294,
+          "std": 0.0,
+          "per_run": [
+            1.1818000078201294
+          ]
+        },
+        "thermal.temperature_delta.standardized_mse": {
+          "mean": 0.6616788506507874,
+          "std": 0.0,
+          "per_run": [
+            0.6616788506507874
+          ]
+        },
+        "thermal.temperature_delta.raw_mae": {
+          "mean": 0.5433943867683411,
+          "std": 0.0,
+          "per_run": [
+            0.5433943867683411
+          ]
+        },
+        "thermal.final_temperature.standardized_mse": {
+          "mean": 1.7849398851394653,
+          "std": 0.0,
+          "per_run": [
+            1.7849398851394653
+          ]
+        },
+        "thermal.final_temperature.raw_mae": {
+          "mean": 5.603997230529785,
+          "std": 0.0,
+          "per_run": [
+            5.603997230529785
+          ]
+        },
+        "weather.wetness_delta.standardized_mse": {
+          "mean": 2.617424726486206,
+          "std": 0.0,
+          "per_run": [
+            2.617424726486206
+          ]
+        },
+        "weather.wetness_delta.raw_mae": {
+          "mean": 0.27894845604896545,
+          "std": 0.0,
+          "per_run": [
+            0.27894845604896545
+          ]
+        },
+        "weather.final_wetness.standardized_mse": {
+          "mean": 1.0117768049240112,
+          "std": 0.0,
+          "per_run": [
+            1.0117768049240112
+          ]
+        },
+        "weather.final_wetness.raw_mae": {
+          "mean": 0.3443850874900818,
+          "std": 0.0,
+          "per_run": [
+            0.3443850874900818
+          ]
+        }
+      }
+    }
+  },
+  "parameter_counts": {
+    "XY": 5518,
+    "MLP-Full": 10310,
+    "Transformer-Full": 9678,
+    "CTN": 9652,
+    "CTN-no-C": 9565,
+    "CTN-no-S": 9478,
+    "CTN-no-XC": 9652,
+    "CTN-no-XS": 9652,
+    "CTN-no-CS": 9565,
+    "CTN-no-transition": 6230,
+    "CTN-no-pair-loss": 9652
+  }
+}
