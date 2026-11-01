@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 reports/phase4/*/checkpoints/
 reports/phase4/*/predictions/
+models/v2/checkpoints/
