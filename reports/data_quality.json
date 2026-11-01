@@ -1,0 +1,385 @@
+{
+  "split_counts": {
+    "train": 5000,
+    "validation": 1000,
+    "test": 1000
+  },
+  "duplicates": {
+    "within_split": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    "cross_split_identical_records": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    },
+    "sample_id_overlap": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    },
+    "pair_id_overlap": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    }
+  },
+  "unique_XCS_combinations": {
+    "train.thermal": 2,
+    "train.mechanics": 6,
+    "train.weather": 8,
+    "validation.thermal": 2,
+    "validation.mechanics": 6,
+    "validation.weather": 8,
+    "test.thermal": 2,
+    "test.mechanics": 2,
+    "test.weather": 2
+  },
+  "cross_split_XCS_overlap": {
+    "thermal": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    },
+    "mechanics": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    },
+    "weather": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    }
+  },
+  "target_distributions": {
+    "thermal": {
+      "target": "temperature_delta",
+      "raw_range": [
+        -10.0,
+        10.0
+      ],
+      "model_target_range_after_scale": [
+        -1.0,
+        1.0
+      ],
+      "mean_after_scale": 0.0,
+      "std_after_scale": 1.0,
+      "normalization": "thermal and mechanics /10; weather unchanged",
+      "iqr_outlier_count": 0,
+      "target_exactly_determined_by_X": true
+    },
+    "mechanics": {
+      "target": "position_delta",
+      "raw_range": [
+        -0.4994802314542186,
+        3.4983302842434933
+      ],
+      "model_target_range_after_scale": [
+        -0.04994802314542186,
+        0.3498330284243493
+      ],
+      "mean_after_scale": 0.07575272313650379,
+      "std_after_scale": 0.1033239355293386,
+      "normalization": "thermal and mechanics /10; weather unchanged",
+      "iqr_outlier_count": 59,
+      "target_exactly_determined_by_X": false
+    },
+    "weather": {
+      "target": "ground_wetness_delta",
+      "raw_range": [
+        -0.1,
+        0.20000000000000007
+      ],
+      "model_target_range_after_scale": [
+        -0.1,
+        0.20000000000000007
+      ],
+      "mean_after_scale": 0.006812870089200916,
+      "std_after_scale": 0.09700883243567389,
+      "normalization": "thermal and mechanics /10; weather unchanged",
+      "iqr_outlier_count": 0,
+      "target_exactly_determined_by_X": false
+    }
+  },
+  "feature_cardinality": {
+    "thermal": {
+      "X_raw.cooling_power": {
+        "unique_values": 2,
+        "constant": false,
+        "top_values": [
+          [
+            "0.0",
+            834
+          ],
+          [
+            "1.0",
+            834
+          ]
+        ]
+      },
+      "X_raw.heating_power": {
+        "unique_values": 2,
+        "constant": false,
+        "top_values": [
+          [
+            "1.0",
+            834
+          ],
+          [
+            "0.0",
+            834
+          ]
+        ]
+      },
+      "C_raw.freezing_point": {
+        "unique_values": 1,
+        "constant": true,
+        "top_values": [
+          [
+            "0.0",
+            1668
+          ]
+        ]
+      },
+      "S_raw.phase": {
+        "unique_values": 2,
+        "constant": false,
+        "top_values": [
+          [
+            "liquid",
+            1106
+          ],
+          [
+            "ice",
+            562
+          ]
+        ]
+      },
+      "S_raw.temperature": {
+        "unique_values": 834,
+        "constant": false,
+        "top_values": [
+          [
+            "19.80566553408284",
+            2
+          ],
+          [
+            "-5.20769534657657",
+            2
+          ],
+          [
+            "1.9816288871697538",
+            2
+          ]
+        ]
+      }
+    },
+    "mechanics": {
+      "X_raw.action": {
+        "unique_values": 1,
+        "constant": true,
+        "top_values": [
+          [
+            "push",
+            1666
+          ]
+        ]
+      },
+      "X_raw.force": {
+        "unique_values": 3,
+        "constant": false,
+        "top_values": [
+          [
+            "0.0",
+            833
+          ],
+          [
+            "3.0",
+            434
+          ],
+          [
+            "1.0",
+            399
+          ]
+        ]
+      },
+      "C_raw.fixed": {
+        "unique_values": 1,
+        "constant": true,
+        "top_values": [
+          [
+            "False",
+            1666
+          ]
+        ]
+      },
+      "C_raw.friction": {
+        "unique_values": 2,
+        "constant": false,
+        "top_values": [
+          [
+            "0.0",
+            868
+          ],
+          [
+            "0.2",
+            798
+          ]
+        ]
+      },
+      "S_raw.fixed": {
+        "unique_values": 1,
+        "constant": true,
+        "top_values": [
+          [
+            "False",
+            1666
+          ]
+        ]
+      },
+      "S_raw.mass": {
+        "unique_values": 2,
+        "constant": false,
+        "top_values": [
+          [
+            "2.0",
+            856
+          ],
+          [
+            "1.0",
+            810
+          ]
+        ]
+      },
+      "S_raw.position": {
+        "unique_values": 833,
+        "constant": false,
+        "top_values": [
+          [
+            "-0.5719551175605135",
+            2
+          ],
+          [
+            "-0.7304865753491159",
+            2
+          ],
+          [
+            "0.018015466684094372",
+            2
+          ]
+        ]
+      },
+      "S_raw.velocity": {
+        "unique_values": 833,
+        "constant": false,
+        "top_values": [
+          [
+            "-0.10888809397743993",
+            2
+          ],
+          [
+            "0.3726695708676654",
+            2
+          ],
+          [
+            "0.3115734184448826",
+            2
+          ]
+        ]
+      }
+    },
+    "weather": {
+      "X_raw.rainfall": {
+        "unique_values": 2,
+        "constant": false,
+        "top_values": [
+          [
+            "0.2",
+            854
+          ],
+          [
+            "0.0",
+            812
+          ]
+        ]
+      },
+      "C_raw.drainage": {
+        "unique_values": 2,
+        "constant": false,
+        "top_values": [
+          [
+            "0.0",
+            840
+          ],
+          [
+            "0.1",
+            826
+          ]
+        ]
+      },
+      "C_raw.roof_cover": {
+        "unique_values": 2,
+        "constant": false,
+        "top_values": [
+          [
+            "0.0",
+            833
+          ],
+          [
+            "1.0",
+            833
+          ]
+        ]
+      },
+      "S_raw.ground_wetness": {
+        "unique_values": 833,
+        "constant": false,
+        "top_values": [
+          [
+            "0.3107076549711786",
+            2
+          ],
+          [
+            "0.06245993361120919",
+            2
+          ],
+          [
+            "0.23302230351260542",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "encoding_consistency": {
+    "declared_encoders": "separate 32-dimensional stable hashed encoders",
+    "experiment_vectorizer": "_vec converts sorted numeric/bool values to at most 8 scalars and maps every string/category to 0; it does not call the declared encoders",
+    "string_features_dropped": [
+      "mechanics X.action",
+      "thermal S.phase"
+    ],
+    "effect": "the tested training representation differs from documented X/Y/C/S encoders; categorical event/phase information is absent from models"
+  },
+  "leakage_review": {
+    "model_input_fields": [
+      "X_raw numeric projection",
+      "C_raw numeric projection",
+      "S_raw numeric projection",
+      "domain"
+    ],
+    "target_fields": [
+      "Y_raw domain-specific scalar"
+    ],
+    "target_state_and_state_after_used_as_input": false,
+    "sample_ids_or_pair_ids_used_as_input": false,
+    "potential_shortcuts": [
+      "thermal temperature_delta is exactly 10*(heating_power-cooling_power), so X alone determines model target; freezing_point C and temperature/phase S do not affect this scalar target",
+      "mechanics fixed is always false in generated rows; position is irrelevant to displacement increment; mass/velocity/friction vary",
+      "weather target is one-step clipped wetness delta; model can infer most direct effect from rainfall/C and boundary state"
+    ],
+    "normalization_warning": "Input fields are not normalized; target output is divided by 10 for thermal/mechanics but not weather. Training uses pooled MSE, so domains have different output variance and loss weight."
+  }
+}

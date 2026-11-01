@@ -32,6 +32,7 @@ pytest
 ```powershell
 python -m pip install -e '.[research]'
 python -m ctn.experiment_cli --data data/generated --output results --epochs 20 --seeds 11 23 37
+python -m ctn.audit
 ```
 
 也可自定义规模：`python -m ctn.cli --train 5000 --validation 1000 --test 1000 --seed 42`。
@@ -65,5 +66,7 @@ tests/               验收测试
 每个数据 split 只含完整配对样本；测试数据留出训练中未见过的力-摩擦、初始温度和降雨-排水组合。训练脚本比较 XY、XYC、XYS、XYCS 与 Transformer，记录训练/验证/测试损失、分领域误差、配对反事实一致性、长链误差、参数量及耗时。各模型参数量保持在约 18k–23k。XY 系列消融有意改变可见输入；Transformer 与 XYCS 接收相同的 X/C/S 信息。
 
 完整实验结果与解释见 `results/REPORT.md` 和 `results/experiment.json`。这些分数只适用于本项目定义的合成结构化目标，不能作为自然语言能力或现实因果发现的证据。
+
+第二阶段机制与数据诊断结果见 `reports/phase2_audit.md`，复现命令会生成 `feature_intervention.json`、`counterfactual_pairs.json`、`data_quality.json` 和 `training_diagnostics.json`。审计阶段只记录模型输入、逐 epoch 训练/验证指标与干预预测，不修改模型架构。
 
 第一阶段的随机哈希编码有碰撞且非可学习编码，只用于验证形状和数据通路。当前实验模型直接读取保留的结构化数值特征。

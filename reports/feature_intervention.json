@@ -1,0 +1,542 @@
+{
+  "method": "调用真实 simulator reset/step；每次仅改变一个字段，其他字段固定",
+  "cases": [
+    {
+      "domain": "mechanics",
+      "feature": "force",
+      "input_before": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "input_after": {
+        "force": 6.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "result_before": {
+        "position_delta": 2.9
+      },
+      "result_after": {
+        "position_delta": 3.9000000000000004
+      },
+      "result_delta": {
+        "position_delta": 1.0
+      },
+      "expected_mechanism": "外力改变净加速度和位移",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "mechanics",
+      "feature": "friction",
+      "input_before": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "input_after": {
+        "force": 4.0,
+        "friction": 0.8,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "result_before": {
+        "position_delta": 2.9
+      },
+      "result_after": {
+        "position_delta": 2.6
+      },
+      "result_delta": {
+        "position_delta": -0.3
+      },
+      "expected_mechanism": "摩擦通过速度项改变净加速度",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "mechanics",
+      "feature": "mass",
+      "input_before": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "input_after": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 4.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "result_before": {
+        "position_delta": 2.9
+      },
+      "result_after": {
+        "position_delta": 1.9500000000000002
+      },
+      "result_delta": {
+        "position_delta": -0.95
+      },
+      "expected_mechanism": "质量改变同一净力下的加速度",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "mechanics",
+      "feature": "fixed",
+      "input_before": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "input_after": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": true,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "result_before": {
+        "position_delta": 2.9
+      },
+      "result_after": {
+        "position_delta": 0.0
+      },
+      "result_delta": {
+        "position_delta": -2.9
+      },
+      "expected_mechanism": "固定约束抑制位移",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "mechanics",
+      "feature": "position",
+      "input_before": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "input_after": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 9.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "result_before": {
+        "position_delta": 2.9
+      },
+      "result_after": {
+        "position_delta": 2.9000000000000004
+      },
+      "result_delta": {
+        "position_delta": 0.0
+      },
+      "expected_mechanism": "位置平移不改变本模型的位置增量",
+      "observed_effect": false,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "mechanics",
+      "feature": "velocity",
+      "input_before": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "input_after": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 2.0,
+        "dt": 1.0
+      },
+      "result_before": {
+        "position_delta": 2.9
+      },
+      "result_after": {
+        "position_delta": 3.8
+      },
+      "result_delta": {
+        "position_delta": 0.9
+      },
+      "expected_mechanism": "初速度通过摩擦项改变运动",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "mechanics",
+      "feature": "dt",
+      "input_before": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 1.0
+      },
+      "input_after": {
+        "force": 4.0,
+        "friction": 0.2,
+        "mass": 2.0,
+        "fixed": false,
+        "position": 1.0,
+        "velocity": 1.0,
+        "dt": 2.0
+      },
+      "result_before": {
+        "position_delta": 2.9
+      },
+      "result_after": {
+        "position_delta": 9.6
+      },
+      "result_delta": {
+        "position_delta": 6.7
+      },
+      "expected_mechanism": "时间步长改变速度/位置更新",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "thermal",
+      "feature": "heating_power",
+      "input_before": {
+        "temperature": -3.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.0,
+        "freezing_point": 0.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "input_after": {
+        "temperature": -3.0,
+        "heating_power": 0.8,
+        "cooling_power": 0.0,
+        "freezing_point": 0.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "result_before": {
+        "temperature_delta": 2.0,
+        "phase": "ice"
+      },
+      "result_after": {
+        "temperature_delta": 8.0,
+        "phase": "liquid"
+      },
+      "result_delta": {
+        "temperature_delta": 6.0,
+        "phase": [
+          "ice",
+          "liquid"
+        ]
+      },
+      "expected_mechanism": "加热功率改变温度增量",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "thermal",
+      "feature": "cooling_power",
+      "input_before": {
+        "temperature": -3.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.0,
+        "freezing_point": 0.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "input_after": {
+        "temperature": -3.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.4,
+        "freezing_point": 0.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "result_before": {
+        "temperature_delta": 2.0,
+        "phase": "ice"
+      },
+      "result_after": {
+        "temperature_delta": -2.0,
+        "phase": "ice"
+      },
+      "result_delta": {
+        "temperature_delta": -4.0,
+        "phase": null
+      },
+      "expected_mechanism": "冷却功率改变温度增量",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "thermal",
+      "feature": "temperature",
+      "input_before": {
+        "temperature": -3.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.0,
+        "freezing_point": 0.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "input_after": {
+        "temperature": -1.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.0,
+        "freezing_point": 0.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "result_before": {
+        "temperature_delta": 2.0,
+        "phase": "ice"
+      },
+      "result_after": {
+        "temperature_delta": 2.0,
+        "phase": "liquid"
+      },
+      "result_delta": {
+        "temperature_delta": 0.0,
+        "phase": [
+          "ice",
+          "liquid"
+        ]
+      },
+      "expected_mechanism": "起始温度跨越相变阈值，改变物态结果但不改变温度增量",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "thermal",
+      "feature": "phase",
+      "input_before": {
+        "temperature": -3.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.0,
+        "freezing_point": 0.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "input_after": {
+        "temperature": -3.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.0,
+        "freezing_point": 0.0,
+        "phase": "liquid",
+        "dt": 1.0
+      },
+      "result_before": {
+        "temperature_delta": 2.0,
+        "phase": "ice"
+      },
+      "result_after": {
+        "temperature_delta": 2.0,
+        "phase": "ice"
+      },
+      "result_delta": {
+        "temperature_delta": 0.0,
+        "phase": null
+      },
+      "expected_mechanism": "输入 phase 会在 step 中按温度重新派生，初始化矛盾相不保留",
+      "observed_effect": false,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "thermal",
+      "feature": "freezing_point",
+      "input_before": {
+        "temperature": -3.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.0,
+        "freezing_point": 0.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "input_after": {
+        "temperature": -3.0,
+        "heating_power": 0.2,
+        "cooling_power": 0.0,
+        "freezing_point": 5.0,
+        "phase": "ice",
+        "dt": 1.0
+      },
+      "result_before": {
+        "temperature_delta": 2.0,
+        "phase": "ice"
+      },
+      "result_after": {
+        "temperature_delta": 2.0,
+        "phase": "ice"
+      },
+      "result_delta": {
+        "temperature_delta": 0.0,
+        "phase": null
+      },
+      "expected_mechanism": "该 C 特征未作为 step 参数，模拟器硬编码 0°C",
+      "observed_effect": false,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "weather",
+      "feature": "rainfall",
+      "input_before": {
+        "rainfall": 0.5,
+        "roof_cover": 0.2,
+        "drainage": 0.1,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.8,
+        "roof_cover": 0.2,
+        "drainage": 0.1,
+        "ground_wetness": 0.4
+      },
+      "result_before": {
+        "ground_wetness_delta": 0.30000000000000004
+      },
+      "result_after": {
+        "ground_wetness_delta": 0.54
+      },
+      "result_delta": {
+        "ground_wetness_delta": 0.24
+      },
+      "expected_mechanism": "降雨量乘以暴露比例后增加湿度",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "weather",
+      "feature": "roof_cover",
+      "input_before": {
+        "rainfall": 0.5,
+        "roof_cover": 0.2,
+        "drainage": 0.1,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.5,
+        "roof_cover": 0.8,
+        "drainage": 0.1,
+        "ground_wetness": 0.4
+      },
+      "result_before": {
+        "ground_wetness_delta": 0.30000000000000004
+      },
+      "result_after": {
+        "ground_wetness_delta": 0.0
+      },
+      "result_delta": {
+        "ground_wetness_delta": -0.3
+      },
+      "expected_mechanism": "遮挡比例减少直接降雨贡献",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "weather",
+      "feature": "drainage",
+      "input_before": {
+        "rainfall": 0.5,
+        "roof_cover": 0.2,
+        "drainage": 0.1,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.5,
+        "roof_cover": 0.2,
+        "drainage": 0.3,
+        "ground_wetness": 0.4
+      },
+      "result_before": {
+        "ground_wetness_delta": 0.30000000000000004
+      },
+      "result_after": {
+        "ground_wetness_delta": 0.09999999999999998
+      },
+      "result_delta": {
+        "ground_wetness_delta": -0.2
+      },
+      "expected_mechanism": "排水量直接扣减湿度",
+      "observed_effect": true,
+      "mechanism_matches": true
+    },
+    {
+      "domain": "weather",
+      "feature": "ground_wetness",
+      "input_before": {
+        "rainfall": 0.5,
+        "roof_cover": 0.2,
+        "drainage": 0.1,
+        "ground_wetness": 0.4
+      },
+      "input_after": {
+        "rainfall": 0.5,
+        "roof_cover": 0.2,
+        "drainage": 0.1,
+        "ground_wetness": 0.9
+      },
+      "result_before": {
+        "ground_wetness_delta": 0.30000000000000004
+      },
+      "result_after": {
+        "ground_wetness_delta": 0.09999999999999998
+      },
+      "result_delta": {
+        "ground_wetness_delta": -0.2
+      },
+      "expected_mechanism": "提高初始湿度使状态触及上界裁剪，改变本步湿度增量",
+      "observed_effect": true,
+      "mechanism_matches": true
+    }
+  ],
+  "summary": {
+    "total": 16,
+    "observed_effect": 13,
+    "mechanism_matches": 16,
+    "mismatches": []
+  }
+}
