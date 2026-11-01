@@ -44,5 +44,5 @@ def test_counterfactual_pairs_share_baseline_and_change_intervention(tmp_path):
     pair = [r for r in rows if r["domain"] == "mechanics"][:2]
     assert pair[0]["pair_id"] == pair[1]["pair_id"]
     assert pair[0]["state_before"] == pair[1]["state_before"]
-    assert pair[0]["C_raw"]["fixed"] != pair[1]["C_raw"]["fixed"]
+    assert pair[0]["X_raw"]["force"] != pair[1]["X_raw"]["force"]
     assert {r["intervention"] for r in pair} == {False, True}

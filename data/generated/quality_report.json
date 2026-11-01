@@ -1,0 +1,46 @@
+{
+  "seed": 42,
+  "splits": {
+    "train": {
+      "samples": 5000,
+      "interventions": 2499,
+      "pairs": 2501
+    },
+    "validation": {
+      "samples": 1000,
+      "interventions": 499,
+      "pairs": 501
+    },
+    "test": {
+      "samples": 1000,
+      "interventions": 499,
+      "pairs": 501
+    }
+  },
+  "domains": {
+    "thermal": {
+      "samples": 2335,
+      "event_types": 1,
+      "relation_types": [
+        "CAUSE"
+      ],
+      "intervention_rate": 0.2
+    },
+    "mechanics": {
+      "samples": 2333,
+      "event_types": 1,
+      "relation_types": [
+        "CAUSE"
+      ],
+      "intervention_rate": 0.2
+    },
+    "weather": {
+      "samples": 2332,
+      "event_types": 1,
+      "relation_types": [
+        "CAUSE"
+      ],
+      "intervention_rate": 0.2
+    }
+  }
+}

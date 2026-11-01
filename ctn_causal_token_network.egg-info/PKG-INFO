@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: ctn-causal-token-network
+Version: 0.1.0
+Summary: Causal Token Network (CTN): first-stage causal simulation prototype
+Requires-Python: >=3.11
+Requires-Dist: numpy>=1.26
+Requires-Dist: pydantic>=2.6
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"

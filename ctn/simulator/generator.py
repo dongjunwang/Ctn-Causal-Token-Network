@@ -17,8 +17,8 @@ def _sample(domain: str, index: int, split: str, rng: random.Random, counterfact
     event_id = f"E_{domain}_{index:06d}"
     intervention = counterfactual
     if domain == "mechanics":
-        fixed = counterfactual
-        force, friction, mass = rng.choice([1.0, 3.0, 5.0]), rng.choice([0.0, 0.2, 0.8]), rng.choice([1.0, 2.0])
+        fixed = False
+        force, friction, mass = (0.0 if counterfactual else rng.choice([1.0, 3.0, 5.0])), rng.choice([0.0, 0.2, 0.8]), rng.choice([1.0, 2.0])
         world = MechanicsWorld(); before = world.reset(fixed=fixed, mass=mass); _, after = world.step(force, friction, intervention=intervention)
         X, Y, C = {"force": force, "action": "push"}, {"position_delta": after["objects"]["object_001"]["position"]}, {"friction": friction, "fixed": fixed}
         S = before["objects"]["object_001"]; action, typ, target = "push", "EV_MOVE_001", "position_change"
