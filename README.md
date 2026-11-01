@@ -2,7 +2,7 @@
 
 **Causal Token Network（CTN）：因果词元网络**
 
-第一阶段原型：建立可重复的模拟世界、结构化事件/X-Y-C-S 样本，以及干预数据生成基础。本阶段不训练语言模型，也不声称模拟实验证明了真实语言中的因果发现能力。
+项目覆盖规划中的第一、第二阶段：可重复模拟、结构化事件/X-Y-C-S 数据、干预反事实、模型对照与消融评估。模拟实验只检验模型在这些合成环境上的学习和泛化，不证明真实语言中的因果发现能力。
 
 ## 功能
 
@@ -11,6 +11,8 @@
 - 保留 X/Y/C/S 原始特征；独立、确定性 32 维哈希编码器用于接口原型，不代表已学到因果知识。
 - 固定随机种子的 JSONL 训练/验证/测试生成以及质量报告。
 - JSON 因果图、领域事件模板和 pytest 验收测试。
+- 30 个事件模板、包含五类关系的因果图、严格配对的事实/反事实数据。
+- XY、XYC、XYS、XYCS 与 Transformer 五种模型配置，多随机种子、留出组合和长链评估。
 
 ## 安装与运行
 
@@ -29,7 +31,7 @@ pytest
 
 ```powershell
 python -m pip install -e '.[research]'
-python -m ctn.experiment_cli --data data/generated --output results --epochs 15 --seeds 11 23 37
+python -m ctn.experiment_cli --data data/generated --output results --epochs 20 --seeds 11 23 37
 ```
 
 也可自定义规模：`python -m ctn.cli --train 5000 --validation 1000 --test 1000 --seed 42`。
@@ -60,6 +62,8 @@ tests/               验收测试
 
 ## 当前范围与限制
 
-模拟器的测试划分为机械领域留出训练未见的力-摩擦组合。小型实验脚本比较仅 X/Y、完整 X/Y/C/S 和 Transformer 特征序列基线，保存参数量、验证/测试 MSE、MAE、分领域误差与耗时。实验指标只适用于此处的合成结构化目标；不同模型的输入可见性不同（XY 模型不接收 C/S），结果解释时应将其视为信息消融，而不是同输入的容量公平赛。
+每个数据 split 只含完整配对样本；测试数据留出训练中未见过的力-摩擦、初始温度和降雨-排水组合。训练脚本比较 XY、XYC、XYS、XYCS 与 Transformer，记录训练/验证/测试损失、分领域误差、配对反事实一致性、长链误差、参数量及耗时。各模型参数量保持在约 18k–23k。XY 系列消融有意改变可见输入；Transformer 与 XYCS 接收相同的 X/C/S 信息。
+
+完整实验结果与解释见 `results/REPORT.md` 和 `results/experiment.json`。这些分数只适用于本项目定义的合成结构化目标，不能作为自然语言能力或现实因果发现的证据。
 
 第一阶段的随机哈希编码有碰撞且非可学习编码，只用于验证形状和数据通路。当前实验模型直接读取保留的结构化数值特征。

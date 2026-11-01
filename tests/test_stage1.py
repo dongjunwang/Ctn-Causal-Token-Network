@@ -1,5 +1,7 @@
 import json
+from pathlib import Path
 from ctn.models import XEncoder, YEncoder, CEncoder, SEncoder, EventInstance
+from ctn.models import EventTemplate, CausalRelation
 from ctn.simulator import ThermalWorld, MechanicsWorld, WeatherWorld
 from ctn.simulator.generator import generate_dataset
 
@@ -56,3 +58,26 @@ def test_test_split_holds_out_mechanism_combinations(tmp_path):
     test_combo = {(r["X_raw"]["force"], r["C_raw"]["friction"]) for r in test if r["domain"] == "mechanics" and r["X_raw"]["force"] != 0}
     assert test_combo == {(5.0, 0.8)}
     assert test_combo.isdisjoint(train_combos)
+
+
+def test_all_generated_records_are_paired(tmp_path):
+    out = tmp_path / "data"; report = generate_dataset(out, 60, 30, 30, 8)
+    for split in ("train", "validation", "test"):
+        rows = [json.loads(line) for line in (out / f"{split}.jsonl").read_text(encoding="utf-8").splitlines()]
+        grouped = {}
+        for row in rows: grouped.setdefault(row["pair_id"], []).append(row)
+        assert all(len(pair) == 2 for pair in grouped.values())
+        assert report["splits"][split]["pairs"] == len(rows) // 2
+        for a, b in grouped.values():
+            assert a["state_before"] == b["state_before"]
+            assert a["intervention"] != b["intervention"]
+
+
+def test_templates_and_causal_graph_cover_planned_types():
+    root = Path(__file__).resolve().parents[1]
+    templates = sum((json.loads((root / "data" / "templates" / f"{d}.json").read_text(encoding="utf-8")) for d in ("mechanics", "thermal", "weather")), [])
+    edges = json.loads((root / "data" / "causal_graph" / "edges.json").read_text(encoding="utf-8"))
+    assert len(templates) == 30
+    for template in templates: EventTemplate.model_validate(template)
+    assert {edge["relation_type"] for edge in edges} == {"CAUSE", "ENABLE", "PREVENT", "CORRELATE", "TEMPORAL"}
+    for edge in edges: CausalRelation.model_validate(edge)

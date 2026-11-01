@@ -1,1 +1,152 @@
-[{"id":"EV_PUSH_001","domain":"mechanics"},{"id":"EV_MOVE_001","domain":"mechanics"},{"id":"EV_HEAT_001","domain":"thermal"},{"id":"EV_PHASE_CHANGE_001","domain":"thermal"},{"id":"EV_RAIN_001","domain":"weather"},{"id":"EV_GROUND_WET_001","domain":"weather"}]
+[
+  {
+    "id": "EV_PUSH_001",
+    "domain": "mechanics",
+    "name": "推动物体"
+  },
+  {
+    "id": "EV_MOVE_001",
+    "domain": "mechanics",
+    "name": "物体移动"
+  },
+  {
+    "id": "EV_PULL_001",
+    "domain": "mechanics",
+    "name": "拉动物体"
+  },
+  {
+    "id": "EV_FRICTION_001",
+    "domain": "mechanics",
+    "name": "表面摩擦"
+  },
+  {
+    "id": "EV_FIX_001",
+    "domain": "mechanics",
+    "name": "固定物体"
+  },
+  {
+    "id": "EV_RELEASE_001",
+    "domain": "mechanics",
+    "name": "释放物体"
+  },
+  {
+    "id": "EV_COLLIDE_001",
+    "domain": "mechanics",
+    "name": "物体碰撞"
+  },
+  {
+    "id": "EV_MASS_001",
+    "domain": "mechanics",
+    "name": "质量影响加速度"
+  },
+  {
+    "id": "EV_STOP_001",
+    "domain": "mechanics",
+    "name": "物体停止"
+  },
+  {
+    "id": "EV_ACCEL_001",
+    "domain": "mechanics",
+    "name": "物体加速"
+  },
+  {
+    "id": "EV_HEAT_001",
+    "domain": "thermal",
+    "name": "加热水"
+  },
+  {
+    "id": "EV_PHASE_CHANGE_001",
+    "domain": "thermal",
+    "name": "水物态变化"
+  },
+  {
+    "id": "EV_COOL_001",
+    "domain": "thermal",
+    "name": "冷却水"
+  },
+  {
+    "id": "EV_FREEZE_001",
+    "domain": "thermal",
+    "name": "水结冰"
+  },
+  {
+    "id": "EV_MELT_001",
+    "domain": "thermal",
+    "name": "冰融化"
+  },
+  {
+    "id": "EV_BOIL_001",
+    "domain": "thermal",
+    "name": "水沸腾"
+  },
+  {
+    "id": "EV_INSULATE_001",
+    "domain": "thermal",
+    "name": "隔热"
+  },
+  {
+    "id": "EV_AMBIENT_001",
+    "domain": "thermal",
+    "name": "环境热交换"
+  },
+  {
+    "id": "EV_MIX_001",
+    "domain": "thermal",
+    "name": "混合温水"
+  },
+  {
+    "id": "EV_LATENT_001",
+    "domain": "thermal",
+    "name": "相变潜热"
+  },
+  {
+    "id": "EV_RAIN_001",
+    "domain": "weather",
+    "name": "降雨"
+  },
+  {
+    "id": "EV_GROUND_WET_001",
+    "domain": "weather",
+    "name": "地面变湿"
+  },
+  {
+    "id": "EV_ROOF_001",
+    "domain": "weather",
+    "name": "屋顶遮挡"
+  },
+  {
+    "id": "EV_DRAIN_001",
+    "domain": "weather",
+    "name": "地面排水"
+  },
+  {
+    "id": "EV_SPRINKLE_001",
+    "domain": "weather",
+    "name": "人工洒水"
+  },
+  {
+    "id": "EV_DRY_001",
+    "domain": "weather",
+    "name": "地面干燥"
+  },
+  {
+    "id": "EV_PUDDLE_001",
+    "domain": "weather",
+    "name": "形成积水"
+  },
+  {
+    "id": "EV_SOIL_001",
+    "domain": "weather",
+    "name": "土壤吸水"
+  },
+  {
+    "id": "EV_RUNOFF_001",
+    "domain": "weather",
+    "name": "地表径流"
+  },
+  {
+    "id": "EV_CLOUD_001",
+    "domain": "weather",
+    "name": "云层降水"
+  }
+]

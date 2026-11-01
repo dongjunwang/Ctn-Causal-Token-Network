@@ -3,44 +3,155 @@
   "splits": {
     "train": {
       "samples": 5000,
-      "interventions": 2499,
-      "pairs": 2501
+      "interventions": 2500,
+      "pairs": 2500,
+      "domains": {
+        "thermal": 1668,
+        "mechanics": 1666,
+        "weather": 1666
+      }
     },
     "validation": {
       "samples": 1000,
-      "interventions": 499,
-      "pairs": 501
+      "interventions": 500,
+      "pairs": 500,
+      "domains": {
+        "thermal": 334,
+        "mechanics": 334,
+        "weather": 332
+      }
     },
     "test": {
       "samples": 1000,
-      "interventions": 499,
-      "pairs": 501
+      "interventions": 500,
+      "pairs": 500,
+      "domains": {
+        "thermal": 334,
+        "mechanics": 334,
+        "weather": 332
+      }
     }
   },
   "domains": {
     "thermal": {
-      "samples": 2335,
-      "event_types": 1,
-      "relation_types": [
-        "CAUSE"
-      ],
-      "intervention_rate": 0.2
+      "template_count": 10,
+      "causal_graph_edges": 1,
+      "train": {
+        "samples": 1668,
+        "event_types": [
+          "EV_PHASE_CHANGE_001"
+        ],
+        "condition_combinations": 2,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 834,
+        "counterfactual_pairs": 834
+      },
+      "validation": {
+        "samples": 334,
+        "event_types": [
+          "EV_PHASE_CHANGE_001"
+        ],
+        "condition_combinations": 2,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 167,
+        "counterfactual_pairs": 167
+      },
+      "test": {
+        "samples": 334,
+        "event_types": [
+          "EV_PHASE_CHANGE_001"
+        ],
+        "condition_combinations": 2,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 167,
+        "counterfactual_pairs": 167
+      }
     },
     "mechanics": {
-      "samples": 2333,
-      "event_types": 1,
-      "relation_types": [
-        "CAUSE"
-      ],
-      "intervention_rate": 0.2
+      "template_count": 10,
+      "causal_graph_edges": 3,
+      "train": {
+        "samples": 1666,
+        "event_types": [
+          "EV_MOVE_001"
+        ],
+        "condition_combinations": 6,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 833,
+        "counterfactual_pairs": 833
+      },
+      "validation": {
+        "samples": 334,
+        "event_types": [
+          "EV_MOVE_001"
+        ],
+        "condition_combinations": 6,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 167,
+        "counterfactual_pairs": 167
+      },
+      "test": {
+        "samples": 334,
+        "event_types": [
+          "EV_MOVE_001"
+        ],
+        "condition_combinations": 2,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 167,
+        "counterfactual_pairs": 167
+      }
     },
     "weather": {
-      "samples": 2332,
-      "event_types": 1,
-      "relation_types": [
-        "CAUSE"
-      ],
-      "intervention_rate": 0.2
+      "template_count": 10,
+      "causal_graph_edges": 2,
+      "train": {
+        "samples": 1666,
+        "event_types": [
+          "EV_GROUND_WET_001"
+        ],
+        "condition_combinations": 8,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 833,
+        "counterfactual_pairs": 833
+      },
+      "validation": {
+        "samples": 332,
+        "event_types": [
+          "EV_GROUND_WET_001"
+        ],
+        "condition_combinations": 8,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 166,
+        "counterfactual_pairs": 166
+      },
+      "test": {
+        "samples": 332,
+        "event_types": [
+          "EV_GROUND_WET_001"
+        ],
+        "condition_combinations": 2,
+        "causal_relations": [
+          "CAUSE"
+        ],
+        "interventions": 166,
+        "counterfactual_pairs": 166
+      }
     }
   }
 }

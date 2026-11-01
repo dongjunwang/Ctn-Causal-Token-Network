@@ -1,1 +1,77 @@
-[{"relation_id":"R_MECH_001","source":"EV_PUSH_001","target":"EV_MOVE_001","relation_type":"CAUSE","condition":{"fixed":false},"mechanism":"external_force_changes_velocity","confidence":1.0,"evidence_type":"simulator","intervention_tested":true},{"relation_id":"R_THERMAL_001","source":"EV_HEAT_001","target":"EV_PHASE_CHANGE_001","relation_type":"CAUSE","condition":{"temperature_threshold":0.0},"mechanism":"heat_flow_changes_temperature_and_phase","confidence":1.0,"evidence_type":"simulator","intervention_tested":true},{"relation_id":"R_WEATHER_001","source":"EV_RAIN_001","target":"EV_GROUND_WET_001","relation_type":"CAUSE","condition":{"roof_cover":0},"mechanism":"exposed_rain_increases_ground_wetness","confidence":1.0,"evidence_type":"simulator","intervention_tested":true}]
+[
+  {
+    "relation_id": "R_MECH_CAUSE",
+    "source": "EV_PUSH_001",
+    "target": "EV_MOVE_001",
+    "relation_type": "CAUSE",
+    "condition": {
+      "fixed": false,
+      "force_gt": 0
+    },
+    "mechanism": "external force changes velocity and position",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_MECH_ENABLE",
+    "source": "EV_RELEASE_001",
+    "target": "EV_MOVE_001",
+    "relation_type": "ENABLE",
+    "condition": {
+      "force_gt": 0
+    },
+    "mechanism": "removing the fixed constraint permits motion",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_MECH_PREVENT",
+    "source": "EV_FIX_001",
+    "target": "EV_MOVE_001",
+    "relation_type": "PREVENT",
+    "condition": {},
+    "mechanism": "fixed objects cannot change position",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_WEATHER_CORRELATE",
+    "source": "EV_RAIN_001",
+    "target": "EV_GROUND_WET_001",
+    "relation_type": "CORRELATE",
+    "condition": {
+      "roof_cover": 0
+    },
+    "mechanism": "co-occurrence in exposed-ground observations; causal effect depends on cover and drainage",
+    "confidence": 0.8,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_WEATHER_TEMPORAL",
+    "source": "EV_RAIN_001",
+    "target": "EV_GROUND_WET_001",
+    "relation_type": "TEMPORAL",
+    "condition": {},
+    "mechanism": "rain event precedes wetness measurement",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  },
+  {
+    "relation_id": "R_THERMAL_CAUSE",
+    "source": "EV_HEAT_001",
+    "target": "EV_PHASE_CHANGE_001",
+    "relation_type": "CAUSE",
+    "condition": {
+      "temperature_threshold": 0.0
+    },
+    "mechanism": "heat flow changes temperature and can change phase",
+    "confidence": 1.0,
+    "evidence_type": "simulator",
+    "intervention_tested": true
+  }
+]
