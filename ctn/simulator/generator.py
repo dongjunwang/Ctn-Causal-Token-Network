@@ -18,19 +18,25 @@ def _sample(domain: str, index: int, split: str, rng: random.Random, counterfact
     intervention = counterfactual
     if domain == "mechanics":
         fixed = False
-        force, friction, mass = (0.0 if counterfactual else rng.choice([1.0, 3.0, 5.0])), rng.choice([0.0, 0.2, 0.8]), rng.choice([1.0, 2.0])
+        if split == "test":
+            factual_force, friction = 5.0, 0.8  # 测试保留未见的力-摩擦组合
+        else:
+            factual_force = rng.choice([1.0, 3.0])
+            friction = rng.choice([0.0, 0.2])
+        force, mass = (0.0 if counterfactual else factual_force), rng.choice([1.0, 2.0])
         world = MechanicsWorld(); before = world.reset(fixed=fixed, mass=mass); _, after = world.step(force, friction, intervention=intervention)
         X, Y, C = {"force": force, "action": "push"}, {"position_delta": after["objects"]["object_001"]["position"]}, {"friction": friction, "fixed": fixed}
         S = before["objects"]["object_001"]; action, typ, target = "push", "EV_MOVE_001", "position_change"
         params = {"force": force, "friction": friction}
     elif domain == "thermal":
-        temp = rng.choice([-5.0, 2.0, 20.0]); heat, cool = (0.0, 1.0) if counterfactual else (1.0, 0.0)
+        temp = 5.0 if split == "test" else rng.choice([-5.0, 2.0, 20.0]); heat, cool = (0.0, 1.0) if counterfactual else (1.0, 0.0)
         world = ThermalWorld(); before = world.reset(temp); _, after = world.step(heat, cool, intervention=intervention)
         X, Y, C = {"heating_power": heat, "cooling_power": cool}, {"phase": after["objects"]["water"]["phase"], "temperature_delta": 10 * (heat-cool)}, {"freezing_point": 0.0}
         S = before["objects"]["water"]; action, typ, target = "heat_or_cool", "EV_PHASE_CHANGE_001", "phase_change"
         params = {"heating_power": heat, "cooling_power": cool}
     else:
-        rain, drain = rng.choice([0.0, 0.2, 0.6]), rng.choice([0.0, 0.1, 0.4]); cover = 1.0 if counterfactual else 0.0
+        rain, drain = ((0.6, 0.4) if split == "test" else (rng.choice([0.0, 0.2]), rng.choice([0.0, 0.1])))
+        cover = 1.0 if counterfactual else 0.0
         world = WeatherWorld(); before = world.reset(); _, after = world.step(rain, cover, drain, intervention)
         X, Y, C = {"rainfall": rain}, {"ground_wetness": after["objects"]["ground_001"]["ground_wetness"]}, {"roof_cover": cover, "drainage": drain}
         S = before["objects"]["ground_001"]; action, typ, target = "rain", "EV_GROUND_WET_001", "wetness_change"

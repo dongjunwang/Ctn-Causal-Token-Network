@@ -25,6 +25,13 @@ python -m ctn.cli --output data/generated --seed 42
 pytest
 ```
 
+安装研究依赖并运行三随机种子对照实验：
+
+```powershell
+python -m pip install -e '.[research]'
+python -m ctn.experiment_cli --data data/generated --output results --epochs 15 --seeds 11 23 37
+```
+
 也可自定义规模：`python -m ctn.cli --train 5000 --validation 1000 --test 1000 --seed 42`。
 
 ## 数据
@@ -53,4 +60,6 @@ tests/               验收测试
 
 ## 当前范围与限制
 
-第一阶段提供用于后续建模的编码接口，不包含训练器、Transformer 对照模型或统计因果发现。随机哈希编码有碰撞且非可学习编码，只用于验证形状和数据通路。
+模拟器的测试划分为机械领域留出训练未见的力-摩擦组合。小型实验脚本比较仅 X/Y、完整 X/Y/C/S 和 Transformer 特征序列基线，保存参数量、验证/测试 MSE、MAE、分领域误差与耗时。实验指标只适用于此处的合成结构化目标；不同模型的输入可见性不同（XY 模型不接收 C/S），结果解释时应将其视为信息消融，而不是同输入的容量公平赛。
+
+第一阶段的随机哈希编码有碰撞且非可学习编码，只用于验证形状和数据通路。当前实验模型直接读取保留的结构化数值特征。

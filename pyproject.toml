@@ -11,9 +11,11 @@ dependencies = ["numpy>=1.26", "pydantic>=2.6"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+research = ["torch>=2.3"]
 
 [project.scripts]
 ctn-generate = "ctn.cli:main"
+ctn-experiment = "ctn.experiment_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

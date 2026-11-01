@@ -1,0 +1,189 @@
+{
+  "dataset": "generated JSONL",
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "records": [
+    {
+      "model": "xy",
+      "seed": 11,
+      "parameters": 18177,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 0.001743530505336821,
+      "test_mse": 0.006800550036132336,
+      "test_mae": 0.056426163762807846,
+      "test_mse_by_domain": {
+        "mechanics": 0.00984172558913616,
+        "thermal": 4.876896333882996e-06,
+        "weather": 0.010575452499588904
+      },
+      "train_seconds": 5.384333800000604,
+      "inference_seconds": 0.0007009000000834931
+    },
+    {
+      "model": "xycs",
+      "seed": 11,
+      "parameters": 22657,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 0.001034315093420446,
+      "test_mse": 0.019168157130479813,
+      "test_mae": 0.10842825472354889,
+      "test_mse_by_domain": {
+        "mechanics": 0.042700376978015285,
+        "thermal": 0.008490141417411223,
+        "weather": 0.0063460185449595585
+      },
+      "train_seconds": 8.19710649999979,
+      "inference_seconds": 0.0011247000002185814
+    },
+    {
+      "model": "transformer",
+      "seed": 11,
+      "parameters": 19297,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 3.396268084543408e-06,
+      "test_mse": 0.034640833735466,
+      "test_mae": 0.11933635175228119,
+      "test_mse_by_domain": {
+        "mechanics": 0.005671645822749884,
+        "thermal": 0.00013406863833154148,
+        "weather": 0.09822042211436133
+      },
+      "train_seconds": 20.36705869999969,
+      "inference_seconds": 0.010090300000229036
+    },
+    {
+      "model": "xy",
+      "seed": 23,
+      "parameters": 18177,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 0.0017763131763786077,
+      "test_mse": 0.006698710843920708,
+      "test_mae": 0.05615324154496193,
+      "test_mse_by_domain": {
+        "mechanics": 0.008805837520289166,
+        "thermal": 7.219822721893365e-06,
+        "weather": 0.011303170358157543
+      },
+      "train_seconds": 5.223007800001142,
+      "inference_seconds": 0.0018321999996260274
+    },
+    {
+      "model": "xycs",
+      "seed": 23,
+      "parameters": 22657,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 0.00028781918808817863,
+      "test_mse": 0.01473783329129219,
+      "test_mae": 0.10867370665073395,
+      "test_mse_by_domain": {
+        "mechanics": 0.018165517116976785,
+        "thermal": 0.011284650721963274,
+        "weather": 0.01477369779806341
+      },
+      "train_seconds": 8.511244799999986,
+      "inference_seconds": 0.0013920000001235167
+    },
+    {
+      "model": "transformer",
+      "seed": 23,
+      "parameters": 19297,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 8.291004633065313e-06,
+      "test_mse": 0.006412736140191555,
+      "test_mae": 0.06019682064652443,
+      "test_mse_by_domain": {
+        "mechanics": 0.006325398078517378,
+        "thermal": 0.005975504529978082,
+        "weather": 0.006938618298972897
+      },
+      "train_seconds": 23.589484000000084,
+      "inference_seconds": 0.017808700000387034
+    },
+    {
+      "model": "xy",
+      "seed": 37,
+      "parameters": 18177,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 0.002326542278751731,
+      "test_mse": 0.010009191930294037,
+      "test_mae": 0.06403563916683197,
+      "test_mse_by_domain": {
+        "mechanics": 0.018006375770219192,
+        "thermal": 0.00037397035035269255,
+        "weather": 0.011676159406929343
+      },
+      "train_seconds": 6.82820570000149,
+      "inference_seconds": 0.001865100000941311
+    },
+    {
+      "model": "xycs",
+      "seed": 37,
+      "parameters": 22657,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 0.00020790584676433355,
+      "test_mse": 0.01395072229206562,
+      "test_mae": 0.09158747643232346,
+      "test_mse_by_domain": {
+        "mechanics": 0.024952900054473297,
+        "thermal": 0.0111285084297581,
+        "weather": 0.005779228286649276
+      },
+      "train_seconds": 8.944037000001117,
+      "inference_seconds": 0.002843300000677118
+    },
+    {
+      "model": "transformer",
+      "seed": 37,
+      "parameters": 19297,
+      "epochs": 15,
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "validation_mse": 1.5254541949616396e-06,
+      "test_mse": 0.05068952590227127,
+      "test_mae": 0.14686580002307892,
+      "test_mse_by_domain": {
+        "mechanics": 0.007018828612487938,
+        "thermal": 5.6315499392667334e-05,
+        "weather": 0.14514549805172774
+      },
+      "train_seconds": 19.623543400000926,
+      "inference_seconds": 0.008134800000334508
+    }
+  ],
+  "summary": {
+    "xy": {
+      "mean_test_mse": 0.00783615093678236,
+      "std_test_mse": 0.001882597454284702,
+      "mean_parameters": 18177.0
+    },
+    "xycs": {
+      "mean_test_mse": 0.01595223757127921,
+      "std_test_mse": 0.0028127370815119964,
+      "mean_parameters": 22657.0
+    },
+    "transformer": {
+      "mean_test_mse": 0.030581031925976276,
+      "std_test_mse": 0.02241584307935135,
+      "mean_parameters": 19297.0
+    }
+  }
+}

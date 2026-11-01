@@ -46,3 +46,13 @@ def test_counterfactual_pairs_share_baseline_and_change_intervention(tmp_path):
     assert pair[0]["state_before"] == pair[1]["state_before"]
     assert pair[0]["X_raw"]["force"] != pair[1]["X_raw"]["force"]
     assert {r["intervention"] for r in pair} == {False, True}
+
+
+def test_test_split_holds_out_mechanism_combinations(tmp_path):
+    out = tmp_path / "data"; generate_dataset(out, 300, 90, 90, 42)
+    train = [json.loads(line) for line in (out / "train.jsonl").read_text(encoding="utf-8").splitlines()]
+    test = [json.loads(line) for line in (out / "test.jsonl").read_text(encoding="utf-8").splitlines()]
+    train_combos = {(r["X_raw"]["force"], r["C_raw"]["friction"]) for r in train if r["domain"] == "mechanics"}
+    test_combo = {(r["X_raw"]["force"], r["C_raw"]["friction"]) for r in test if r["domain"] == "mechanics" and r["X_raw"]["force"] != 0}
+    assert test_combo == {(5.0, 0.8)}
+    assert test_combo.isdisjoint(train_combos)
