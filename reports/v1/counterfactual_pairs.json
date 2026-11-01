@@ -33069,5 +33069,6 @@
     ],
     "pairs_per_domain": 80,
     "test_used_for_training": false
-  }
+  },
+  "audit_version": "v1"
 }

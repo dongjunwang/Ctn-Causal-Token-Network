@@ -381,5 +381,6 @@
       "weather target is one-step clipped wetness delta; model can infer most direct effect from rainfall/C and boundary state"
     ],
     "normalization_warning": "Input fields are not normalized; target output is divided by 10 for thermal/mechanics but not weather. Training uses pooled MSE, so domains have different output variance and loss weight."
-  }
+  },
+  "audit_version": "v1"
 }

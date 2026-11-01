@@ -159,7 +159,7 @@ def _cf_inputs(row):
     return _model_features(d,*cv(a)),_model_features(d,*cv(b))
 
 
-def run_training_audit(data_dir="data/generated", output_dir="reports", seeds=(11,23,37), epochs=20, batch_size=64, lr=1e-3):
+def run_training_audit(data_dir="data/generated", output_dir="reports/v1", seeds=(11,23,37), epochs=20, batch_size=64, lr=1e-3):
     data=Path(data_dir); out=Path(output_dir); out.mkdir(parents=True,exist_ok=True)
     train_x,train_y,_,_=_read(data/"train.jsonl"); val_x,val_y,_,_=_read(data/"validation.jsonl"); test_x,test_y,test_domains,_=_read(data/"test.jsonl")
     cf=counterfactual_cases(); architectures={"XY":lambda:XYModel(128),"XYCS":lambda:CTNModel(64),"Transformer":lambda:TransformerBaseline(32)}
@@ -197,17 +197,17 @@ def run_training_audit(data_dir="data/generated", output_dir="reports", seeds=(1
     for name in architectures:
         rs=[r for r in records if r["model"]==name]; vals=[r["test_mse"] for r in rs]
         summary[name]={"test_mse_mean":statistics.mean(vals),"test_mse_stdev":statistics.stdev(vals) if len(vals)>1 else 0.0,"best_epoch_by_seed":[r["best_epoch"] for r in rs],"overfit_runs":sum(r["overfit_at_end"] for r in rs),"gradient_nonfinite_total":sum(r["gradient_nonfinite_count"] for r in rs),"parameter_count":rs[0]["parameters"],"inputs":rs[0]["inputs"]}
-    result={"settings":{"seeds":list(seeds),"epochs":epochs,"learning_rate":lr,"batch_size":batch_size,"test_used_for_training":False},"summary":summary,"runs":records}
+    result={"audit_version":out.name,"settings":{"seeds":list(seeds),"epochs":epochs,"learning_rate":lr,"batch_size":batch_size,"test_used_for_training":False},"summary":summary,"runs":records}
     _write_json(out/"training_diagnostics.json",result)
     return result
 
 
-def write_audit_reports(data_dir="data/generated", output_dir="reports"):
-    out=Path(output_dir); _write_json(out/"feature_intervention.json",feature_intervention_audit()); _write_json(out/"data_quality.json",data_quality_audit(data_dir))
-    _write_json(out/"counterfactual_pairs.json",{"method":"Same simulator initial state/exogenous settings; one requested feature changed; model predictions populated after run_training_audit.","cases":counterfactual_cases()})
+def write_audit_reports(data_dir="data/generated", output_dir="reports/v1"):
+    out=Path(output_dir); _write_json(out/"feature_intervention.json",{"audit_version":out.name,**feature_intervention_audit()}); _write_json(out/"data_quality.json",{"audit_version":out.name,**data_quality_audit(data_dir)})
+    _write_json(out/"counterfactual_pairs.json",{"audit_version":out.name,"method":"Same simulator initial state/exogenous settings; one requested feature changed; model predictions populated after run_training_audit.","cases":counterfactual_cases()})
 
 
-def merge_counterfactual_predictions(output_dir="reports"):
+def merge_counterfactual_predictions(output_dir="reports/v1"):
     out=Path(output_dir); pairs=json.loads((out/"counterfactual_pairs.json").read_text(encoding="utf-8")); diag=json.loads((out/"training_diagnostics.json").read_text(encoding="utf-8"))
     indexed={}
     for run in diag["runs"]:
@@ -229,7 +229,30 @@ def merge_counterfactual_predictions(output_dir="reports"):
     _write_json(out/"counterfactual_pairs.json",pairs)
 
 
+def _next_report_version(base="reports"):
+    root=Path(base); root.mkdir(parents=True,exist_ok=True); versions=[]
+    for p in root.glob("v*"):
+        if p.is_dir() and p.name[1:].isdigit(): versions.append(int(p.name[1:]))
+    return root/f"v{max(versions,default=0)+1}"
+
+
+def write_versioned_audit_markdown(output_dir):
+    out=Path(output_dir)
+    data=json.loads((out/"data_quality.json").read_text(encoding="utf-8")); train=json.loads((out/"training_diagnostics.json").read_text(encoding="utf-8")); cf=json.loads((out/"counterfactual_pairs.json").read_text(encoding="utf-8")); feat=json.loads((out/"feature_intervention.json").read_text(encoding="utf-8"))
+    lines=[f"# CTN 第二阶段因果机制审计报告（{out.name}）","",f"审计版本：`{out.name}`。本次生成独立目录，既有报告不会覆盖。","",
+      "## 机制干预检查","",f"直接调用 simulator 的单特征干预测试 {feat['summary']['total']} 项，观察到符合预期的结果响应 {feat['summary']['mechanism_matches']} 项；逐项输入/输出见 `feature_intervention.json`。","",
+      "## 数据质量","",f"各 split 样本数：{data['split_counts']}。重复样本、跨 split ID/配对 ID 重叠及完整 X/C/S 重叠见 `data_quality.json`。","",
+      "## 训练诊断","","| Model | 参数量 | 最佳 epoch（种子序） | 过拟合运行数 | 非有限梯度 | 测试 MSE 均值±标准差 |","|---|---:|---|---:|---:|---:|"]
+    for model,stat in train['summary'].items():
+      lines.append(f"| {model} | {stat['parameter_count']} | {', '.join(map(str,stat['best_epoch_by_seed']))} | {stat['overfit_runs']}/{len(train['settings']['seeds'])} | {stat['gradient_nonfinite_total']} | {stat['test_mse_mean']:.6f} ± {stat['test_mse_stdev']:.6f} |")
+    lines += ["","逐 epoch train/validation loss 在 `training_diagnostics.json`；不删减种子，测试集不参与梯度更新。","","## 反事实结果","","方向准确率按真实目标变化非零的 pair 计算；热学温度干预对本轮温度增量目标是零效应，另报零效应保持率。各模型分领域指标及单 pair 预测见 `counterfactual_pairs.json`。","","## 解释与限制","","XY、XYCS 与 Transformer 使用当前仓库定义的结构不变。本报告只诊断固定模拟环境中的结构化目标，不推断自然语言因果能力。结合 feature intervention 与 data-quality 文件回答：C/S 在不同领域的有效性取决于当前 Y 定义；目标尺度/无效字段/特征表示问题会影响模型比较。","","详细问题清单与逐字段机制说明见本版本的 `feature_intervention.json`、`data_quality.json`、`counterfactual_pairs.json`。"]
+    (out/"phase2_audit.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
+
+
 if __name__=="__main__":
-    write_audit_reports()
-    run_training_audit()
-    merge_counterfactual_predictions()
+    version_dir=_next_report_version()
+    write_audit_reports(output_dir=version_dir)
+    run_training_audit(output_dir=version_dir)
+    merge_counterfactual_predictions(output_dir=version_dir)
+    write_versioned_audit_markdown(version_dir)
+    print(f"Audit reports written to {version_dir}")

@@ -67,6 +67,6 @@ tests/               验收测试
 
 完整实验结果与解释见 `results/REPORT.md` 和 `results/experiment.json`。这些分数只适用于本项目定义的合成结构化目标，不能作为自然语言能力或现实因果发现的证据。
 
-第二阶段机制与数据诊断结果见 `reports/phase2_audit.md`，复现命令会生成 `feature_intervention.json`、`counterfactual_pairs.json`、`data_quality.json` 和 `training_diagnostics.json`。审计阶段只记录模型输入、逐 epoch 训练/验证指标与干预预测，不修改模型架构。
+第二阶段机制与数据诊断结果见 `reports/v1/phase2_audit.md`。每次运行 `python -m ctn.audit` 会自动创建 `reports/vN/` 新版本目录，包含总报告、特征干预、配对反事实、数据质量和逐 epoch 训练诊断文件，不覆盖旧版。审计阶段只记录模型输入、逐 epoch 训练/验证指标与干预预测，不修改模型架构。
 
 第一阶段的随机哈希编码有碰撞且非可学习编码，只用于验证形状和数据通路。当前实验模型直接读取保留的结构化数值特征。
