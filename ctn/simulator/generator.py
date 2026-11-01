@@ -12,27 +12,25 @@ from .weather import WeatherWorld
 DOMAINS = ("thermal", "mechanics", "weather")
 
 
-def _sample(domain: str, index: int, split: str, rng: random.Random) -> CausalSample:
+def _sample(domain: str, index: int, split: str, rng: random.Random, counterfactual: bool = False) -> CausalSample:
     pair_id = f"P_{domain}_{index:06d}"
     event_id = f"E_{domain}_{index:06d}"
-    intervention = index % 5 == 0
+    intervention = counterfactual
     if domain == "mechanics":
-        fixed = (index % 4 == 0) if split != "test" else (index % 4 == 1)
+        fixed = counterfactual
         force, friction, mass = rng.choice([1.0, 3.0, 5.0]), rng.choice([0.0, 0.2, 0.8]), rng.choice([1.0, 2.0])
         world = MechanicsWorld(); before = world.reset(fixed=fixed, mass=mass); _, after = world.step(force, friction, intervention=intervention)
         X, Y, C = {"force": force, "action": "push"}, {"position_delta": after["objects"]["object_001"]["position"]}, {"friction": friction, "fixed": fixed}
         S = before["objects"]["object_001"]; action, typ, target = "push", "EV_MOVE_001", "position_change"
         params = {"force": force, "friction": friction}
     elif domain == "thermal":
-        cold = (index % 3 == 0) if split != "test" else (index % 3 == 1)
-        temp = rng.choice([-5.0, 2.0, 20.0]); heat, cool = (0.0, 1.0) if cold else (1.0, 0.0)
+        temp = rng.choice([-5.0, 2.0, 20.0]); heat, cool = (0.0, 1.0) if counterfactual else (1.0, 0.0)
         world = ThermalWorld(); before = world.reset(temp); _, after = world.step(heat, cool, intervention=intervention)
         X, Y, C = {"heating_power": heat, "cooling_power": cool}, {"phase": after["objects"]["water"]["phase"], "temperature_delta": 10 * (heat-cool)}, {"freezing_point": 0.0}
         S = before["objects"]["water"]; action, typ, target = "heat_or_cool", "EV_PHASE_CHANGE_001", "phase_change"
         params = {"heating_power": heat, "cooling_power": cool}
     else:
-        covered = (index % 4 == 0) if split != "test" else (index % 4 == 1)
-        rain, drain = rng.choice([0.0, 0.2, 0.6]), rng.choice([0.0, 0.1, 0.4]); cover = 1.0 if covered else 0.0
+        rain, drain = rng.choice([0.0, 0.2, 0.6]), rng.choice([0.0, 0.1, 0.4]); cover = 1.0 if counterfactual else 0.0
         world = WeatherWorld(); before = world.reset(); _, after = world.step(rain, cover, drain, intervention)
         X, Y, C = {"rainfall": rain}, {"ground_wetness": after["objects"]["ground_001"]["ground_wetness"]}, {"roof_cover": cover, "drainage": drain}
         S = before["objects"]["ground_001"]; action, typ, target = "rain", "EV_GROUND_WET_001", "wetness_change"
@@ -42,14 +40,23 @@ def _sample(domain: str, index: int, split: str, rng: random.Random) -> CausalSa
 
 
 def generate_dataset(output_dir: str | Path, train=5000, validation=1000, test=1000, seed=42):
-    out = Path(output_dir); out.mkdir(parents=True, exist_ok=True); rng = random.Random(seed)
+    out = Path(output_dir); out.mkdir(parents=True, exist_ok=True)
     counts = {"train": train, "validation": validation, "test": test}; report = {"seed": seed, "splits": {}, "domains": {}}
     for split, total in counts.items():
         path = out / f"{split}.jsonl"; per_domain = total // len(DOMAINS); remainder = total % len(DOMAINS)
         rows = []
         for d_i, domain in enumerate(DOMAINS):
             n = per_domain + (1 if d_i < remainder else 0)
-            rows.extend(_sample(domain, i + (100000 if split == "validation" else 200000 if split == "test" else 0), split, rng).model_dump(mode="json") for i in range(n))
+            offset = 100000 if split == "validation" else 200000 if split == "test" else 0
+            for i in range(n // 2):
+                pair_index = i + offset
+                # 同一 pair 的两行重置随机数，确保外生参数相同，只切换指定干预变量。
+                pair_seed = seed + pair_index * 17 + d_i * 1000003
+                rows.append(_sample(domain, pair_index, split, random.Random(pair_seed), False).model_dump(mode="json"))
+                rows.append(_sample(domain, pair_index, split, random.Random(pair_seed), True).model_dump(mode="json"))
+            if n % 2:
+                pair_index = n // 2 + offset
+                rows.append(_sample(domain, pair_index, split, random.Random(seed + pair_index * 17 + d_i * 1000003), False).model_dump(mode="json"))
         with path.open("w", encoding="utf-8") as f:
             for row in rows: f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
         report["splits"][split] = {"samples": len(rows), "interventions": sum(x["intervention"] for x in rows), "pairs": len({x["pair_id"] for x in rows})}

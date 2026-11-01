@@ -29,7 +29,7 @@ pytest
 
 ## 数据
 
-每条样本包含 `sample_id/domain/cause/X_raw/Y_raw/C_raw/S_raw/state_before/target_state/target_event/relation_label/intervention/pair_id/split/event`。JSONL 生成路径为 `data/generated/`。测试集使用与训练集不同的条件周期，且数据划分按配置的组合模式区分，不做行级随机切分。
+每条样本包含 `sample_id/domain/cause/X_raw/Y_raw/C_raw/S_raw/state_before/target_state/target_event/relation_label/intervention/pair_id/split/event`。JSONL 生成路径为 `data/generated/`。同一 `pair_id` 有事实和反事实两条记录，复用相同随机外生参数，只切换一个指定条件；不同 split 使用分离的场景编号。
 
 ## 模拟假设
 
@@ -53,4 +53,4 @@ tests/               验收测试
 
 ## 当前范围与限制
 
-第一阶段提供用于后续建模的编码接口，不包含训练器、Transformer 对照模型或统计因果发现。`pair_id` 保留成对场景标识；当前默认生成器输出的是单条场景样本，严格的事实/反事实双样本配对仍需在后续迭代中补齐，不能据此计算配对反事实指标。随机哈希编码有碰撞且非可学习编码，只用于验证形状和数据通路。
+第一阶段提供用于后续建模的编码接口，不包含训练器、Transformer 对照模型或统计因果发现。随机哈希编码有碰撞且非可学习编码，只用于验证形状和数据通路。

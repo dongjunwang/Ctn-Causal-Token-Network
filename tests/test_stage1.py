@@ -38,8 +38,11 @@ def test_seed_reproducibility_and_jsonl(tmp_path):
     assert all(k in row for k in ("X_raw", "Y_raw", "C_raw", "S_raw", "pair_id"))
 
 
-def test_test_split_uses_held_out_condition_values(tmp_path):
-    out = tmp_path / "data"; generate_dataset(out, 300, 90, 90, 42)
-    def conditions(split):
-        return {json.loads(line)["C_raw"].get("fixed") for line in (out / f"{split}.jsonl").read_text(encoding="utf-8").splitlines() if json.loads(line)["domain"] == "mechanics"}
-    assert conditions("train") != conditions("test")
+def test_counterfactual_pairs_share_baseline_and_change_intervention(tmp_path):
+    out = tmp_path / "data"; generate_dataset(out, 30, 12, 12, 42)
+    rows = [json.loads(line) for line in (out / "test.jsonl").read_text(encoding="utf-8").splitlines()]
+    pair = [r for r in rows if r["domain"] == "mechanics"][:2]
+    assert pair[0]["pair_id"] == pair[1]["pair_id"]
+    assert pair[0]["state_before"] == pair[1]["state_before"]
+    assert pair[0]["C_raw"]["fixed"] != pair[1]["C_raw"]["fixed"]
+    assert {r["intervention"] for r in pair} == {False, True}
